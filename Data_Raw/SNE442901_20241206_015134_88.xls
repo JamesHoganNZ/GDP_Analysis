@@ -1,0 +1,2475 @@
+<html xmlns:x="urn:schemas-microsoft-com:office:excel">
+	<head>
+		<meta http-equiv="Content-Type" content="charset=windows-1252" />
+		<!--[if gte mso 9]>
+		<xml>
+			<x:ExcelWorkbook>
+				<x:ExcelWorksheets>
+					<x:ExcelWorksheet>
+						<x:Name>matrix</x:Name>
+						<x:WorksheetOptions>
+							<x:Print>
+								<x:ValidPrinterInfo/>
+							</x:Print>
+						</x:WorksheetOptions>
+					</x:ExcelWorksheet>
+				</x:ExcelWorksheets>
+			</x:ExcelWorkbook>
+		</xml>
+		<![endif]-->
+	</head>
+	<body>
+		<style>
+			.stub1 {
+				mso-style-parent:style0;
+				mso-number-format:\@;
+				vertical-align:middle;
+			}
+			.headfirst {
+				mso-style-parent:style0;
+				mso-number-format:\@;
+			}
+			.headlast {
+				mso-style-parent:style0;
+				mso-number-format:\@;
+			}
+			.headmid {
+				mso-style-parent:style0;
+				mso-number-format:\@;
+			}
+			.title
+				mso-style-parent:style0;
+				text-align:left;
+			}
+		</style>
+<table class="pxtable" cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<th colspan="14">Series, GDP(E), Chain Volume, Seasonally Adjusted, Household FCE by item (Qrtly-Mar/Jun/Sep/Dec)</th>
+	</tr>
+	<tr>
+		<td class="headfirst" colspan="1" rowspan="3">&nbsp;</td>
+		<th class="headfirst" colspan="13">Final Consumption Expenditure</th>
+	</tr>
+	<tr>
+		<th class="headmid" colspan="1">Food and nonalcoholic beverages</th>
+		<th class="headmid" colspan="1">Alcoholic beverages, tobacco and illicit drugs</th>
+		<th class="headmid" colspan="1">Clothing and footwear</th>
+		<th class="headmid" colspan="1">Housing and household utilities</th>
+		<th class="headmid" colspan="1">Household contents and services</th>
+		<th class="headmid" colspan="1">Health</th>
+		<th class="headmid" colspan="1">Transport</th>
+		<th class="headmid" colspan="1">Communication</th>
+		<th class="headmid" colspan="1">Recreation and culture</th>
+		<th class="headmid" colspan="1">Education</th>
+		<th class="headmid" colspan="1">Restaurants and hotels</th>
+		<th class="headmid" colspan="1">Miscellaneous goods and services</th>
+		<th class="headmid" colspan="1">Imports of low value goods purchased directly by households</th>
+	</tr>
+	<tr>
+		<th class="headlast" colspan="1">Households</th>
+		<th class="headlast" colspan="1">Households</th>
+		<th class="headlast" colspan="1">Households</th>
+		<th class="headlast" colspan="1">Households</th>
+		<th class="headlast" colspan="1">Households</th>
+		<th class="headlast" colspan="1">Households</th>
+		<th class="headlast" colspan="1">Households</th>
+		<th class="headlast" colspan="1">Households</th>
+		<th class="headlast" colspan="1">Households</th>
+		<th class="headlast" colspan="1">Households</th>
+		<th class="headlast" colspan="1">Households</th>
+		<th class="headlast" colspan="1">Households</th>
+		<th class="headlast" colspan="1">Households</th>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1987Q2</td>
+		<td style="white-space: nowrap;">2,213</td>
+		<td style="white-space: nowrap;">1,372</td>
+		<td style="white-space: nowrap;">643</td>
+		<td style="white-space: nowrap;">4,568</td>
+		<td style="white-space: nowrap;">862</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,873</td>
+		<td style="white-space: nowrap;">74</td>
+		<td style="white-space: nowrap;">1,025</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,110</td>
+		<td style="white-space: nowrap;">1,258</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1987Q3</td>
+		<td style="white-space: nowrap;">2,243</td>
+		<td style="white-space: nowrap;">1,374</td>
+		<td style="white-space: nowrap;">623</td>
+		<td style="white-space: nowrap;">4,621</td>
+		<td style="white-space: nowrap;">846</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,938</td>
+		<td style="white-space: nowrap;">79</td>
+		<td style="white-space: nowrap;">1,015</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,080</td>
+		<td style="white-space: nowrap;">1,290</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1987Q4</td>
+		<td style="white-space: nowrap;">2,291</td>
+		<td style="white-space: nowrap;">1,374</td>
+		<td style="white-space: nowrap;">629</td>
+		<td style="white-space: nowrap;">4,664</td>
+		<td style="white-space: nowrap;">847</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,913</td>
+		<td style="white-space: nowrap;">82</td>
+		<td style="white-space: nowrap;">1,040</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,108</td>
+		<td style="white-space: nowrap;">1,351</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1988Q1</td>
+		<td style="white-space: nowrap;">2,252</td>
+		<td style="white-space: nowrap;">1,361</td>
+		<td style="white-space: nowrap;">611</td>
+		<td style="white-space: nowrap;">4,691</td>
+		<td style="white-space: nowrap;">843</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,873</td>
+		<td style="white-space: nowrap;">86</td>
+		<td style="white-space: nowrap;">1,049</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,062</td>
+		<td style="white-space: nowrap;">1,393</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1988Q2</td>
+		<td style="white-space: nowrap;">2,234</td>
+		<td style="white-space: nowrap;">1,347</td>
+		<td style="white-space: nowrap;">594</td>
+		<td style="white-space: nowrap;">4,693</td>
+		<td style="white-space: nowrap;">827</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,924</td>
+		<td style="white-space: nowrap;">88</td>
+		<td style="white-space: nowrap;">1,058</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,022</td>
+		<td style="white-space: nowrap;">1,418</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1988Q3</td>
+		<td style="white-space: nowrap;">2,318</td>
+		<td style="white-space: nowrap;">1,370</td>
+		<td style="white-space: nowrap;">594</td>
+		<td style="white-space: nowrap;">4,688</td>
+		<td style="white-space: nowrap;">844</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,031</td>
+		<td style="white-space: nowrap;">94</td>
+		<td style="white-space: nowrap;">1,107</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,069</td>
+		<td style="white-space: nowrap;">1,467</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1988Q4</td>
+		<td style="white-space: nowrap;">2,292</td>
+		<td style="white-space: nowrap;">1,353</td>
+		<td style="white-space: nowrap;">578</td>
+		<td style="white-space: nowrap;">4,687</td>
+		<td style="white-space: nowrap;">838</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,111</td>
+		<td style="white-space: nowrap;">101</td>
+		<td style="white-space: nowrap;">1,105</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,048</td>
+		<td style="white-space: nowrap;">1,464</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1989Q1</td>
+		<td style="white-space: nowrap;">2,300</td>
+		<td style="white-space: nowrap;">1,319</td>
+		<td style="white-space: nowrap;">574</td>
+		<td style="white-space: nowrap;">4,653</td>
+		<td style="white-space: nowrap;">837</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,221</td>
+		<td style="white-space: nowrap;">113</td>
+		<td style="white-space: nowrap;">1,122</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,025</td>
+		<td style="white-space: nowrap;">1,452</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1989Q2</td>
+		<td style="white-space: nowrap;">2,425</td>
+		<td style="white-space: nowrap;">1,333</td>
+		<td style="white-space: nowrap;">659</td>
+		<td style="white-space: nowrap;">4,644</td>
+		<td style="white-space: nowrap;">877</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,266</td>
+		<td style="white-space: nowrap;">132</td>
+		<td style="white-space: nowrap;">1,146</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,050</td>
+		<td style="white-space: nowrap;">1,462</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1989Q3</td>
+		<td style="white-space: nowrap;">2,201</td>
+		<td style="white-space: nowrap;">1,269</td>
+		<td style="white-space: nowrap;">612</td>
+		<td style="white-space: nowrap;">4,640</td>
+		<td style="white-space: nowrap;">812</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,144</td>
+		<td style="white-space: nowrap;">142</td>
+		<td style="white-space: nowrap;">1,079</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,002</td>
+		<td style="white-space: nowrap;">1,394</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1989Q4</td>
+		<td style="white-space: nowrap;">2,231</td>
+		<td style="white-space: nowrap;">1,275</td>
+		<td style="white-space: nowrap;">600</td>
+		<td style="white-space: nowrap;">4,633</td>
+		<td style="white-space: nowrap;">804</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,128</td>
+		<td style="white-space: nowrap;">152</td>
+		<td style="white-space: nowrap;">1,079</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">940</td>
+		<td style="white-space: nowrap;">1,382</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1990Q1</td>
+		<td style="white-space: nowrap;">2,307</td>
+		<td style="white-space: nowrap;">1,312</td>
+		<td style="white-space: nowrap;">591</td>
+		<td style="white-space: nowrap;">4,662</td>
+		<td style="white-space: nowrap;">803</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,157</td>
+		<td style="white-space: nowrap;">156</td>
+		<td style="white-space: nowrap;">1,101</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">980</td>
+		<td style="white-space: nowrap;">1,399</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1990Q2</td>
+		<td style="white-space: nowrap;">2,310</td>
+		<td style="white-space: nowrap;">1,339</td>
+		<td style="white-space: nowrap;">593</td>
+		<td style="white-space: nowrap;">4,685</td>
+		<td style="white-space: nowrap;">794</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,137</td>
+		<td style="white-space: nowrap;">156</td>
+		<td style="white-space: nowrap;">1,115</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">957</td>
+		<td style="white-space: nowrap;">1,420</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1990Q3</td>
+		<td style="white-space: nowrap;">2,323</td>
+		<td style="white-space: nowrap;">1,377</td>
+		<td style="white-space: nowrap;">596</td>
+		<td style="white-space: nowrap;">4,717</td>
+		<td style="white-space: nowrap;">787</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,100</td>
+		<td style="white-space: nowrap;">155</td>
+		<td style="white-space: nowrap;">1,125</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">949</td>
+		<td style="white-space: nowrap;">1,440</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1990Q4</td>
+		<td style="white-space: nowrap;">2,410</td>
+		<td style="white-space: nowrap;">1,405</td>
+		<td style="white-space: nowrap;">599</td>
+		<td style="white-space: nowrap;">4,735</td>
+		<td style="white-space: nowrap;">794</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,157</td>
+		<td style="white-space: nowrap;">158</td>
+		<td style="white-space: nowrap;">1,130</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">980</td>
+		<td style="white-space: nowrap;">1,445</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1991Q1</td>
+		<td style="white-space: nowrap;">2,345</td>
+		<td style="white-space: nowrap;">1,370</td>
+		<td style="white-space: nowrap;">599</td>
+		<td style="white-space: nowrap;">4,744</td>
+		<td style="white-space: nowrap;">764</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,955</td>
+		<td style="white-space: nowrap;">161</td>
+		<td style="white-space: nowrap;">1,086</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">966</td>
+		<td style="white-space: nowrap;">1,401</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1991Q2</td>
+		<td style="white-space: nowrap;">2,338</td>
+		<td style="white-space: nowrap;">1,325</td>
+		<td style="white-space: nowrap;">555</td>
+		<td style="white-space: nowrap;">4,765</td>
+		<td style="white-space: nowrap;">760</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,916</td>
+		<td style="white-space: nowrap;">165</td>
+		<td style="white-space: nowrap;">1,072</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">896</td>
+		<td style="white-space: nowrap;">1,356</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1991Q3</td>
+		<td style="white-space: nowrap;">2,354</td>
+		<td style="white-space: nowrap;">1,266</td>
+		<td style="white-space: nowrap;">561</td>
+		<td style="white-space: nowrap;">4,772</td>
+		<td style="white-space: nowrap;">773</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,983</td>
+		<td style="white-space: nowrap;">170</td>
+		<td style="white-space: nowrap;">1,079</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">855</td>
+		<td style="white-space: nowrap;">1,360</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1991Q4</td>
+		<td style="white-space: nowrap;">2,370</td>
+		<td style="white-space: nowrap;">1,224</td>
+		<td style="white-space: nowrap;">573</td>
+		<td style="white-space: nowrap;">4,799</td>
+		<td style="white-space: nowrap;">771</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,874</td>
+		<td style="white-space: nowrap;">176</td>
+		<td style="white-space: nowrap;">1,061</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">891</td>
+		<td style="white-space: nowrap;">1,370</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1992Q1</td>
+		<td style="white-space: nowrap;">2,453</td>
+		<td style="white-space: nowrap;">1,251</td>
+		<td style="white-space: nowrap;">572</td>
+		<td style="white-space: nowrap;">4,799</td>
+		<td style="white-space: nowrap;">791</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,830</td>
+		<td style="white-space: nowrap;">179</td>
+		<td style="white-space: nowrap;">1,068</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">879</td>
+		<td style="white-space: nowrap;">1,399</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1992Q2</td>
+		<td style="white-space: nowrap;">2,430</td>
+		<td style="white-space: nowrap;">1,222</td>
+		<td style="white-space: nowrap;">574</td>
+		<td style="white-space: nowrap;">4,803</td>
+		<td style="white-space: nowrap;">795</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,820</td>
+		<td style="white-space: nowrap;">178</td>
+		<td style="white-space: nowrap;">1,060</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">862</td>
+		<td style="white-space: nowrap;">1,407</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1992Q3</td>
+		<td style="white-space: nowrap;">2,431</td>
+		<td style="white-space: nowrap;">1,235</td>
+		<td style="white-space: nowrap;">564</td>
+		<td style="white-space: nowrap;">4,756</td>
+		<td style="white-space: nowrap;">800</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,804</td>
+		<td style="white-space: nowrap;">182</td>
+		<td style="white-space: nowrap;">1,055</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">864</td>
+		<td style="white-space: nowrap;">1,400</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1992Q4</td>
+		<td style="white-space: nowrap;">2,462</td>
+		<td style="white-space: nowrap;">1,246</td>
+		<td style="white-space: nowrap;">559</td>
+		<td style="white-space: nowrap;">4,826</td>
+		<td style="white-space: nowrap;">820</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,824</td>
+		<td style="white-space: nowrap;">186</td>
+		<td style="white-space: nowrap;">1,090</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">925</td>
+		<td style="white-space: nowrap;">1,397</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1993Q1</td>
+		<td style="white-space: nowrap;">2,437</td>
+		<td style="white-space: nowrap;">1,241</td>
+		<td style="white-space: nowrap;">563</td>
+		<td style="white-space: nowrap;">4,838</td>
+		<td style="white-space: nowrap;">843</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,790</td>
+		<td style="white-space: nowrap;">195</td>
+		<td style="white-space: nowrap;">1,115</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">835</td>
+		<td style="white-space: nowrap;">1,385</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1993Q2</td>
+		<td style="white-space: nowrap;">2,467</td>
+		<td style="white-space: nowrap;">1,246</td>
+		<td style="white-space: nowrap;">580</td>
+		<td style="white-space: nowrap;">4,846</td>
+		<td style="white-space: nowrap;">874</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,761</td>
+		<td style="white-space: nowrap;">204</td>
+		<td style="white-space: nowrap;">1,156</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">917</td>
+		<td style="white-space: nowrap;">1,373</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1993Q3</td>
+		<td style="white-space: nowrap;">2,487</td>
+		<td style="white-space: nowrap;">1,250</td>
+		<td style="white-space: nowrap;">589</td>
+		<td style="white-space: nowrap;">4,879</td>
+		<td style="white-space: nowrap;">901</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,774</td>
+		<td style="white-space: nowrap;">211</td>
+		<td style="white-space: nowrap;">1,191</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">935</td>
+		<td style="white-space: nowrap;">1,356</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1993Q4</td>
+		<td style="white-space: nowrap;">2,519</td>
+		<td style="white-space: nowrap;">1,235</td>
+		<td style="white-space: nowrap;">587</td>
+		<td style="white-space: nowrap;">4,870</td>
+		<td style="white-space: nowrap;">912</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,874</td>
+		<td style="white-space: nowrap;">215</td>
+		<td style="white-space: nowrap;">1,184</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">972</td>
+		<td style="white-space: nowrap;">1,342</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1994Q1</td>
+		<td style="white-space: nowrap;">2,533</td>
+		<td style="white-space: nowrap;">1,234</td>
+		<td style="white-space: nowrap;">586</td>
+		<td style="white-space: nowrap;">4,864</td>
+		<td style="white-space: nowrap;">943</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,044</td>
+		<td style="white-space: nowrap;">221</td>
+		<td style="white-space: nowrap;">1,238</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">972</td>
+		<td style="white-space: nowrap;">1,378</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1994Q2</td>
+		<td style="white-space: nowrap;">2,615</td>
+		<td style="white-space: nowrap;">1,228</td>
+		<td style="white-space: nowrap;">612</td>
+		<td style="white-space: nowrap;">4,864</td>
+		<td style="white-space: nowrap;">957</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,026</td>
+		<td style="white-space: nowrap;">224</td>
+		<td style="white-space: nowrap;">1,299</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,035</td>
+		<td style="white-space: nowrap;">1,438</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1994Q3</td>
+		<td style="white-space: nowrap;">2,671</td>
+		<td style="white-space: nowrap;">1,226</td>
+		<td style="white-space: nowrap;">627</td>
+		<td style="white-space: nowrap;">4,895</td>
+		<td style="white-space: nowrap;">978</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,088</td>
+		<td style="white-space: nowrap;">226</td>
+		<td style="white-space: nowrap;">1,329</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,018</td>
+		<td style="white-space: nowrap;">1,447</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1994Q4</td>
+		<td style="white-space: nowrap;">2,764</td>
+		<td style="white-space: nowrap;">1,213</td>
+		<td style="white-space: nowrap;">633</td>
+		<td style="white-space: nowrap;">4,951</td>
+		<td style="white-space: nowrap;">973</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,127</td>
+		<td style="white-space: nowrap;">234</td>
+		<td style="white-space: nowrap;">1,319</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,092</td>
+		<td style="white-space: nowrap;">1,460</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1995Q1</td>
+		<td style="white-space: nowrap;">2,746</td>
+		<td style="white-space: nowrap;">1,224</td>
+		<td style="white-space: nowrap;">629</td>
+		<td style="white-space: nowrap;">5,035</td>
+		<td style="white-space: nowrap;">1,003</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,198</td>
+		<td style="white-space: nowrap;">242</td>
+		<td style="white-space: nowrap;">1,338</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,105</td>
+		<td style="white-space: nowrap;">1,463</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1995Q2</td>
+		<td style="white-space: nowrap;">2,793</td>
+		<td style="white-space: nowrap;">1,246</td>
+		<td style="white-space: nowrap;">612</td>
+		<td style="white-space: nowrap;">4,999</td>
+		<td style="white-space: nowrap;">1,009</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,215</td>
+		<td style="white-space: nowrap;">255</td>
+		<td style="white-space: nowrap;">1,349</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,000</td>
+		<td style="white-space: nowrap;">1,483</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1995Q3</td>
+		<td style="white-space: nowrap;">2,798</td>
+		<td style="white-space: nowrap;">1,244</td>
+		<td style="white-space: nowrap;">621</td>
+		<td style="white-space: nowrap;">5,027</td>
+		<td style="white-space: nowrap;">998</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,282</td>
+		<td style="white-space: nowrap;">271</td>
+		<td style="white-space: nowrap;">1,377</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,048</td>
+		<td style="white-space: nowrap;">1,517</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1995Q4</td>
+		<td style="white-space: nowrap;">2,765</td>
+		<td style="white-space: nowrap;">1,259</td>
+		<td style="white-space: nowrap;">633</td>
+		<td style="white-space: nowrap;">5,036</td>
+		<td style="white-space: nowrap;">1,019</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,363</td>
+		<td style="white-space: nowrap;">279</td>
+		<td style="white-space: nowrap;">1,441</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,002</td>
+		<td style="white-space: nowrap;">1,540</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1996Q1</td>
+		<td style="white-space: nowrap;">2,931</td>
+		<td style="white-space: nowrap;">1,254</td>
+		<td style="white-space: nowrap;">652</td>
+		<td style="white-space: nowrap;">5,053</td>
+		<td style="white-space: nowrap;">998</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,498</td>
+		<td style="white-space: nowrap;">289</td>
+		<td style="white-space: nowrap;">1,470</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,068</td>
+		<td style="white-space: nowrap;">1,541</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1996Q2</td>
+		<td style="white-space: nowrap;">2,897</td>
+		<td style="white-space: nowrap;">1,248</td>
+		<td style="white-space: nowrap;">667</td>
+		<td style="white-space: nowrap;">5,084</td>
+		<td style="white-space: nowrap;">1,017</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,551</td>
+		<td style="white-space: nowrap;">290</td>
+		<td style="white-space: nowrap;">1,511</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,107</td>
+		<td style="white-space: nowrap;">1,537</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1996Q3</td>
+		<td style="white-space: nowrap;">2,929</td>
+		<td style="white-space: nowrap;">1,253</td>
+		<td style="white-space: nowrap;">662</td>
+		<td style="white-space: nowrap;">5,126</td>
+		<td style="white-space: nowrap;">1,020</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,604</td>
+		<td style="white-space: nowrap;">296</td>
+		<td style="white-space: nowrap;">1,572</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,153</td>
+		<td style="white-space: nowrap;">1,546</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1996Q4</td>
+		<td style="white-space: nowrap;">2,904</td>
+		<td style="white-space: nowrap;">1,233</td>
+		<td style="white-space: nowrap;">674</td>
+		<td style="white-space: nowrap;">5,165</td>
+		<td style="white-space: nowrap;">1,011</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,582</td>
+		<td style="white-space: nowrap;">306</td>
+		<td style="white-space: nowrap;">1,605</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,107</td>
+		<td style="white-space: nowrap;">1,568</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1997Q1</td>
+		<td style="white-space: nowrap;">2,937</td>
+		<td style="white-space: nowrap;">1,205</td>
+		<td style="white-space: nowrap;">691</td>
+		<td style="white-space: nowrap;">5,197</td>
+		<td style="white-space: nowrap;">967</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,520</td>
+		<td style="white-space: nowrap;">315</td>
+		<td style="white-space: nowrap;">1,656</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,204</td>
+		<td style="white-space: nowrap;">1,591</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1997Q2</td>
+		<td style="white-space: nowrap;">2,963</td>
+		<td style="white-space: nowrap;">1,201</td>
+		<td style="white-space: nowrap;">725</td>
+		<td style="white-space: nowrap;">5,244</td>
+		<td style="white-space: nowrap;">998</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,494</td>
+		<td style="white-space: nowrap;">338</td>
+		<td style="white-space: nowrap;">1,684</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,218</td>
+		<td style="white-space: nowrap;">1,615</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1997Q3</td>
+		<td style="white-space: nowrap;">2,961</td>
+		<td style="white-space: nowrap;">1,210</td>
+		<td style="white-space: nowrap;">696</td>
+		<td style="white-space: nowrap;">5,259</td>
+		<td style="white-space: nowrap;">1,008</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,431</td>
+		<td style="white-space: nowrap;">349</td>
+		<td style="white-space: nowrap;">1,723</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,192</td>
+		<td style="white-space: nowrap;">1,604</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1997Q4</td>
+		<td style="white-space: nowrap;">2,951</td>
+		<td style="white-space: nowrap;">1,242</td>
+		<td style="white-space: nowrap;">716</td>
+		<td style="white-space: nowrap;">5,275</td>
+		<td style="white-space: nowrap;">1,002</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,404</td>
+		<td style="white-space: nowrap;">361</td>
+		<td style="white-space: nowrap;">1,748</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,227</td>
+		<td style="white-space: nowrap;">1,612</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1998Q1</td>
+		<td style="white-space: nowrap;">2,979</td>
+		<td style="white-space: nowrap;">1,277</td>
+		<td style="white-space: nowrap;">713</td>
+		<td style="white-space: nowrap;">5,313</td>
+		<td style="white-space: nowrap;">1,007</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,438</td>
+		<td style="white-space: nowrap;">377</td>
+		<td style="white-space: nowrap;">1,790</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,343</td>
+		<td style="white-space: nowrap;">1,623</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1998Q2</td>
+		<td style="white-space: nowrap;">2,946</td>
+		<td style="white-space: nowrap;">1,252</td>
+		<td style="white-space: nowrap;">706</td>
+		<td style="white-space: nowrap;">5,334</td>
+		<td style="white-space: nowrap;">1,023</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,473</td>
+		<td style="white-space: nowrap;">393</td>
+		<td style="white-space: nowrap;">1,789</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,264</td>
+		<td style="white-space: nowrap;">1,616</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1998Q3</td>
+		<td style="white-space: nowrap;">2,952</td>
+		<td style="white-space: nowrap;">1,242</td>
+		<td style="white-space: nowrap;">701</td>
+		<td style="white-space: nowrap;">5,363</td>
+		<td style="white-space: nowrap;">1,028</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,481</td>
+		<td style="white-space: nowrap;">407</td>
+		<td style="white-space: nowrap;">1,738</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,223</td>
+		<td style="white-space: nowrap;">1,658</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1998Q4</td>
+		<td style="white-space: nowrap;">2,961</td>
+		<td style="white-space: nowrap;">1,256</td>
+		<td style="white-space: nowrap;">709</td>
+		<td style="white-space: nowrap;">5,386</td>
+		<td style="white-space: nowrap;">1,055</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,610</td>
+		<td style="white-space: nowrap;">417</td>
+		<td style="white-space: nowrap;">1,790</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,298</td>
+		<td style="white-space: nowrap;">1,687</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1999Q1</td>
+		<td style="white-space: nowrap;">3,021</td>
+		<td style="white-space: nowrap;">1,256</td>
+		<td style="white-space: nowrap;">712</td>
+		<td style="white-space: nowrap;">5,406</td>
+		<td style="white-space: nowrap;">1,079</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,607</td>
+		<td style="white-space: nowrap;">420</td>
+		<td style="white-space: nowrap;">1,788</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,258</td>
+		<td style="white-space: nowrap;">1,720</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1999Q2</td>
+		<td style="white-space: nowrap;">3,043</td>
+		<td style="white-space: nowrap;">1,260</td>
+		<td style="white-space: nowrap;">725</td>
+		<td style="white-space: nowrap;">5,428</td>
+		<td style="white-space: nowrap;">1,080</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,660</td>
+		<td style="white-space: nowrap;">419</td>
+		<td style="white-space: nowrap;">1,829</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,309</td>
+		<td style="white-space: nowrap;">1,766</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1999Q3</td>
+		<td style="white-space: nowrap;">3,102</td>
+		<td style="white-space: nowrap;">1,267</td>
+		<td style="white-space: nowrap;">738</td>
+		<td style="white-space: nowrap;">5,456</td>
+		<td style="white-space: nowrap;">1,096</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,669</td>
+		<td style="white-space: nowrap;">426</td>
+		<td style="white-space: nowrap;">1,854</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,279</td>
+		<td style="white-space: nowrap;">1,784</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1999Q4</td>
+		<td style="white-space: nowrap;">3,131</td>
+		<td style="white-space: nowrap;">1,245</td>
+		<td style="white-space: nowrap;">744</td>
+		<td style="white-space: nowrap;">5,487</td>
+		<td style="white-space: nowrap;">1,119</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,580</td>
+		<td style="white-space: nowrap;">438</td>
+		<td style="white-space: nowrap;">1,891</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,191</td>
+		<td style="white-space: nowrap;">1,803</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2000Q1</td>
+		<td style="white-space: nowrap;">3,146</td>
+		<td style="white-space: nowrap;">1,232</td>
+		<td style="white-space: nowrap;">752</td>
+		<td style="white-space: nowrap;">5,521</td>
+		<td style="white-space: nowrap;">1,115</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,540</td>
+		<td style="white-space: nowrap;">441</td>
+		<td style="white-space: nowrap;">1,882</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,091</td>
+		<td style="white-space: nowrap;">1,809</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2000Q2</td>
+		<td style="white-space: nowrap;">3,177</td>
+		<td style="white-space: nowrap;">1,224</td>
+		<td style="white-space: nowrap;">757</td>
+		<td style="white-space: nowrap;">5,560</td>
+		<td style="white-space: nowrap;">1,119</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,601</td>
+		<td style="white-space: nowrap;">464</td>
+		<td style="white-space: nowrap;">1,911</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,233</td>
+		<td style="white-space: nowrap;">1,811</td>
+		<td style="white-space: nowrap;">2</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2000Q3</td>
+		<td style="white-space: nowrap;">3,195</td>
+		<td style="white-space: nowrap;">1,216</td>
+		<td style="white-space: nowrap;">776</td>
+		<td style="white-space: nowrap;">5,603</td>
+		<td style="white-space: nowrap;">1,139</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,525</td>
+		<td style="white-space: nowrap;">460</td>
+		<td style="white-space: nowrap;">1,956</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,214</td>
+		<td style="white-space: nowrap;">1,837</td>
+		<td style="white-space: nowrap;">2</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2000Q4</td>
+		<td style="white-space: nowrap;">3,195</td>
+		<td style="white-space: nowrap;">1,226</td>
+		<td style="white-space: nowrap;">766</td>
+		<td style="white-space: nowrap;">5,638</td>
+		<td style="white-space: nowrap;">1,113</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,476</td>
+		<td style="white-space: nowrap;">463</td>
+		<td style="white-space: nowrap;">1,927</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,168</td>
+		<td style="white-space: nowrap;">1,830</td>
+		<td style="white-space: nowrap;">4</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2001Q1</td>
+		<td style="white-space: nowrap;">3,127</td>
+		<td style="white-space: nowrap;">1,233</td>
+		<td style="white-space: nowrap;">764</td>
+		<td style="white-space: nowrap;">5,676</td>
+		<td style="white-space: nowrap;">1,105</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,498</td>
+		<td style="white-space: nowrap;">469</td>
+		<td style="white-space: nowrap;">1,961</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,105</td>
+		<td style="white-space: nowrap;">1,836</td>
+		<td style="white-space: nowrap;">6</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2001Q2</td>
+		<td style="white-space: nowrap;">3,166</td>
+		<td style="white-space: nowrap;">1,267</td>
+		<td style="white-space: nowrap;">780</td>
+		<td style="white-space: nowrap;">5,720</td>
+		<td style="white-space: nowrap;">1,119</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,595</td>
+		<td style="white-space: nowrap;">483</td>
+		<td style="white-space: nowrap;">1,987</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,157</td>
+		<td style="white-space: nowrap;">1,856</td>
+		<td style="white-space: nowrap;">9</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2001Q3</td>
+		<td style="white-space: nowrap;">3,162</td>
+		<td style="white-space: nowrap;">1,278</td>
+		<td style="white-space: nowrap;">788</td>
+		<td style="white-space: nowrap;">5,731</td>
+		<td style="white-space: nowrap;">1,117</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,663</td>
+		<td style="white-space: nowrap;">506</td>
+		<td style="white-space: nowrap;">2,018</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,204</td>
+		<td style="white-space: nowrap;">1,878</td>
+		<td style="white-space: nowrap;">11</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2001Q4</td>
+		<td style="white-space: nowrap;">3,158</td>
+		<td style="white-space: nowrap;">1,280</td>
+		<td style="white-space: nowrap;">797</td>
+		<td style="white-space: nowrap;">5,764</td>
+		<td style="white-space: nowrap;">1,146</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,669</td>
+		<td style="white-space: nowrap;">504</td>
+		<td style="white-space: nowrap;">2,038</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,196</td>
+		<td style="white-space: nowrap;">1,903</td>
+		<td style="white-space: nowrap;">13</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2002Q1</td>
+		<td style="white-space: nowrap;">3,173</td>
+		<td style="white-space: nowrap;">1,279</td>
+		<td style="white-space: nowrap;">797</td>
+		<td style="white-space: nowrap;">5,787</td>
+		<td style="white-space: nowrap;">1,174</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,674</td>
+		<td style="white-space: nowrap;">503</td>
+		<td style="white-space: nowrap;">1,992</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,036</td>
+		<td style="white-space: nowrap;">1,925</td>
+		<td style="white-space: nowrap;">13</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2002Q2</td>
+		<td style="white-space: nowrap;">3,299</td>
+		<td style="white-space: nowrap;">1,292</td>
+		<td style="white-space: nowrap;">819</td>
+		<td style="white-space: nowrap;">5,832</td>
+		<td style="white-space: nowrap;">1,202</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,659</td>
+		<td style="white-space: nowrap;">514</td>
+		<td style="white-space: nowrap;">2,101</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,173</td>
+		<td style="white-space: nowrap;">1,961</td>
+		<td style="white-space: nowrap;">15</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2002Q3</td>
+		<td style="white-space: nowrap;">3,390</td>
+		<td style="white-space: nowrap;">1,305</td>
+		<td style="white-space: nowrap;">822</td>
+		<td style="white-space: nowrap;">5,869</td>
+		<td style="white-space: nowrap;">1,222</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,813</td>
+		<td style="white-space: nowrap;">505</td>
+		<td style="white-space: nowrap;">2,085</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,186</td>
+		<td style="white-space: nowrap;">1,991</td>
+		<td style="white-space: nowrap;">17</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2002Q4</td>
+		<td style="white-space: nowrap;">3,443</td>
+		<td style="white-space: nowrap;">1,292</td>
+		<td style="white-space: nowrap;">826</td>
+		<td style="white-space: nowrap;">5,911</td>
+		<td style="white-space: nowrap;">1,258</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,856</td>
+		<td style="white-space: nowrap;">521</td>
+		<td style="white-space: nowrap;">2,143</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,162</td>
+		<td style="white-space: nowrap;">2,023</td>
+		<td style="white-space: nowrap;">21</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2003Q1</td>
+		<td style="white-space: nowrap;">3,489</td>
+		<td style="white-space: nowrap;">1,288</td>
+		<td style="white-space: nowrap;">835</td>
+		<td style="white-space: nowrap;">5,957</td>
+		<td style="white-space: nowrap;">1,264</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,890</td>
+		<td style="white-space: nowrap;">532</td>
+		<td style="white-space: nowrap;">2,176</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,259</td>
+		<td style="white-space: nowrap;">2,048</td>
+		<td style="white-space: nowrap;">25</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2003Q2</td>
+		<td style="white-space: nowrap;">3,538</td>
+		<td style="white-space: nowrap;">1,285</td>
+		<td style="white-space: nowrap;">840</td>
+		<td style="white-space: nowrap;">5,965</td>
+		<td style="white-space: nowrap;">1,284</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,978</td>
+		<td style="white-space: nowrap;">537</td>
+		<td style="white-space: nowrap;">2,215</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,252</td>
+		<td style="white-space: nowrap;">2,067</td>
+		<td style="white-space: nowrap;">32</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2003Q3</td>
+		<td style="white-space: nowrap;">3,515</td>
+		<td style="white-space: nowrap;">1,285</td>
+		<td style="white-space: nowrap;">868</td>
+		<td style="white-space: nowrap;">6,048</td>
+		<td style="white-space: nowrap;">1,304</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,054</td>
+		<td style="white-space: nowrap;">556</td>
+		<td style="white-space: nowrap;">2,238</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,245</td>
+		<td style="white-space: nowrap;">2,078</td>
+		<td style="white-space: nowrap;">41</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2003Q4</td>
+		<td style="white-space: nowrap;">3,739</td>
+		<td style="white-space: nowrap;">1,311</td>
+		<td style="white-space: nowrap;">884</td>
+		<td style="white-space: nowrap;">6,098</td>
+		<td style="white-space: nowrap;">1,312</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,221</td>
+		<td style="white-space: nowrap;">557</td>
+		<td style="white-space: nowrap;">2,266</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,209</td>
+		<td style="white-space: nowrap;">2,104</td>
+		<td style="white-space: nowrap;">54</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2004Q1</td>
+		<td style="white-space: nowrap;">3,826</td>
+		<td style="white-space: nowrap;">1,308</td>
+		<td style="white-space: nowrap;">903</td>
+		<td style="white-space: nowrap;">6,149</td>
+		<td style="white-space: nowrap;">1,354</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,351</td>
+		<td style="white-space: nowrap;">570</td>
+		<td style="white-space: nowrap;">2,308</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,243</td>
+		<td style="white-space: nowrap;">2,159</td>
+		<td style="white-space: nowrap;">73</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2004Q2</td>
+		<td style="white-space: nowrap;">3,740</td>
+		<td style="white-space: nowrap;">1,284</td>
+		<td style="white-space: nowrap;">881</td>
+		<td style="white-space: nowrap;">6,185</td>
+		<td style="white-space: nowrap;">1,366</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,272</td>
+		<td style="white-space: nowrap;">576</td>
+		<td style="white-space: nowrap;">2,304</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,248</td>
+		<td style="white-space: nowrap;">2,141</td>
+		<td style="white-space: nowrap;">101</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2004Q3</td>
+		<td style="white-space: nowrap;">3,813</td>
+		<td style="white-space: nowrap;">1,268</td>
+		<td style="white-space: nowrap;">963</td>
+		<td style="white-space: nowrap;">6,258</td>
+		<td style="white-space: nowrap;">1,405</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,359</td>
+		<td style="white-space: nowrap;">592</td>
+		<td style="white-space: nowrap;">2,388</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,408</td>
+		<td style="white-space: nowrap;">2,174</td>
+		<td style="white-space: nowrap;">132</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2004Q4</td>
+		<td style="white-space: nowrap;">3,802</td>
+		<td style="white-space: nowrap;">1,267</td>
+		<td style="white-space: nowrap;">954</td>
+		<td style="white-space: nowrap;">6,296</td>
+		<td style="white-space: nowrap;">1,425</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,408</td>
+		<td style="white-space: nowrap;">615</td>
+		<td style="white-space: nowrap;">2,372</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,482</td>
+		<td style="white-space: nowrap;">2,192</td>
+		<td style="white-space: nowrap;">161</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2005Q1</td>
+		<td style="white-space: nowrap;">3,835</td>
+		<td style="white-space: nowrap;">1,278</td>
+		<td style="white-space: nowrap;">966</td>
+		<td style="white-space: nowrap;">6,338</td>
+		<td style="white-space: nowrap;">1,422</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,411</td>
+		<td style="white-space: nowrap;">638</td>
+		<td style="white-space: nowrap;">2,379</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,424</td>
+		<td style="white-space: nowrap;">2,189</td>
+		<td style="white-space: nowrap;">184</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2005Q2</td>
+		<td style="white-space: nowrap;">3,884</td>
+		<td style="white-space: nowrap;">1,299</td>
+		<td style="white-space: nowrap;">1,002</td>
+		<td style="white-space: nowrap;">6,399</td>
+		<td style="white-space: nowrap;">1,454</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,545</td>
+		<td style="white-space: nowrap;">643</td>
+		<td style="white-space: nowrap;">2,453</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,554</td>
+		<td style="white-space: nowrap;">2,198</td>
+		<td style="white-space: nowrap;">191</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2005Q3</td>
+		<td style="white-space: nowrap;">3,974</td>
+		<td style="white-space: nowrap;">1,329</td>
+		<td style="white-space: nowrap;">1,015</td>
+		<td style="white-space: nowrap;">6,419</td>
+		<td style="white-space: nowrap;">1,471</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,508</td>
+		<td style="white-space: nowrap;">665</td>
+		<td style="white-space: nowrap;">2,430</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,429</td>
+		<td style="white-space: nowrap;">2,230</td>
+		<td style="white-space: nowrap;">204</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2005Q4</td>
+		<td style="white-space: nowrap;">4,008</td>
+		<td style="white-space: nowrap;">1,339</td>
+		<td style="white-space: nowrap;">1,055</td>
+		<td style="white-space: nowrap;">6,490</td>
+		<td style="white-space: nowrap;">1,482</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,474</td>
+		<td style="white-space: nowrap;">685</td>
+		<td style="white-space: nowrap;">2,481</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,545</td>
+		<td style="white-space: nowrap;">2,245</td>
+		<td style="white-space: nowrap;">202</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2006Q1</td>
+		<td style="white-space: nowrap;">4,117</td>
+		<td style="white-space: nowrap;">1,376</td>
+		<td style="white-space: nowrap;">1,044</td>
+		<td style="white-space: nowrap;">6,545</td>
+		<td style="white-space: nowrap;">1,502</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,471</td>
+		<td style="white-space: nowrap;">683</td>
+		<td style="white-space: nowrap;">2,455</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,529</td>
+		<td style="white-space: nowrap;">2,281</td>
+		<td style="white-space: nowrap;">215</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2006Q2</td>
+		<td style="white-space: nowrap;">4,120</td>
+		<td style="white-space: nowrap;">1,384</td>
+		<td style="white-space: nowrap;">1,048</td>
+		<td style="white-space: nowrap;">6,613</td>
+		<td style="white-space: nowrap;">1,512</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,404</td>
+		<td style="white-space: nowrap;">672</td>
+		<td style="white-space: nowrap;">2,458</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,502</td>
+		<td style="white-space: nowrap;">2,300</td>
+		<td style="white-space: nowrap;">187</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2006Q3</td>
+		<td style="white-space: nowrap;">4,069</td>
+		<td style="white-space: nowrap;">1,392</td>
+		<td style="white-space: nowrap;">1,076</td>
+		<td style="white-space: nowrap;">6,677</td>
+		<td style="white-space: nowrap;">1,531</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,473</td>
+		<td style="white-space: nowrap;">641</td>
+		<td style="white-space: nowrap;">2,529</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,563</td>
+		<td style="white-space: nowrap;">2,309</td>
+		<td style="white-space: nowrap;">155</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2006Q4</td>
+		<td style="white-space: nowrap;">4,150</td>
+		<td style="white-space: nowrap;">1,394</td>
+		<td style="white-space: nowrap;">1,066</td>
+		<td style="white-space: nowrap;">6,711</td>
+		<td style="white-space: nowrap;">1,575</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,514</td>
+		<td style="white-space: nowrap;">767</td>
+		<td style="white-space: nowrap;">2,536</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,597</td>
+		<td style="white-space: nowrap;">2,348</td>
+		<td style="white-space: nowrap;">152</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2007Q1</td>
+		<td style="white-space: nowrap;">4,078</td>
+		<td style="white-space: nowrap;">1,385</td>
+		<td style="white-space: nowrap;">1,117</td>
+		<td style="white-space: nowrap;">6,768</td>
+		<td style="white-space: nowrap;">1,644</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,536</td>
+		<td style="white-space: nowrap;">769</td>
+		<td style="white-space: nowrap;">2,615</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,644</td>
+		<td style="white-space: nowrap;">2,389</td>
+		<td style="white-space: nowrap;">153</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2007Q2</td>
+		<td style="white-space: nowrap;">4,137</td>
+		<td style="white-space: nowrap;">1,397</td>
+		<td style="white-space: nowrap;">1,122</td>
+		<td style="white-space: nowrap;">6,810</td>
+		<td style="white-space: nowrap;">1,621</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,627</td>
+		<td style="white-space: nowrap;">764</td>
+		<td style="white-space: nowrap;">2,603</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,634</td>
+		<td style="white-space: nowrap;">2,395</td>
+		<td style="white-space: nowrap;">169</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2007Q3</td>
+		<td style="white-space: nowrap;">4,171</td>
+		<td style="white-space: nowrap;">1,387</td>
+		<td style="white-space: nowrap;">1,097</td>
+		<td style="white-space: nowrap;">6,860</td>
+		<td style="white-space: nowrap;">1,605</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,641</td>
+		<td style="white-space: nowrap;">774</td>
+		<td style="white-space: nowrap;">2,595</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,634</td>
+		<td style="white-space: nowrap;">2,421</td>
+		<td style="white-space: nowrap;">192</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2007Q4</td>
+		<td style="white-space: nowrap;">4,163</td>
+		<td style="white-space: nowrap;">1,399</td>
+		<td style="white-space: nowrap;">1,129</td>
+		<td style="white-space: nowrap;">6,918</td>
+		<td style="white-space: nowrap;">1,571</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,676</td>
+		<td style="white-space: nowrap;">778</td>
+		<td style="white-space: nowrap;">2,600</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,647</td>
+		<td style="white-space: nowrap;">2,415</td>
+		<td style="white-space: nowrap;">189</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2008Q1</td>
+		<td style="white-space: nowrap;">4,253</td>
+		<td style="white-space: nowrap;">1,417</td>
+		<td style="white-space: nowrap;">1,140</td>
+		<td style="white-space: nowrap;">6,971</td>
+		<td style="white-space: nowrap;">1,574</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,727</td>
+		<td style="white-space: nowrap;">802</td>
+		<td style="white-space: nowrap;">2,705</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,687</td>
+		<td style="white-space: nowrap;">2,387</td>
+		<td style="white-space: nowrap;">198</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2008Q2</td>
+		<td style="white-space: nowrap;">4,071</td>
+		<td style="white-space: nowrap;">1,392</td>
+		<td style="white-space: nowrap;">1,107</td>
+		<td style="white-space: nowrap;">7,016</td>
+		<td style="white-space: nowrap;">1,559</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,543</td>
+		<td style="white-space: nowrap;">828</td>
+		<td style="white-space: nowrap;">2,677</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,577</td>
+		<td style="white-space: nowrap;">2,385</td>
+		<td style="white-space: nowrap;">197</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2008Q3</td>
+		<td style="white-space: nowrap;">4,010</td>
+		<td style="white-space: nowrap;">1,395</td>
+		<td style="white-space: nowrap;">1,152</td>
+		<td style="white-space: nowrap;">7,064</td>
+		<td style="white-space: nowrap;">1,538</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,489</td>
+		<td style="white-space: nowrap;">836</td>
+		<td style="white-space: nowrap;">2,691</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,650</td>
+		<td style="white-space: nowrap;">2,395</td>
+		<td style="white-space: nowrap;">183</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2008Q4</td>
+		<td style="white-space: nowrap;">3,971</td>
+		<td style="white-space: nowrap;">1,365</td>
+		<td style="white-space: nowrap;">1,161</td>
+		<td style="white-space: nowrap;">7,090</td>
+		<td style="white-space: nowrap;">1,526</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,504</td>
+		<td style="white-space: nowrap;">853</td>
+		<td style="white-space: nowrap;">2,726</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,600</td>
+		<td style="white-space: nowrap;">2,404</td>
+		<td style="white-space: nowrap;">179</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2009Q1</td>
+		<td style="white-space: nowrap;">4,011</td>
+		<td style="white-space: nowrap;">1,355</td>
+		<td style="white-space: nowrap;">1,142</td>
+		<td style="white-space: nowrap;">7,113</td>
+		<td style="white-space: nowrap;">1,473</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,249</td>
+		<td style="white-space: nowrap;">842</td>
+		<td style="white-space: nowrap;">2,596</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,389</td>
+		<td style="white-space: nowrap;">2,424</td>
+		<td style="white-space: nowrap;">155</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2009Q2</td>
+		<td style="white-space: nowrap;">4,122</td>
+		<td style="white-space: nowrap;">1,386</td>
+		<td style="white-space: nowrap;">1,158</td>
+		<td style="white-space: nowrap;">7,182</td>
+		<td style="white-space: nowrap;">1,478</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,312</td>
+		<td style="white-space: nowrap;">861</td>
+		<td style="white-space: nowrap;">2,572</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,564</td>
+		<td style="white-space: nowrap;">2,486</td>
+		<td style="white-space: nowrap;">143</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2009Q3</td>
+		<td style="white-space: nowrap;">4,191</td>
+		<td style="white-space: nowrap;">1,396</td>
+		<td style="white-space: nowrap;">1,162</td>
+		<td style="white-space: nowrap;">7,187</td>
+		<td style="white-space: nowrap;">1,513</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,357</td>
+		<td style="white-space: nowrap;">867</td>
+		<td style="white-space: nowrap;">2,569</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,499</td>
+		<td style="white-space: nowrap;">2,521</td>
+		<td style="white-space: nowrap;">140</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2009Q4</td>
+		<td style="white-space: nowrap;">4,154</td>
+		<td style="white-space: nowrap;">1,394</td>
+		<td style="white-space: nowrap;">1,161</td>
+		<td style="white-space: nowrap;">7,250</td>
+		<td style="white-space: nowrap;">1,519</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,474</td>
+		<td style="white-space: nowrap;">872</td>
+		<td style="white-space: nowrap;">2,635</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,565</td>
+		<td style="white-space: nowrap;">2,546</td>
+		<td style="white-space: nowrap;">141</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2010Q1</td>
+		<td style="white-space: nowrap;">4,093</td>
+		<td style="white-space: nowrap;">1,393</td>
+		<td style="white-space: nowrap;">1,185</td>
+		<td style="white-space: nowrap;">7,292</td>
+		<td style="white-space: nowrap;">1,537</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,627</td>
+		<td style="white-space: nowrap;">901</td>
+		<td style="white-space: nowrap;">2,652</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,593</td>
+		<td style="white-space: nowrap;">2,609</td>
+		<td style="white-space: nowrap;">138</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2010Q2</td>
+		<td style="white-space: nowrap;">4,183</td>
+		<td style="white-space: nowrap;">1,363</td>
+		<td style="white-space: nowrap;">1,221</td>
+		<td style="white-space: nowrap;">7,326</td>
+		<td style="white-space: nowrap;">1,563</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,638</td>
+		<td style="white-space: nowrap;">937</td>
+		<td style="white-space: nowrap;">2,654</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,592</td>
+		<td style="white-space: nowrap;">2,570</td>
+		<td style="white-space: nowrap;">139</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2010Q3</td>
+		<td style="white-space: nowrap;">4,171</td>
+		<td style="white-space: nowrap;">1,332</td>
+		<td style="white-space: nowrap;">1,222</td>
+		<td style="white-space: nowrap;">7,368</td>
+		<td style="white-space: nowrap;">1,604</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,618</td>
+		<td style="white-space: nowrap;">974</td>
+		<td style="white-space: nowrap;">2,635</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,592</td>
+		<td style="white-space: nowrap;">2,553</td>
+		<td style="white-space: nowrap;">147</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2010Q4</td>
+		<td style="white-space: nowrap;">4,190</td>
+		<td style="white-space: nowrap;">1,343</td>
+		<td style="white-space: nowrap;">1,235</td>
+		<td style="white-space: nowrap;">7,408</td>
+		<td style="white-space: nowrap;">1,509</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,555</td>
+		<td style="white-space: nowrap;">995</td>
+		<td style="white-space: nowrap;">2,635</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,624</td>
+		<td style="white-space: nowrap;">2,547</td>
+		<td style="white-space: nowrap;">150</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2011Q1</td>
+		<td style="white-space: nowrap;">4,206</td>
+		<td style="white-space: nowrap;">1,322</td>
+		<td style="white-space: nowrap;">1,233</td>
+		<td style="white-space: nowrap;">7,446</td>
+		<td style="white-space: nowrap;">1,580</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,512</td>
+		<td style="white-space: nowrap;">1,037</td>
+		<td style="white-space: nowrap;">2,710</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,650</td>
+		<td style="white-space: nowrap;">2,585</td>
+		<td style="white-space: nowrap;">164</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2011Q2</td>
+		<td style="white-space: nowrap;">4,170</td>
+		<td style="white-space: nowrap;">1,316</td>
+		<td style="white-space: nowrap;">1,236</td>
+		<td style="white-space: nowrap;">7,475</td>
+		<td style="white-space: nowrap;">1,591</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,558</td>
+		<td style="white-space: nowrap;">1,045</td>
+		<td style="white-space: nowrap;">2,840</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,680</td>
+		<td style="white-space: nowrap;">2,640</td>
+		<td style="white-space: nowrap;">181</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2011Q3</td>
+		<td style="white-space: nowrap;">4,220</td>
+		<td style="white-space: nowrap;">1,322</td>
+		<td style="white-space: nowrap;">1,271</td>
+		<td style="white-space: nowrap;">7,517</td>
+		<td style="white-space: nowrap;">1,589</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,588</td>
+		<td style="white-space: nowrap;">1,057</td>
+		<td style="white-space: nowrap;">2,922</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,746</td>
+		<td style="white-space: nowrap;">2,684</td>
+		<td style="white-space: nowrap;">207</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2011Q4</td>
+		<td style="white-space: nowrap;">4,284</td>
+		<td style="white-space: nowrap;">1,296</td>
+		<td style="white-space: nowrap;">1,269</td>
+		<td style="white-space: nowrap;">7,527</td>
+		<td style="white-space: nowrap;">1,643</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,554</td>
+		<td style="white-space: nowrap;">1,093</td>
+		<td style="white-space: nowrap;">2,904</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,718</td>
+		<td style="white-space: nowrap;">2,729</td>
+		<td style="white-space: nowrap;">223</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2012Q1</td>
+		<td style="white-space: nowrap;">4,284</td>
+		<td style="white-space: nowrap;">1,272</td>
+		<td style="white-space: nowrap;">1,317</td>
+		<td style="white-space: nowrap;">7,604</td>
+		<td style="white-space: nowrap;">1,643</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,565</td>
+		<td style="white-space: nowrap;">1,098</td>
+		<td style="white-space: nowrap;">2,994</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,833</td>
+		<td style="white-space: nowrap;">2,731</td>
+		<td style="white-space: nowrap;">247</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2012Q2</td>
+		<td style="white-space: nowrap;">4,282</td>
+		<td style="white-space: nowrap;">1,274</td>
+		<td style="white-space: nowrap;">1,316</td>
+		<td style="white-space: nowrap;">7,637</td>
+		<td style="white-space: nowrap;">1,635</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,612</td>
+		<td style="white-space: nowrap;">1,128</td>
+		<td style="white-space: nowrap;">2,926</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,760</td>
+		<td style="white-space: nowrap;">2,724</td>
+		<td style="white-space: nowrap;">265</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2012Q3</td>
+		<td style="white-space: nowrap;">4,267</td>
+		<td style="white-space: nowrap;">1,262</td>
+		<td style="white-space: nowrap;">1,329</td>
+		<td style="white-space: nowrap;">7,645</td>
+		<td style="white-space: nowrap;">1,645</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,622</td>
+		<td style="white-space: nowrap;">1,166</td>
+		<td style="white-space: nowrap;">2,929</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,726</td>
+		<td style="white-space: nowrap;">2,731</td>
+		<td style="white-space: nowrap;">262</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2012Q4</td>
+		<td style="white-space: nowrap;">4,301</td>
+		<td style="white-space: nowrap;">1,265</td>
+		<td style="white-space: nowrap;">1,343</td>
+		<td style="white-space: nowrap;">7,680</td>
+		<td style="white-space: nowrap;">1,690</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,712</td>
+		<td style="white-space: nowrap;">1,170</td>
+		<td style="white-space: nowrap;">2,985</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,806</td>
+		<td style="white-space: nowrap;">2,780</td>
+		<td style="white-space: nowrap;">268</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2013Q1</td>
+		<td style="white-space: nowrap;">4,360</td>
+		<td style="white-space: nowrap;">1,270</td>
+		<td style="white-space: nowrap;">1,338</td>
+		<td style="white-space: nowrap;">7,720</td>
+		<td style="white-space: nowrap;">1,729</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,782</td>
+		<td style="white-space: nowrap;">1,188</td>
+		<td style="white-space: nowrap;">3,057</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,852</td>
+		<td style="white-space: nowrap;">2,807</td>
+		<td style="white-space: nowrap;">277</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2013Q2</td>
+		<td style="white-space: nowrap;">4,404</td>
+		<td style="white-space: nowrap;">1,263</td>
+		<td style="white-space: nowrap;">1,393</td>
+		<td style="white-space: nowrap;">7,725</td>
+		<td style="white-space: nowrap;">1,792</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,851</td>
+		<td style="white-space: nowrap;">1,178</td>
+		<td style="white-space: nowrap;">3,087</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,918</td>
+		<td style="white-space: nowrap;">2,850</td>
+		<td style="white-space: nowrap;">322</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2013Q3</td>
+		<td style="white-space: nowrap;">4,411</td>
+		<td style="white-space: nowrap;">1,259</td>
+		<td style="white-space: nowrap;">1,357</td>
+		<td style="white-space: nowrap;">7,738</td>
+		<td style="white-space: nowrap;">1,827</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,903</td>
+		<td style="white-space: nowrap;">1,194</td>
+		<td style="white-space: nowrap;">3,151</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,891</td>
+		<td style="white-space: nowrap;">2,890</td>
+		<td style="white-space: nowrap;">321</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2013Q4</td>
+		<td style="white-space: nowrap;">4,401</td>
+		<td style="white-space: nowrap;">1,266</td>
+		<td style="white-space: nowrap;">1,416</td>
+		<td style="white-space: nowrap;">7,791</td>
+		<td style="white-space: nowrap;">1,834</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">4,019</td>
+		<td style="white-space: nowrap;">1,203</td>
+		<td style="white-space: nowrap;">3,158</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,933</td>
+		<td style="white-space: nowrap;">2,893</td>
+		<td style="white-space: nowrap;">330</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2014Q1</td>
+		<td style="white-space: nowrap;">4,420</td>
+		<td style="white-space: nowrap;">1,290</td>
+		<td style="white-space: nowrap;">1,424</td>
+		<td style="white-space: nowrap;">7,823</td>
+		<td style="white-space: nowrap;">1,854</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">4,068</td>
+		<td style="white-space: nowrap;">1,214</td>
+		<td style="white-space: nowrap;">3,178</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,987</td>
+		<td style="white-space: nowrap;">2,902</td>
+		<td style="white-space: nowrap;">354</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2014Q2</td>
+		<td style="white-space: nowrap;">4,434</td>
+		<td style="white-space: nowrap;">1,308</td>
+		<td style="white-space: nowrap;">1,406</td>
+		<td style="white-space: nowrap;">7,873</td>
+		<td style="white-space: nowrap;">1,870</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">4,103</td>
+		<td style="white-space: nowrap;">1,226</td>
+		<td style="white-space: nowrap;">3,222</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,934</td>
+		<td style="white-space: nowrap;">2,906</td>
+		<td style="white-space: nowrap;">361</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2014Q3</td>
+		<td style="white-space: nowrap;">4,549</td>
+		<td style="white-space: nowrap;">1,331</td>
+		<td style="white-space: nowrap;">1,432</td>
+		<td style="white-space: nowrap;">7,942</td>
+		<td style="white-space: nowrap;">1,934</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">4,145</td>
+		<td style="white-space: nowrap;">1,239</td>
+		<td style="white-space: nowrap;">3,257</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,934</td>
+		<td style="white-space: nowrap;">2,918</td>
+		<td style="white-space: nowrap;">371</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2014Q4</td>
+		<td style="white-space: nowrap;">4,506</td>
+		<td style="white-space: nowrap;">1,331</td>
+		<td style="white-space: nowrap;">1,434</td>
+		<td style="white-space: nowrap;">7,974</td>
+		<td style="white-space: nowrap;">1,946</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">4,229</td>
+		<td style="white-space: nowrap;">1,262</td>
+		<td style="white-space: nowrap;">3,306</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,834</td>
+		<td style="white-space: nowrap;">2,951</td>
+		<td style="white-space: nowrap;">376</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2015Q1</td>
+		<td style="white-space: nowrap;">4,598</td>
+		<td style="white-space: nowrap;">1,325</td>
+		<td style="white-space: nowrap;">1,451</td>
+		<td style="white-space: nowrap;">8,005</td>
+		<td style="white-space: nowrap;">2,006</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">4,354</td>
+		<td style="white-space: nowrap;">1,252</td>
+		<td style="white-space: nowrap;">3,412</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,809</td>
+		<td style="white-space: nowrap;">3,000</td>
+		<td style="white-space: nowrap;">366</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2015Q2</td>
+		<td style="white-space: nowrap;">4,658</td>
+		<td style="white-space: nowrap;">1,325</td>
+		<td style="white-space: nowrap;">1,451</td>
+		<td style="white-space: nowrap;">8,065</td>
+		<td style="white-space: nowrap;">2,022</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">4,434</td>
+		<td style="white-space: nowrap;">1,283</td>
+		<td style="white-space: nowrap;">3,463</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,829</td>
+		<td style="white-space: nowrap;">3,042</td>
+		<td style="white-space: nowrap;">357</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2015Q3</td>
+		<td style="white-space: nowrap;">4,722</td>
+		<td style="white-space: nowrap;">1,338</td>
+		<td style="white-space: nowrap;">1,451</td>
+		<td style="white-space: nowrap;">8,108</td>
+		<td style="white-space: nowrap;">2,056</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">4,504</td>
+		<td style="white-space: nowrap;">1,285</td>
+		<td style="white-space: nowrap;">3,484</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,857</td>
+		<td style="white-space: nowrap;">3,121</td>
+		<td style="white-space: nowrap;">349</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2015Q4</td>
+		<td style="white-space: nowrap;">4,740</td>
+		<td style="white-space: nowrap;">1,358</td>
+		<td style="white-space: nowrap;">1,486</td>
+		<td style="white-space: nowrap;">8,143</td>
+		<td style="white-space: nowrap;">2,094</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">4,569</td>
+		<td style="white-space: nowrap;">1,302</td>
+		<td style="white-space: nowrap;">3,579</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,941</td>
+		<td style="white-space: nowrap;">3,143</td>
+		<td style="white-space: nowrap;">362</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2016Q1</td>
+		<td style="white-space: nowrap;">4,812</td>
+		<td style="white-space: nowrap;">1,373</td>
+		<td style="white-space: nowrap;">1,493</td>
+		<td style="white-space: nowrap;">8,152</td>
+		<td style="white-space: nowrap;">2,090</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">4,649</td>
+		<td style="white-space: nowrap;">1,324</td>
+		<td style="white-space: nowrap;">3,588</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,868</td>
+		<td style="white-space: nowrap;">3,197</td>
+		<td style="white-space: nowrap;">362</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2016Q2</td>
+		<td style="white-space: nowrap;">4,877</td>
+		<td style="white-space: nowrap;">1,411</td>
+		<td style="white-space: nowrap;">1,525</td>
+		<td style="white-space: nowrap;">8,209</td>
+		<td style="white-space: nowrap;">2,145</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">4,815</td>
+		<td style="white-space: nowrap;">1,335</td>
+		<td style="white-space: nowrap;">3,711</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,065</td>
+		<td style="white-space: nowrap;">3,265</td>
+		<td style="white-space: nowrap;">393</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2016Q3</td>
+		<td style="white-space: nowrap;">4,923</td>
+		<td style="white-space: nowrap;">1,435</td>
+		<td style="white-space: nowrap;">1,521</td>
+		<td style="white-space: nowrap;">8,292</td>
+		<td style="white-space: nowrap;">2,126</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">5,028</td>
+		<td style="white-space: nowrap;">1,352</td>
+		<td style="white-space: nowrap;">3,756</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,167</td>
+		<td style="white-space: nowrap;">3,288</td>
+		<td style="white-space: nowrap;">406</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2016Q4</td>
+		<td style="white-space: nowrap;">4,973</td>
+		<td style="white-space: nowrap;">1,447</td>
+		<td style="white-space: nowrap;">1,504</td>
+		<td style="white-space: nowrap;">8,351</td>
+		<td style="white-space: nowrap;">2,169</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">5,038</td>
+		<td style="white-space: nowrap;">1,359</td>
+		<td style="white-space: nowrap;">3,852</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,163</td>
+		<td style="white-space: nowrap;">3,359</td>
+		<td style="white-space: nowrap;">416</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2017Q1</td>
+		<td style="white-space: nowrap;">4,974</td>
+		<td style="white-space: nowrap;">1,460</td>
+		<td style="white-space: nowrap;">1,537</td>
+		<td style="white-space: nowrap;">8,427</td>
+		<td style="white-space: nowrap;">2,203</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">5,232</td>
+		<td style="white-space: nowrap;">1,384</td>
+		<td style="white-space: nowrap;">3,955</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,274</td>
+		<td style="white-space: nowrap;">3,396</td>
+		<td style="white-space: nowrap;">428</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2017Q2</td>
+		<td style="white-space: nowrap;">5,054</td>
+		<td style="white-space: nowrap;">1,460</td>
+		<td style="white-space: nowrap;">1,569</td>
+		<td style="white-space: nowrap;">8,523</td>
+		<td style="white-space: nowrap;">2,234</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">5,223</td>
+		<td style="white-space: nowrap;">1,417</td>
+		<td style="white-space: nowrap;">3,971</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,299</td>
+		<td style="white-space: nowrap;">3,441</td>
+		<td style="white-space: nowrap;">433</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2017Q3</td>
+		<td style="white-space: nowrap;">5,118</td>
+		<td style="white-space: nowrap;">1,456</td>
+		<td style="white-space: nowrap;">1,610</td>
+		<td style="white-space: nowrap;">8,588</td>
+		<td style="white-space: nowrap;">2,259</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">5,381</td>
+		<td style="white-space: nowrap;">1,429</td>
+		<td style="white-space: nowrap;">4,058</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,253</td>
+		<td style="white-space: nowrap;">3,481</td>
+		<td style="white-space: nowrap;">448</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2017Q4</td>
+		<td style="white-space: nowrap;">5,220</td>
+		<td style="white-space: nowrap;">1,473</td>
+		<td style="white-space: nowrap;">1,634</td>
+		<td style="white-space: nowrap;">8,661</td>
+		<td style="white-space: nowrap;">2,301</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">5,471</td>
+		<td style="white-space: nowrap;">1,453</td>
+		<td style="white-space: nowrap;">4,079</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,266</td>
+		<td style="white-space: nowrap;">3,564</td>
+		<td style="white-space: nowrap;">454</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2018Q1</td>
+		<td style="white-space: nowrap;">5,238</td>
+		<td style="white-space: nowrap;">1,441</td>
+		<td style="white-space: nowrap;">1,593</td>
+		<td style="white-space: nowrap;">8,706</td>
+		<td style="white-space: nowrap;">2,340</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">5,520</td>
+		<td style="white-space: nowrap;">1,474</td>
+		<td style="white-space: nowrap;">4,185</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,293</td>
+		<td style="white-space: nowrap;">3,588</td>
+		<td style="white-space: nowrap;">496</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2018Q2</td>
+		<td style="white-space: nowrap;">5,285</td>
+		<td style="white-space: nowrap;">1,423</td>
+		<td style="white-space: nowrap;">1,652</td>
+		<td style="white-space: nowrap;">8,819</td>
+		<td style="white-space: nowrap;">2,367</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">5,704</td>
+		<td style="white-space: nowrap;">1,494</td>
+		<td style="white-space: nowrap;">4,259</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,296</td>
+		<td style="white-space: nowrap;">3,640</td>
+		<td style="white-space: nowrap;">504</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2018Q3</td>
+		<td style="white-space: nowrap;">5,295</td>
+		<td style="white-space: nowrap;">1,429</td>
+		<td style="white-space: nowrap;">1,695</td>
+		<td style="white-space: nowrap;">8,869</td>
+		<td style="white-space: nowrap;">2,406</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">5,746</td>
+		<td style="white-space: nowrap;">1,487</td>
+		<td style="white-space: nowrap;">4,363</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,331</td>
+		<td style="white-space: nowrap;">3,702</td>
+		<td style="white-space: nowrap;">495</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2018Q4</td>
+		<td style="white-space: nowrap;">5,355</td>
+		<td style="white-space: nowrap;">1,478</td>
+		<td style="white-space: nowrap;">1,753</td>
+		<td style="white-space: nowrap;">8,907</td>
+		<td style="white-space: nowrap;">2,430</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">5,802</td>
+		<td style="white-space: nowrap;">1,472</td>
+		<td style="white-space: nowrap;">4,381</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,396</td>
+		<td style="white-space: nowrap;">3,764</td>
+		<td style="white-space: nowrap;">523</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2019Q1</td>
+		<td style="white-space: nowrap;">5,324</td>
+		<td style="white-space: nowrap;">1,459</td>
+		<td style="white-space: nowrap;">1,740</td>
+		<td style="white-space: nowrap;">9,006</td>
+		<td style="white-space: nowrap;">2,488</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">5,707</td>
+		<td style="white-space: nowrap;">1,462</td>
+		<td style="white-space: nowrap;">4,402</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,315</td>
+		<td style="white-space: nowrap;">3,873</td>
+		<td style="white-space: nowrap;">543</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2019Q2</td>
+		<td style="white-space: nowrap;">5,296</td>
+		<td style="white-space: nowrap;">1,492</td>
+		<td style="white-space: nowrap;">1,769</td>
+		<td style="white-space: nowrap;">9,107</td>
+		<td style="white-space: nowrap;">2,427</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">5,735</td>
+		<td style="white-space: nowrap;">1,492</td>
+		<td style="white-space: nowrap;">4,510</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,351</td>
+		<td style="white-space: nowrap;">3,908</td>
+		<td style="white-space: nowrap;">570</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2019Q3</td>
+		<td style="white-space: nowrap;">5,284</td>
+		<td style="white-space: nowrap;">1,527</td>
+		<td style="white-space: nowrap;">1,796</td>
+		<td style="white-space: nowrap;">9,160</td>
+		<td style="white-space: nowrap;">2,521</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">5,703</td>
+		<td style="white-space: nowrap;">1,528</td>
+		<td style="white-space: nowrap;">4,618</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,343</td>
+		<td style="white-space: nowrap;">3,954</td>
+		<td style="white-space: nowrap;">601</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2019Q4</td>
+		<td style="white-space: nowrap;">5,264</td>
+		<td style="white-space: nowrap;">1,547</td>
+		<td style="white-space: nowrap;">1,804</td>
+		<td style="white-space: nowrap;">9,188</td>
+		<td style="white-space: nowrap;">2,552</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">5,643</td>
+		<td style="white-space: nowrap;">1,562</td>
+		<td style="white-space: nowrap;">4,706</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,350</td>
+		<td style="white-space: nowrap;">3,935</td>
+		<td style="white-space: nowrap;">624</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2020Q1</td>
+		<td style="white-space: nowrap;">5,706</td>
+		<td style="white-space: nowrap;">1,557</td>
+		<td style="white-space: nowrap;">1,673</td>
+		<td style="white-space: nowrap;">9,182</td>
+		<td style="white-space: nowrap;">2,540</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">5,222</td>
+		<td style="white-space: nowrap;">1,541</td>
+		<td style="white-space: nowrap;">4,675</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,043</td>
+		<td style="white-space: nowrap;">3,936</td>
+		<td style="white-space: nowrap;">598</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2020Q2</td>
+		<td style="white-space: nowrap;">5,491</td>
+		<td style="white-space: nowrap;">1,231</td>
+		<td style="white-space: nowrap;">1,459</td>
+		<td style="white-space: nowrap;">9,166</td>
+		<td style="white-space: nowrap;">2,240</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,283</td>
+		<td style="white-space: nowrap;">1,546</td>
+		<td style="white-space: nowrap;">3,989</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,601</td>
+		<td style="white-space: nowrap;">3,651</td>
+		<td style="white-space: nowrap;">619</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2020Q3</td>
+		<td style="white-space: nowrap;">5,555</td>
+		<td style="white-space: nowrap;">1,522</td>
+		<td style="white-space: nowrap;">1,948</td>
+		<td style="white-space: nowrap;">9,260</td>
+		<td style="white-space: nowrap;">2,900</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">4,704</td>
+		<td style="white-space: nowrap;">1,572</td>
+		<td style="white-space: nowrap;">4,895</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,376</td>
+		<td style="white-space: nowrap;">3,962</td>
+		<td style="white-space: nowrap;">674</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2020Q4</td>
+		<td style="white-space: nowrap;">5,424</td>
+		<td style="white-space: nowrap;">1,442</td>
+		<td style="white-space: nowrap;">2,020</td>
+		<td style="white-space: nowrap;">9,363</td>
+		<td style="white-space: nowrap;">2,918</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">4,810</td>
+		<td style="white-space: nowrap;">1,592</td>
+		<td style="white-space: nowrap;">5,026</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,687</td>
+		<td style="white-space: nowrap;">4,064</td>
+		<td style="white-space: nowrap;">671</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2021Q1</td>
+		<td style="white-space: nowrap;">5,543</td>
+		<td style="white-space: nowrap;">1,436</td>
+		<td style="white-space: nowrap;">2,154</td>
+		<td style="white-space: nowrap;">9,456</td>
+		<td style="white-space: nowrap;">3,024</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">4,939</td>
+		<td style="white-space: nowrap;">1,686</td>
+		<td style="white-space: nowrap;">5,657</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,407</td>
+		<td style="white-space: nowrap;">4,120</td>
+		<td style="white-space: nowrap;">763</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2021Q2</td>
+		<td style="white-space: nowrap;">5,584</td>
+		<td style="white-space: nowrap;">1,451</td>
+		<td style="white-space: nowrap;">2,121</td>
+		<td style="white-space: nowrap;">9,460</td>
+		<td style="white-space: nowrap;">3,075</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">5,393</td>
+		<td style="white-space: nowrap;">1,675</td>
+		<td style="white-space: nowrap;">5,489</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,965</td>
+		<td style="white-space: nowrap;">4,178</td>
+		<td style="white-space: nowrap;">794</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2021Q3</td>
+		<td style="white-space: nowrap;">5,781</td>
+		<td style="white-space: nowrap;">1,366</td>
+		<td style="white-space: nowrap;">1,748</td>
+		<td style="white-space: nowrap;">9,525</td>
+		<td style="white-space: nowrap;">2,628</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">4,437</td>
+		<td style="white-space: nowrap;">1,675</td>
+		<td style="white-space: nowrap;">4,777</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,180</td>
+		<td style="white-space: nowrap;">3,972</td>
+		<td style="white-space: nowrap;">894</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2021Q4</td>
+		<td style="white-space: nowrap;">5,616</td>
+		<td style="white-space: nowrap;">1,433</td>
+		<td style="white-space: nowrap;">2,149</td>
+		<td style="white-space: nowrap;">9,634</td>
+		<td style="white-space: nowrap;">3,025</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">4,648</td>
+		<td style="white-space: nowrap;">1,679</td>
+		<td style="white-space: nowrap;">5,311</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,471</td>
+		<td style="white-space: nowrap;">4,215</td>
+		<td style="white-space: nowrap;">946</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2022Q1</td>
+		<td style="white-space: nowrap;">5,617</td>
+		<td style="white-space: nowrap;">1,469</td>
+		<td style="white-space: nowrap;">2,234</td>
+		<td style="white-space: nowrap;">9,792</td>
+		<td style="white-space: nowrap;">3,063</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">5,123</td>
+		<td style="white-space: nowrap;">1,737</td>
+		<td style="white-space: nowrap;">5,815</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,100</td>
+		<td style="white-space: nowrap;">4,250</td>
+		<td style="white-space: nowrap;">856</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2022Q2</td>
+		<td style="white-space: nowrap;">5,478</td>
+		<td style="white-space: nowrap;">1,474</td>
+		<td style="white-space: nowrap;">2,193</td>
+		<td style="white-space: nowrap;">9,767</td>
+		<td style="white-space: nowrap;">2,881</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">4,967</td>
+		<td style="white-space: nowrap;">1,719</td>
+		<td style="white-space: nowrap;">5,497</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,898</td>
+		<td style="white-space: nowrap;">4,243</td>
+		<td style="white-space: nowrap;">847</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2022Q3</td>
+		<td style="white-space: nowrap;">5,476</td>
+		<td style="white-space: nowrap;">1,488</td>
+		<td style="white-space: nowrap;">2,166</td>
+		<td style="white-space: nowrap;">9,889</td>
+		<td style="white-space: nowrap;">2,845</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">5,525</td>
+		<td style="white-space: nowrap;">1,730</td>
+		<td style="white-space: nowrap;">5,293</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,695</td>
+		<td style="white-space: nowrap;">4,281</td>
+		<td style="white-space: nowrap;">812</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2022Q4</td>
+		<td style="white-space: nowrap;">5,463</td>
+		<td style="white-space: nowrap;">1,526</td>
+		<td style="white-space: nowrap;">2,184</td>
+		<td style="white-space: nowrap;">9,949</td>
+		<td style="white-space: nowrap;">2,766</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">5,561</td>
+		<td style="white-space: nowrap;">1,732</td>
+		<td style="white-space: nowrap;">5,351</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,698</td>
+		<td style="white-space: nowrap;">4,270</td>
+		<td style="white-space: nowrap;">825</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2023Q1</td>
+		<td style="white-space: nowrap;">5,375</td>
+		<td style="white-space: nowrap;">1,429</td>
+		<td style="white-space: nowrap;">2,216</td>
+		<td style="white-space: nowrap;">9,996</td>
+		<td style="white-space: nowrap;">2,800</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">5,597</td>
+		<td style="white-space: nowrap;">1,685</td>
+		<td style="white-space: nowrap;">5,478</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,803</td>
+		<td style="white-space: nowrap;">4,307</td>
+		<td style="white-space: nowrap;">862</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2023Q2</td>
+		<td style="white-space: nowrap;">5,352</td>
+		<td style="white-space: nowrap;">1,424</td>
+		<td style="white-space: nowrap;">2,057</td>
+		<td style="white-space: nowrap;">10,094</td>
+		<td style="white-space: nowrap;">2,733</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">6,082</td>
+		<td style="white-space: nowrap;">1,679</td>
+		<td style="white-space: nowrap;">5,411</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,601</td>
+		<td style="white-space: nowrap;">4,325</td>
+		<td style="white-space: nowrap;">966</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2023Q3</td>
+		<td style="white-space: nowrap;">5,412</td>
+		<td style="white-space: nowrap;">1,418</td>
+		<td style="white-space: nowrap;">2,068</td>
+		<td style="white-space: nowrap;">10,143</td>
+		<td style="white-space: nowrap;">2,740</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">5,619</td>
+		<td style="white-space: nowrap;">1,685</td>
+		<td style="white-space: nowrap;">5,343</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,480</td>
+		<td style="white-space: nowrap;">4,352</td>
+		<td style="white-space: nowrap;">978</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2023Q4</td>
+		<td style="white-space: nowrap;">5,426</td>
+		<td style="white-space: nowrap;">1,394</td>
+		<td style="white-space: nowrap;">2,007</td>
+		<td style="white-space: nowrap;">10,183</td>
+		<td style="white-space: nowrap;">2,741</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">5,802</td>
+		<td style="white-space: nowrap;">1,655</td>
+		<td style="white-space: nowrap;">5,258</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,472</td>
+		<td style="white-space: nowrap;">4,354</td>
+		<td style="white-space: nowrap;">1,094</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2024Q1</td>
+		<td style="white-space: nowrap;">5,500</td>
+		<td style="white-space: nowrap;">1,384</td>
+		<td style="white-space: nowrap;">1,977</td>
+		<td style="white-space: nowrap;">10,239</td>
+		<td style="white-space: nowrap;">2,747</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">5,767</td>
+		<td style="white-space: nowrap;">1,580</td>
+		<td style="white-space: nowrap;">5,269</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,508</td>
+		<td style="white-space: nowrap;">4,342</td>
+		<td style="white-space: nowrap;">1,301</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2024Q2</td>
+		<td style="white-space: nowrap;">5,609</td>
+		<td style="white-space: nowrap;">1,379</td>
+		<td style="white-space: nowrap;">1,964</td>
+		<td style="white-space: nowrap;">10,321</td>
+		<td style="white-space: nowrap;">2,748</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">5,733</td>
+		<td style="white-space: nowrap;">1,585</td>
+		<td style="white-space: nowrap;">5,338</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,417</td>
+		<td style="white-space: nowrap;">4,361</td>
+		<td style="white-space: nowrap;">1,343</td>
+	</tr>
+	<tr>
+		<td class="footnote" colspan="14">
+			<a id="information">
+				<b>Table information:</b>
+			</a>
+			<br />Units:<br />$, Magnitude = Millions<br /><br /><a id="footnotes"><b>Footnotes:</b></a><br />Chain-volume series expressed in 2009/10 prices.<br /> <br />Symbols:<br />.. figure not available<br />C: Confidential<br />E: Early Estimate<br />P: Provisional<br />R: Revised<br />S: Suppressed<br /><br />Status flags are not displayed<br /><br />Table reference: <br />SNE042AA<br /><br />Last updated:<br />19 September 2024 10:45am<br /><br />Source: Statistics New Zealand<br />Contact: Information Centre<br />Telephone: 0508 525 525<br />Email:<a href="mailto:info@stats.govt.nz">info@stats.govt.nz</a><br /><br /><br /></td>
+	</tr>
+</table>	</body>
+</html>
