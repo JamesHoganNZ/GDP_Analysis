@@ -109,6 +109,10 @@
    ##
    ## Step 3: Seasonally adjust the quarterly QES measure
    ##
+      Labour[Labour$Labour == "Accommodation and Food Services",]
+
+
+
 
    ##
    ## Step 4: Combine the data sources together into a common industry and time period, and save. This will become our

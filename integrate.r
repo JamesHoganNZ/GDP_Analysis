@@ -49,27 +49,31 @@
       library(textclean)
       library(RSelenium)
       library(splines)
+      library(forecast)
+      library(nlme)
+      library(plm)
+      library(systemfit)
 
    ##
    ##    Set working directory
    ##
-      setwd("C:/Work_Related_Projects/GDP_Analysis")
+      setwd("C:/From BigDisk/GDP_Analysis")
 
       ##
       ##    STEP 1:  Update the trade stats
       ##
-         source("C:/Work_Related_Projects/Trade_Modelling/integrate.r")
+      #   source("C:/From BigDisk/Trade_Modelling/integrate.r")
          
       ##
       ##    STEP 2:  Update the Reserve Bank stats. This isn't working yet because the RB blocks
       ##             screen scraping :-/
       ##
-         source("C:/Work_Related_Projects/RBNZ_Analysis/integrate.r")
+      #      source("C:/From BigDisk/RBNZ_Analysis/integrate.r")
 
       ##
       ##    STEP 3: Grab some Stats NZ data.
       ##
-         Publish_Date <- "20250631"
+         Publish_Date <- "20241206"
          save(Publish_Date, file = "Data_Intermediate/Publish_Date.rda")
          
          source("Programmes/Grab_GDP_Data.r") # This grabs a whole heap of info off InfoShare
