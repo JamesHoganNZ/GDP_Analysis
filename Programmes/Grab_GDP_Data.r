@@ -65,15 +65,18 @@
             
             webElem <- remDr$findElement(using = "id", "ctl00_MainContent_ctl07_lblSelectAll")
             webElem$clickElement()
+            
             ##
             ##    Select the download as excel option
             ##
             Prelist <- list.files("Data_Raw")
+               Sys.sleep(5)   
                option <- remDr$findElement(using = 'xpath', "//*/option[@value = 'xls']")
                option$clickElement()
+               
                webElem <- remDr$findElement(using = "name", "ctl00$MainContent$btnGo")
                webElem$clickElement()
-               Sys.sleep(5)
+               Sys.sleep(5)            
             Postlist <- list.files("Data_Raw")
             File <- Postlist[!(Postlist %in% Prelist)]
 
@@ -107,6 +110,7 @@
             ##    Select the download as excel option
             ##
             Prelist <- list.files("Data_Raw")
+               Sys.sleep(5)   
                option <- remDr$findElement(using = 'xpath', "//*/option[@value = 'xls']")
                option$clickElement()
                webElem <- remDr$findElement(using = "name", "ctl00$MainContent$btnGo")
@@ -151,6 +155,7 @@
             ##    Select the download as excel option
             ##
             Prelist <- list.files("Data_Raw")
+               Sys.sleep(5)   
                option <- remDr$findElement(using = 'xpath', "//*/option[@value = 'xls']")
                option$clickElement()
                webElem <- remDr$findElement(using = "name", "ctl00$MainContent$btnGo")
@@ -196,6 +201,7 @@
             ##    Select the download as excel option
             ##
             Prelist <- list.files("Data_Raw")
+               Sys.sleep(5)   
                option <- remDr$findElement(using = 'xpath', "//*/option[@value = 'xls']")
                option$clickElement()
                webElem <- remDr$findElement(using = "name", "ctl00$MainContent$btnGo")
@@ -238,6 +244,7 @@
             ##    Select the download as excel option
             ##
             Prelist <- list.files("Data_Raw")
+               Sys.sleep(5)   
                option <- remDr$findElement(using = 'xpath', "//*/option[@value = 'xls']")
                option$clickElement()
                webElem <- remDr$findElement(using = "name", "ctl00$MainContent$btnGo")
@@ -282,6 +289,7 @@
             ##    Select the download as excel option
             ##
             Prelist <- list.files("Data_Raw")
+               Sys.sleep(5)   
                option <- remDr$findElement(using = 'xpath', "//*/option[@value = 'xls']")
                option$clickElement()
                
@@ -335,6 +343,7 @@
             ##    Select the download as excel option
             ##
             Prelist <- list.files("Data_Raw")
+               Sys.sleep(5)   
                option <- remDr$findElement(using = 'xpath', "//*/option[@value = 'xls']")
                option$clickElement()
                
@@ -380,6 +389,7 @@
             ##    Select the download as excel option
             ##
             Prelist <- list.files("Data_Raw")
+               Sys.sleep(5)   
                option <- remDr$findElement(using = 'xpath', "//*/option[@value = 'xls']")
                option$clickElement()
                
@@ -416,6 +426,7 @@
             ##    Select the download as excel option
             ##
             Prelist <- list.files("Data_Raw")
+               Sys.sleep(5)   
                option <- remDr$findElement(using = 'xpath', "//*/option[@value = 'xls']")
                option$clickElement()
                
@@ -460,6 +471,7 @@
             ##    Select the download as excel option
             ##
             Prelist <- list.files("Data_Raw")
+               Sys.sleep(5)   
                option <- remDr$findElement(using = 'xpath', "//*/option[@value = 'xls']")
                option$clickElement()
                
@@ -504,6 +516,7 @@
             ##    Select the download as excel option
             ##
             Prelist <- list.files("Data_Raw")
+               Sys.sleep(5)   
                option <- remDr$findElement(using = 'xpath', "//*/option[@value = 'xls']")
                option$clickElement()
                
@@ -559,6 +572,7 @@
             ##    Select the download as excel option
             ##
             Prelist <- list.files("Data_Raw")
+               Sys.sleep(5)   
                option <- remDr$findElement(using = 'xpath', "//*/option[@value = 'xls']")
                option$clickElement()
                
