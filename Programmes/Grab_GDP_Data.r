@@ -16,7 +16,7 @@
                                     browser.helperApps.neverAsk.saveToDisk = "text/csv")
                                )
     
-    rD <- rsDriver(browser=c("firefox"), chromever = "114.0.5735.90", extraCapabilities = fprof)
+    rD <- rsDriver(browser=c("firefox"), chromever = "114.0.5735.90", extraCapabilities = fprof, phantomver = NULL)
 
     remDr <- rD[["client"]]
 
