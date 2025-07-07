@@ -4,6 +4,10 @@
 ##    Objective:  This programme goes to the New Zealand Reserve Bank website and pulls down all of its
 ##                statistical data
 ##
+##                There's a little trick with infoshare. At the bottom is a "helpful" chatbox which covers
+##                the "go" button and prevents selenium being able to press the go button. The browser needs
+##                to shrink in size.
+##
 ##
 
    rm(list=ls(all=TRUE))
@@ -73,6 +77,7 @@
                Sys.sleep(5)   
                option <- remDr$findElement(using = 'xpath', "//*/option[@value = 'xls']")
                option$clickElement()
+               Sys.sleep(5)
                
                webElem <- remDr$findElement(using = "name", "ctl00$MainContent$btnGo")
                webElem$clickElement()
@@ -113,6 +118,7 @@
                Sys.sleep(5)   
                option <- remDr$findElement(using = 'xpath', "//*/option[@value = 'xls']")
                option$clickElement()
+               Sys.sleep(5)
                webElem <- remDr$findElement(using = "name", "ctl00$MainContent$btnGo")
                webElem$clickElement()
                Sys.sleep(5)
@@ -158,6 +164,7 @@
                Sys.sleep(5)   
                option <- remDr$findElement(using = 'xpath', "//*/option[@value = 'xls']")
                option$clickElement()
+               Sys.sleep(5)
                webElem <- remDr$findElement(using = "name", "ctl00$MainContent$btnGo")
                webElem$clickElement()
                Sys.sleep(5)
