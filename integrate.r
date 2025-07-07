@@ -22,7 +22,7 @@
    ##    Clear the decks and load up some functionality
    ##
       rm(list=ls(all=TRUE))
-      
+      options(scipen = 999)
    ##
    ##    Core libraries
    ##
@@ -73,7 +73,7 @@
       ##
       ##    STEP 3: Grab some Stats NZ data.
       ##
-         Publish_Date <- "20241206"
+         Publish_Date <- "20250631"
          save(Publish_Date, file = "Data_Intermediate/Publish_Date.rda")
          
          source("Programmes/Grab_GDP_Data.r") # This grabs a whole heap of info off InfoShare

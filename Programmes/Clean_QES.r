@@ -47,11 +47,11 @@
          Rename <- Rename[Industry != "Total All Industries"]
          ConstantPrice_Actual_Qtr_PaidHours <- data.table::melt(ConstantPrice_Actual_Qtr_PaidHours,
                                                       id.var = c("V1"))
-                              
-         ConstantPrice_Actual_Qtr_PaidHours$Period <- as.Date(paste0(str_sub(ConstantPrice_Actual_Qtr_PaidHours$V1,start = 1, end = 4),
-                                                                     ifelse(str_sub(ConstantPrice_Actual_Qtr_PaidHours$V1,start = 6, end = 6) == "1", "-03-01",
-                                                                     ifelse(str_sub(ConstantPrice_Actual_Qtr_PaidHours$V1,start = 6, end = 6) == "2", "-06-01",
-                                                                     ifelse(str_sub(ConstantPrice_Actual_Qtr_PaidHours$V1,start = 6, end = 6) == "3", "-09-01","-12-01")))), "%Y-%m-%d")
+                                                      
+         ConstantPrice_Actual_Qtr_PaidHours$Period <- as.Date(paste0(str_sub(ConstantPrice_Actual_Qtr_PaidHours$V1,start = 1, end = 4),"-",
+                                                           ifelse(str_detect(ConstantPrice_Actual_Qtr_PaidHours$V1, "Q1"), "03",
+                                                           ifelse(str_detect(ConstantPrice_Actual_Qtr_PaidHours$V1, "Q2"), "06",
+                                                           ifelse(str_detect(ConstantPrice_Actual_Qtr_PaidHours$V1, "Q3"), "09","12"))), "-01"), "%Y-%m-%d")
                                                            
          month(ConstantPrice_Actual_Qtr_PaidHours$Period) <- month(ConstantPrice_Actual_Qtr_PaidHours$Period) + 1
          ConstantPrice_Actual_Qtr_PaidHours$Period <- ConstantPrice_Actual_Qtr_PaidHours$Period - 1

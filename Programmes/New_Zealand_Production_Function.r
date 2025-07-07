@@ -102,25 +102,135 @@
                })
          InterpCapStock <- data.table(do.call(rbind, XList))
          InterpCapStock$Value <- as.numeric(InterpCapStock$Value)
-         #plot(InterpCapStock$Period[InterpCapStock$Labour == "Accommodation and Food Services"], InterpCapStock$Value[InterpCapStock$Labour == "Accommodation and Food Services"])
+         plot(InterpCapStock$Period[InterpCapStock$Labour == "Accommodation and Food Services"], InterpCapStock$Value[InterpCapStock$Labour == "Accommodation and Food Services"])
          #plot(CapStock$Period[CapStock$Labour == "Accommodation and Food Services"], CapStock$Value[CapStock$Labour == "Accommodation and Food Services"])
 
 
    ##
    ## Step 3: Seasonally adjust the quarterly QES measure
    ##
-      Labour[Labour$Labour == "Accommodation and Food Services",]
+      InterpCapStock[Labour == "Accommodation and Food Services",]
+      Labour[Labour == "Accommodation and Food Services",]
+      GDP[Labour == "Accommodation and Food Services",]
+
+    
+     ##
+     ##  Merge everything together
+     ##
+         Together <- merge(GDP,
+                           InterpCapStock,
+                           by = c("Period", "Labour"))
+         Together <- merge(Together,
+                           Labour,
+                           by = c("Period", "Labour"),
+                           stringsAsFactors = TRUE)
+         names(Together) <- c("Period", "Industry", "GDP", "Capital_Stock", "Labour")                 
+                           
+      
+     ##
+     ##  Take the logs
+     ##
+         Together$Output  <- log(Together$GDP)
+         Together$Capital <- log(Together$Capital_Stock)
+         Together$Labour  <- log(Together$Labour)
+         Together$Year    <- year(Together$Period)
+         
+         Together <- pdata.frame(data.frame(Together), c("Industry", "Period"))
+   
+     ##
+     ##  Estimate the production function
+     ##
+     ##  
+        ##
+        ##  First, the baseline:  bog standard OLS
+        ##
+            OLS <- lm(Output ~ (Year + Labour + Capital)*Industry, data=Together)
+            summary(OLS)
+            plot(OLS)
+         
+           ##
+           ##  Test for Autocorrelation:  Extract the residuals and check out their autocorrelation function
+           ##        Autocorrelation in errors, looks like a AR(1) process
+           ##
+           ##     Autocorrelation underestimates the true variance of the estimates:  t-values are overstated 
+           ##
+               acf(OLS$residuals)
+               pacf(OLS$residuals)
+               dwtest(OLS)
+
+           ##
+           ##  Test for Hetroskedasticity:  Breusch-Pagan test.  Yep, heaps of hetroskedasticity
+           ##     Hetroskedasticity overestimates the true variance of the estimates:  t-values are understated 
+           ##
+               bptest(OLS)           
+           
+           ##
+           ##  Test for misspecification: Ramsey Reset test and test of structural break
+           ##
+               sctest(OLS)
+               reset(OLS)
+              
+        ##
+        ##  Secondly:  As a mixed-multilevel model.  This model assumes random coefficients that
+        ##     vary by industry.  I've also included a weights function for addressing hetroskedasticity.
+        ##
+
+             ML_Production_LabCap <- lme(Output ~ Year + Labour + Capital,
+                                        data = Together, 
+                                        weights = varFunc(~ as.numeric(Industry)),
+                                        #correlation=corAR1(0,form = ~ Year|variable),
+                                        random = ~ (Year + Capital + Labour ) |Industry)
+
+
+
+             ML_Production_LabCap <- lme(Output ~ Year + Labour + Capital,
+                                        data = Together, 
+
+                                        random = ~ (Year + Capital + Labour ) |Industry)
 
 
 
 
-   ##
-   ## Step 4: Combine the data sources together into a common industry and time period, and save. This will become our
-   ##         modelling data set.
-   ##
 
 
 
+
+
+
+
+
+
+
+            
+            ML_Production_LabCap <- lme(Output ~ (Year + Labour + Capital)|Industry,
+                                        data = Together), 
+                                        weights = varFunc(~ as.numeric(Industry))) ,
+                                        #correlation=corAR1(0,form = ~ Year|variable),
+                                        random = ~ (Year + Capital + Labour ) |Industry)
+            summary(ML_Production_LabCap)
+            random.effects(ML_Production_LabCap)            
+           
+        ##
+        ##     Lets see how it worked
+        ##
+            Actual_Expected <- data.frame(TimePeriod = as.Date(Together$Period,"%Y-%m-%d"),
+                                          Industry   = str_wrap(str_replace_all(Together$Industry, "\\.", " ")),
+                                          Actual_Gross_Output = as.numeric(exp(Together$Output)),
+                                          Estimates = as.numeric(exp(ML_Production_LabCap$fitted[,2])))          
+                               
+            Actual_Expected <- reshape2::melt(Actual_Expected,
+                                    id.vars = c("TimePeriod", "Industry"),
+                                    measure.vars = c("Actual_Gross_Output", "Estimates"))
+                         
+            ggplot(Actual_Expected, aes(x=TimePeriod, y=value, colour=variable))     +
+                   geom_line(size =.7) +
+                   geom_point(size =.5) +
+                   labs(title="New Zealand Production\nCobb-Douglas Function, Estimated with Multi-Level Model\n") +
+                   ylab("Gross Output\n$(Mill)") +
+                   theme(axis.text.x = element_text(angle=90, vjust=0.5, size=8),
+                         strip.text  = element_text(angle=00, vjust=0.5, size=8),
+                         legend.position="right")+
+                   facet_grid(~Industry, scales="free")
 
 
    ##
