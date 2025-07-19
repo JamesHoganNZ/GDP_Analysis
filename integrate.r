@@ -41,6 +41,10 @@
       library(RDCOMClient)
       library(extrafont)
       library(tictoc)
+
+      library(sysfonts)
+      library(showtext)
+                  
    ##
    ##    Project-specific libraries
    ##

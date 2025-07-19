@@ -35,7 +35,7 @@
       load("Data_Output/ConstantPrice_Actual_Annual_CapitalStock_Published20250631.rda")
       load("Data_Output/ConstantPrice_Actual_Qtr_PaidHours_Published20250631.rda")
       load("Data_Output/Household_Labour_Force_Survey_Published20250631.rda")
-                     
+      load("Data_Intermediate/Downloaded_Files.rda")                
    ##
    ## Step 1: Check out the Industries and move each data source to a common industry definition
    ##
@@ -366,7 +366,11 @@
             ##
             ##    Fix up the industry names
             ##
-            Wrap_Industry <- data.frame(Industry = c("Arts, Recreation and Other Services",
+            Wrap_Industry <- data.frame(Industry = c("Public Administration and Safety", 
+                                                     "Health Care and Social Assistance",
+                                                     "Education and Training",
+                                                     "Accommodation and Food Services",
+                                                     "Arts, Recreation and Other Services",
                                                      "Construction",
                                                      "Electricity, Gas, Water and Waste Services",
                                                      "Financial and Insurance Services",
@@ -378,18 +382,22 @@
                                                      "Retail Trade and Accommodation",
                                                      "Transport, Postal and Warehousing",
                                                      "Wholesale Trade"),
-                                    NZIndustry = c("Arts, Recreation\nand Other Services",
-                                                 "Construction",
-                                                 "Electricity, Gas, Water\nand Waste Services",
-                                                 "Financial and\nInsurance Services",
-                                                 "Forestry and Mining",
-                                                 "Information Media\nand Telecommunications",
-                                                 "Manufacturing",
-                                                 "Professional, Scientific,\nTechnical, Administrative\nand Support Services",
-                                                 "Rental, Hiring and\nReal Estate Services",
-                                                 "Retail Trade\nand Accommodation",
-                                                 "Transport, Postal\nand Warehousing",
-                                                 "Wholesale Trade"), stringsAsFactors = FALSE)
+                                    NZIndustry = c("Public\nAdministration\nand Safety",
+                                                   "Health Care and\nSocial Assistance",
+                                                   "Education and\nTraining",
+                                                   "Accommodation and\nFood Services",
+                                                   "Arts, Recreation\nand Other Services",
+                                                   "Construction",
+                                                   "Electricity,\nGas, Water\nand Waste Services",
+                                                   "Financial and\nInsurance Services",
+                                                   "Forestry and Mining",
+                                                   "Information\nMedia\nand Telecommunications",
+                                                   "Manufacturing",
+                                                   "Professional,\nScientific,\nTechnical,\nAdministrative\nand Support Services",
+                                                   "Rental, Hiring and\nReal Estate Services",
+                                                   "Retail Trade\nand Accommodation",
+                                                   "Transport, Postal\nand Warehousing",
+                                                   "Wholesale Trade"), stringsAsFactors = FALSE)
              
                Actual_Expected <- merge(Actual_Expected,
                                         Wrap_Industry,
@@ -398,27 +406,70 @@
                Actual_Expected$NZIndustry <- ifelse(is.na(Actual_Expected$NZIndustry), Actual_Expected$Industry, Actual_Expected$NZIndustry)
             ggplot(Actual_Expected[Actual_Expected$variable %in% c("GDP", "SystemEstimates"),], aes(x=TimePeriod, y=value, colour=variable))     +
                    geom_line(size =.5) +
-                   geom_point(size =.7) +
+                   geom_point(size =.3) +
                    labs(title="New Zealand Production\nGross Domestic Product Measure - Actual and Estimated\n") +
                    ylab("Gross Domestic Product\n$(Mill)") +
                    scale_colour_manual(values = c("#7b1244","#0094c5"), name="Actual or Expected") +
                    xlab("Time Period\n") +
                    facet_grid(~NZIndustry, scales="free") +
-                   theme_bw(base_size=10, base_family = "Gustan-Book") %+replace%
+                   theme_bw(base_size=12, base_family =  "Calibri") %+replace%
                    theme(legend.title.align=0.5,
-                      plot.margin = unit(c(1,3,1,1),"mm"),
-                      legend.text  = element_text(size=12),
-                      axis.text.x  = element_text(angle=90, size=8),
-                      axis.text.y  = element_text(angle=00, size=8),
-                      axis.title.y  = element_text(angle=90, size=7.5),
-                      strip.text  = element_text(size=6),
-                      plot.title = element_text(size = 12),
-                      legend.key.width = unit(1, "cm"),
-                      legend.spacing.y = unit(0, "cm"),
-                      legend.margin = margin(0, 0, 0, 0),
-                      legend.position  = "bottom")   
+                         plot.margin = unit(c(1,3,1,1),"mm"),
+                         panel.border = element_blank(),
+                         strip.background =  element_rect(fill   = SPCColours("Light_Blue")),
+                         strip.text = element_text(colour = "white", 
+                                                   size   = 8,
+                                                   family = "MyriadPro-Bold",
+                                                   margin = margin(0.0,0.0,0.0,0.0, unit = "mm")),
+                         panel.spacing = unit(1, "lines"),                                              
+                         legend.text   = element_text(size = 20, family = "MyriadPro-Regular"),
+                         plot.title    = element_text(size = 24, colour = SPCColours("Dark_Blue"),  family = "MyriadPro-Bold"),
+                         plot.subtitle = element_text(size = 14, colour = SPCColours("Light_Blue"), family = "MyriadPro-Light"),
+                         plot.caption  = element_text(size = 10,  colour = SPCColours("Dark_Blue"), family = "MyriadPro-Light", hjust = 1.0),
+                         plot.tag      = element_text(size =  9, colour = SPCColours("Red")),
+                         axis.title    = element_text(size = 24, colour = SPCColours("Dark_Blue")),
+                         axis.text.x   = element_text(size = 12, colour = SPCColours("Dark_Blue"), angle = 90, margin = margin(t = 10, r = 0,  b = 0, l = 0, unit = "pt"),hjust = 0.5),
+                         axis.text.y   = element_text(size = 12, colour = SPCColours("Dark_Blue"), angle = 00, margin = margin(t = 0,  r = 10, b = 0, l = 0, unit = "pt"),hjust = 1.0),
+                         legend.key.width = unit(1, "cm"),
+                         legend.spacing.y = unit(1, "cm"),
+                         legend.margin = margin(10, 10, 10, 10),
+                         legend.position  = "bottom")
 
-            ggsave("Graphical_Output/New Zealand Production.png",units = "cm",width = 29.7, height = 21, dpi=600) 
+            ggsave("Graphical_Output/New Zealand Production.png", height =(1.5)*16.13, width = (1.75)*20.66, dpi = 165, units = c("cm"))
+            
+            ggplot(Actual_Expected[(Actual_Expected$variable %in% c("GDP", "SystemEstimates")) &
+                                   (year(Actual_Expected$TimePeriod) > 2019),], aes(x=TimePeriod, y=value, colour=variable))     +
+                   geom_line(size =.5) +
+                   geom_point(size =.3) +
+                   labs(title="New Zealand Production\nGross Domestic Product Measure - Actual and Estimated\nCOVID and since\n") +
+                   ylab("Gross Domestic Product\n$(Mill)") +
+                   scale_colour_manual(values = c("#7b1244","#0094c5"), name="Actual or Expected") +
+                   xlab("Time Period\n") +
+                   facet_grid(~NZIndustry, scales="free") +
+                   theme_bw(base_size=12, base_family =  "Calibri") %+replace%
+                   theme(legend.title.align=0.5,
+                         plot.margin = unit(c(1,3,1,1),"mm"),
+                         panel.border = element_blank(),
+                         strip.background =  element_rect(fill   = SPCColours("Light_Blue")),
+                         strip.text = element_text(colour = "white", 
+                                                   size   = 10,
+                                                   family = "MyriadPro-Bold",
+                                                   margin = margin(0.0,0.0,0.0,0.0, unit = "mm")),
+                         panel.spacing = unit(1, "lines"),                                              
+                         legend.text   = element_text(size = 20, family = "MyriadPro-Regular"),
+                         plot.title    = element_text(size = 24, colour = SPCColours("Dark_Blue"),  family = "MyriadPro-Bold"),
+                         plot.subtitle = element_text(size = 22, colour = SPCColours("Light_Blue"), family = "MyriadPro-Light"),
+                         plot.caption  = element_text(size = 10,  colour = SPCColours("Dark_Blue"), family = "MyriadPro-Light", hjust = 1.0),
+                         plot.tag      = element_text(size =  9, colour = SPCColours("Red")),
+                         axis.title    = element_text(size = 24, colour = SPCColours("Dark_Blue")),
+                         axis.text.x   = element_text(size = 12, colour = SPCColours("Dark_Blue"), angle = 90, margin = margin(t = 10, r = 0,  b = 0, l = 0, unit = "pt"),hjust = 0.5),
+                         axis.text.y   = element_text(size = 12, colour = SPCColours("Dark_Blue"), angle = 00, margin = margin(t = 0,  r = 10, b = 0, l = 0, unit = "pt"),hjust = 1.0),
+                         legend.key.width = unit(1, "cm"),
+                         legend.spacing.y = unit(1, "cm"),
+                         legend.margin = margin(10, 10, 10, 10),
+                         legend.position  = "bottom")
+
+            ggsave("Graphical_Output/New Zealand Production - COVID and Since.png", height =(1.5)*16.13, width = (1.75)*20.66, dpi = 165, units = c("cm"))
         ##
         ##    Which Industries are cooking and which are uncooking?
         ##
@@ -491,18 +542,18 @@
          ##
       showtext_auto()
          
-         ggplot(Output_Gap[month(Output_Gap$TimePeriod) == 3,], aes(x=Output_Gap/100, y=Value/100))     +
+         ggplot(Output_Gap[(month(Output_Gap$TimePeriod) == 3),], aes(x=Output_Gap/100, y=Value/100))     +
                 geom_smooth(method=lm) +
                 geom_path(size = 1, linejoin = "mitre", lineend = "butt", colour = c("#7b1244")) +
                 geom_point(size = 1.5, colour = c("#0094c5")) +
-                geom_text(aes(label=format(TimePeriod, "%Y")), size=7, nudge_x = 0.005) +
-                scale_x_continuous(labels = percent) +
-                scale_y_continuous(labels = percent) +                
+                geom_text(aes(label=format(TimePeriod, "%Y")), size=7, nudge_x = 0.003) +
+                scale_x_continuous(labels = percent, breaks = seq(from = -0.08, to = 0.05, by =0.01)) +
+                scale_y_continuous(labels = percent, breaks = seq(from = 0, to = 0.13, by =0.01)) +                
 
                 geom_vline(xintercept = 0, size=2, alpha = 0.3, colour = SPCColours("Green")) +
 
-                geom_text(x=-0.007, y=0.11, size=6, label="Contraction",family ="MyriadPro-Light", hjust = 0.0,colour = SPCColours("Gold")) +
-                geom_text(x= 0.002, y=0.11, size=6, label="Expansion",  family ="MyriadPro-Light", hjust = 0.0,colour = SPCColours("Gold")) +
+                geom_text(x= -0.02, y=0.11, size=13, label="Below Potential",family ="MyriadPro-Light", hjust = 0,colour = SPCColours("Gold")) +
+                geom_text(x= -0.02, y=0.11, size=13, label="Above Potential",  family ="MyriadPro-Light", hjust = -1.155,colour = SPCColours("Gold")) +
 
                 ylab("Unemployment Rate\n") +
                 xlab("\nGross Domestic Product Output Gap\n(Actual GDP / Expected GDP)") +                
@@ -532,6 +583,53 @@
                       legend.position  = "bottom")
                       
          ggsave("Graphical_Output/Okuns Law - System_of_Equations.png", height =(1.5)*16.13, width = (1.75)*20.66, dpi = 165, units = c("cm"))
+
+     showtext_auto()
+         
+         ggplot(Output_Gap[(month(Output_Gap$TimePeriod) == 3) &
+                           (year(Output_Gap$TimePeriod) >= 1992) *
+                           (year(Output_Gap$TimePeriod) <= 2017),], aes(x=Output_Gap/100, y=Value/100))     +
+                geom_smooth(method=lm) +
+                geom_path(size = 1, linejoin = "mitre", lineend = "butt", colour = c("#7b1244")) +
+                geom_point(size = 1.5, colour = c("#0094c5")) +
+                geom_text(aes(label=format(TimePeriod, "%Y")), size=7, nudge_x = 0.005) +
+                scale_x_continuous(labels = percent) +
+                scale_y_continuous(labels = percent) +                
+
+                geom_vline(xintercept = 0, size=2, alpha = 0.3, colour = SPCColours("Green")) +
+
+                geom_text(x= -0.01, y=0.11, size=6, label="Below Potential",family ="MyriadPro-Light", hjust = 0,colour = SPCColours("Gold")) +
+                geom_text(x= 0, y=0.11, size=6, label="Above Potential",  family ="MyriadPro-Light", hjust = -.25,colour = SPCColours("Gold")) +
+
+                ylab("Unemployment Rate\n") +
+                xlab("\nGross Domestic Product Output Gap\n(Actual GDP / Expected GDP)") +                
+                labs(title="The New Zealand Business Cycle\n")  +         
+         
+                theme_bw(base_size=12, base_family =  "Calibri") %+replace%
+                theme(legend.title.align=0.5,
+                      plot.margin = unit(c(1,3,1,1),"mm"),
+                      panel.border = element_blank(),
+                      strip.background =  element_rect(fill   = SPCColours("Light_Blue")),
+                      strip.text = element_text(colour = "white", 
+                                                size   = 13,
+                                                family = "MyriadPro-Bold",
+                                                margin = margin(1.25,1.25,1.25,1.25, unit = "mm")),
+                      panel.spacing = unit(1, "lines"),                                              
+                      legend.text   = element_text(size = 10, family = "MyriadPro-Regular"),
+                      plot.title    = element_text(size = 44, colour = SPCColours("Dark_Blue"),  family = "MyriadPro-Bold"),
+                      plot.subtitle = element_text(size = 14, colour = SPCColours("Light_Blue"), family = "MyriadPro-Light"),
+                      plot.caption  = element_text(size = 10,  colour = SPCColours("Dark_Blue"), family = "MyriadPro-Light", hjust = 1.0),
+                      plot.tag      = element_text(size =  9, colour = SPCColours("Red")),
+                      axis.title    = element_text(size = 24, colour = SPCColours("Dark_Blue")),
+                      axis.text.x   = element_text(size = 22, colour = SPCColours("Dark_Blue"), angle = 00, margin = margin(t = 10, r = 0,  b = 0, l = 0, unit = "pt"),hjust = 0.5),
+                      axis.text.y   = element_text(size = 22, colour = SPCColours("Dark_Blue"), angle = 00, margin = margin(t = 0,  r = 10, b = 0, l = 0, unit = "pt"),hjust = 1.0),
+                      legend.key.width = unit(1, "cm"),
+                      legend.spacing.y = unit(1, "cm"),
+                      legend.margin = margin(10, 10, 10, 10),
+                      legend.position  = "bottom")
+                      
+         ggsave("Graphical_Output/Okuns Law - NZIER Comparison.png", height =(1.5)*16.13, width = (1.75)*20.66, dpi = 165, units = c("cm"))
+
       ##
       ##    Do some error checking
       ##
