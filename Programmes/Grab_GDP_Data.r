@@ -586,6 +586,76 @@
             ##
             webElem <- remDr$findElement(using = "id", "ctl00_headerUserControl_browseTab")
             webElem$clickElement()
+
+         ##
+         ##       Grab some Unemployment measures
+         ##    	Quarterly Employment Survey - QEM
+         ##
+         
+         webElem <- remDr$findElement(using = "link text", "Work income and spending")
+         webElem$sendKeysToElement(list(key = "enter"))
+         Sys.sleep(3)
+         
+
+         webElem <- remDr$findElement(using = "link text", "Household Labour Force Survey - HLF")
+         webElem$sendKeysToElement(list(key = "enter"))
+         Sys.sleep(3)
+      
+         ##
+         ##    	Total Paid Hours by Industry (ANZSIC06) (Qrtly-Mar/Jun/Sep/Dec)
+         ##
+            Measure <- "Labour Force Status by Sex by Age Group (Qrtly-Mar/Jun/Sep/Dec)"
+            Focus   <- "Unemployment"
+            
+            webElem <- remDr$findElement(using = "link text", Measure)
+            webElem$sendKeysToElement(list(key = "enter"))
+            Sys.sleep(3)
+         
+            ##
+            ##    Select all of the box elements
+            ##
+            webElem <- remDr$findElement(using = "id", "ctl00_MainContent_ctl02_lblSelectAll")
+            webElem$clickElement()
+
+            webElem <- remDr$findElement(using = "id", "ctl00_MainContent_ctl04_lblSelectAll")
+            webElem$clickElement()
+
+            webElem <- remDr$findElement(using = "id", "ctl00_MainContent_ctl07_lblSelectAll")
+            webElem$clickElement()
+            
+            webElem <- remDr$findElement(using = "id", "ctl00_MainContent_ctl09_lblSelectAll")
+            webElem$clickElement()
+            
+            ##
+            ##    Select the download as excel option
+            ##
+
+            Prelist <- list.files("Data_Raw")
+               option <- remDr$findElement(using = 'xpath', "//*/option[@value = 'xls']")
+               option$clickElement()
+               
+               webElem <- remDr$findElement(using = "name", "ctl00$MainContent$btnGo")
+               webElem$clickElement()
+               Sys.sleep(2)
+               webElem$acceptAlert()   ## THIS TURNS OFF THE ANNOYING ALERT BUTTON!!! What is mission it was to find this command              
+               Sys.sleep(5)
+               
+            Postlist <- list.files("Data_Raw")
+            File <- Postlist[!(Postlist %in% Prelist)]
+
+
+
+            Downloaded_Files <- rbind(Downloaded_Files,
+                                      data.frame(Measure = Measure,
+                                                 File    = File,
+                                                 Focus   = Focus))
+            ##
+            ##    Go Back to main page
+            ##
+            webElem <- remDr$findElement(using = "id", "ctl00_headerUserControl_browseTab")
+            webElem$clickElement()
+
+
      
    ##
    ## Lets leave it at that for the moment :)

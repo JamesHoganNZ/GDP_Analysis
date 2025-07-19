@@ -49,11 +49,25 @@
       library(textclean)
       library(RSelenium)
       library(splines)
+      library(strucchange)
+      library(lmtest)
+      library(scales)
+      library(dynlm)
+      library(systemfit)
+      library(tseries)
+      library(cluster)
+      library(nlme)
+      library(plm)
+      library(systemfit)
+      library(micEconCES)      
+      library(forecast)
+      library(grid)
+      library(gridExtra)
 
    ##
    ##    Set working directory
    ##
-      setwd("C:/Work_Related_Projects/GDP_Analysis")
+      setwd("C:\\GIT_Projects\\GDP_Analysis")
 
       ##
       ##    STEP 1:  Update the trade stats
@@ -65,6 +79,11 @@
       ##             screen scraping :-/
       ##
          source("C:/Work_Related_Projects/RBNZ_Analysis/integrate.r")
+
+      ##
+      ## Reset the working directory
+      ##
+      setwd("C:\\GIT_Projects\\GDP_Analysis")
 
       ##
       ##    STEP 3: Grab some Stats NZ data.
@@ -87,6 +106,7 @@
          source("Programmes/Clean_PPI.r")
          source("Programmes/Clean_Capital_Stock.r")
          source("Programmes/Clean_QES.r")
+         source("Programmes/Clean_Unemployment.r")
          
       ##
       ##    STEP 5: Estimate a long run and short run production function
