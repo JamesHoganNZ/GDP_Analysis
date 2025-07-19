@@ -24,6 +24,11 @@
    ##
       rm(list=ls(all=TRUE))
    ##
+   ##    Load some generic functions and colour palattes
+   ##
+      source("R/themes.r")
+
+   ##
    ##    Load data from somewhere  
    ##
       load("Data_Output/ConstantPrice_SA_Qtr_GDP_Published20250631.rda")
@@ -484,31 +489,65 @@
          ##    Quite a clear cyclical pattern showing up when you look at the points of a 
          ##       scattergraph, by year
          ##
+      showtext_auto()
+         
          ggplot(Output_Gap[month(Output_Gap$TimePeriod) == 3,], aes(x=Output_Gap/100, y=Value/100))     +
                 geom_smooth(method=lm) +
                 geom_path(size = 1, linejoin = "mitre", lineend = "butt", colour = c("#7b1244")) +
                 geom_point(size = 1.5, colour = c("#0094c5")) +
-                geom_text(aes(label=format(TimePeriod, "%Y")), size=3, nudge_x = 0.001) +
-             #   scale_x_continuous(labels = percent) +
-             #   scale_y_continuous(labels = percent) +                
+                geom_text(aes(label=format(TimePeriod, "%Y")), size=7, nudge_x = 0.005) +
+                scale_x_continuous(labels = percent) +
+                scale_y_continuous(labels = percent) +                
+
+                geom_vline(xintercept = 0, size=2, alpha = 0.3, colour = SPCColours("Green")) +
+
+                geom_text(x=-0.007, y=0.11, size=6, label="Contraction",family ="MyriadPro-Light", hjust = 0.0,colour = SPCColours("Gold")) +
+                geom_text(x= 0.002, y=0.11, size=6, label="Expansion",  family ="MyriadPro-Light", hjust = 0.0,colour = SPCColours("Gold")) +
+
                 ylab("Unemployment Rate\n") +
-                xlab("Economic Production Output Gap\n(Actual Output / Expected Output)") +                
+                xlab("\nGross Domestic Product Output Gap\n(Actual GDP / Expected GDP)") +                
                 labs(title="The New Zealand Business Cycle\n")  +         
-                theme_bw(base_size=10, base_family = "Gustan-Book") %+replace%
+         
+                theme_bw(base_size=12, base_family =  "Calibri") %+replace%
                 theme(legend.title.align=0.5,
-                   plot.margin = unit(c(1,3,1,1),"mm"),
-                   legend.text  = element_text(size=12),
-                   axis.text.x  = element_text(angle=90, size=8),
-                   axis.text.y  = element_text(angle=00, size=8),
-                   axis.title.y  = element_text(angle=90, size=7.5),
-                   strip.text  = element_text(size=6),
-                   plot.title = element_text(size = 12),
-                   legend.key.width = unit(1, "cm"),
-                   legend.spacing.y = unit(0, "cm"),
-                   legend.margin = margin(0, 0, 0, 0),
-                   legend.position  = "bottom")   
+                      plot.margin = unit(c(1,3,1,1),"mm"),
+                      panel.border = element_blank(),
+                      strip.background =  element_rect(fill   = SPCColours("Light_Blue")),
+                      strip.text = element_text(colour = "white", 
+                                                size   = 13,
+                                                family = "MyriadPro-Bold",
+                                                margin = margin(1.25,1.25,1.25,1.25, unit = "mm")),
+                      panel.spacing = unit(1, "lines"),                                              
+                      legend.text   = element_text(size = 10, family = "MyriadPro-Regular"),
+                      plot.title    = element_text(size = 44, colour = SPCColours("Dark_Blue"),  family = "MyriadPro-Bold"),
+                      plot.subtitle = element_text(size = 14, colour = SPCColours("Light_Blue"), family = "MyriadPro-Light"),
+                      plot.caption  = element_text(size = 10,  colour = SPCColours("Dark_Blue"), family = "MyriadPro-Light", hjust = 1.0),
+                      plot.tag      = element_text(size =  9, colour = SPCColours("Red")),
+                      axis.title    = element_text(size = 24, colour = SPCColours("Dark_Blue")),
+                      axis.text.x   = element_text(size = 22, colour = SPCColours("Dark_Blue"), angle = 00, margin = margin(t = 10, r = 0,  b = 0, l = 0, unit = "pt"),hjust = 0.5),
+                      axis.text.y   = element_text(size = 22, colour = SPCColours("Dark_Blue"), angle = 00, margin = margin(t = 0,  r = 10, b = 0, l = 0, unit = "pt"),hjust = 1.0),
+                      legend.key.width = unit(1, "cm"),
+                      legend.spacing.y = unit(1, "cm"),
+                      legend.margin = margin(10, 10, 10, 10),
+                      legend.position  = "bottom")
                       
-         ggsave("Graphical_Output/Okuns Law - System_of_Equations.png",units = "cm", width = 29.7, height = 21, dpi=600) 
+         ggsave("Graphical_Output/Okuns Law - System_of_Equations.png", height =(1.5)*16.13, width = (1.75)*20.66, dpi = 165, units = c("cm"))
+      ##
+      ##    Do some error checking
+      ##
+         Actual_Expected[(Actual_Expected$TimePeriod) == max(Actual_Expected$TimePeriod, na.rm=TRUE),]
+
+        ##
+        ##     Regress it...
+        ##
+         OLS_Unemployment <- lm(log(Value) ~ log(Output_Gap), data=Output_Gap)
+         summary(OLS_Unemployment)
+
+         GLS_Unemployment <- gls(log(Value) ~ log(Output_Gap), 
+                                  data=Output_Gap[!is.na(Output_Gap$Output_Gap),],
+                                  correlation = corAR1(form = ~ TimePeriod))
+         summary(GLS_Unemployment)
+
 
   ##
   ##     Save the output sets
@@ -517,14 +556,6 @@
    save(Output_Gap, file= "Data_Output/Output_Gap.rda")
   
   
-
-
-   Actual_Expected[(Actual_Expected$TimePeriod) == max(Actual_Expected$TimePeriod, na.rm=TRUE),]
-
-
-
-
-
 
    ##
    ## Save files our produce some final output of something
