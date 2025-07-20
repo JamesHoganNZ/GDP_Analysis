@@ -8,16 +8,8 @@
 ##    Plan of  :  Lets start off with a project which pulls in all of the SNZ GDP data.
 ##    Attack   :  It will also interface with the imports and exports data. And well
 ##                download the RBNZ data.
-##    
-##                Did you every want to roll back a version of git
-##    
-##                git log
-##                find the commit id you want
-##                git checkout <commitId> .
-##    
-##                Important note: the trailing . in the previous line is important! If you omit it, you will end up in a "detached HEAD" state, which you do not want here.
-##                https://stackoverflow.com/questions/44727750/how-do-i-restore-a-previous-version-as-a-new-commit-in-git
-##    
+##
+##
 ##    Important:  This programme will interface with the Trade project here:
 ##    Linkages :  C:\Work_Related_Projects\Trade_Modelling
 ##
