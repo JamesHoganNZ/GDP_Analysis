@@ -4,24 +4,29 @@
 ##    Objective:  This programme goes to the New Zealand Reserve Bank website and pulls down all of its
 ##                statistical data
 ##
-##                There's a little trick with infoshare. At the bottom is a "helpful" chatbox which covers
-##                the "go" button and prevents selenium being able to press the go button. The browser needs
-##                to shrink in size.
+##                Its always hard to start Chromedriver. Binman seems to download a copy and insist
+##                on only using that. If you have trouble initialising Chromedriver check in the 
+##                C:\Users\james\AppData\Local\binman\binman_chromedriver\win32
+##                directory. Download the latest version of Chromedriver from here https://googlechromelabs.github.io/chrome-for-testing/
+##                and store it there in its correct version name.
+##             
+##                rsDriver doesn't care what path you put in the system environment variable in the config
 ##
 ##
 
    rm(list=ls(all=TRUE))
-   
-   file_path <- paste0(str_replace_all(getwd(),"/", "\\\\\\\\"), "\\\\Data_Raw\\\\")
-   fprof <- makeFirefoxProfile(list(browser.download.dir = file_path,
-                                    browser.download.folderList = 2L,
-                                    browser.download.manager.showWhenStarting = FALSE,
-                                    browser.helperApps.neverAsk.openFile = "text/csv",
-                                    browser.helperApps.neverAsk.saveToDisk = "text/csv")
-                               )
-    
-    rD <- rsDriver(browser=c("firefox"), chromever = "114.0.5735.90", extraCapabilities = fprof, phantomver = NULL)
 
+   eCaps <- list(
+      chromeOptions = 
+        list(prefs = list(
+          "profile.default_content_settings.popups" = 0L,
+          "download.prompt_for_download" = FALSE,
+          "profile.default_content_setting_values.notifications" = 2,
+          "download.default_directory" = str_replace_all(paste0(getwd(), "\\Data_Raw\\"), "\\/","\\\\")
+        )
+        )
+    )
+    rD <- rsDriver(browser=c("chrome"), extraCapabilities = eCaps, phantomver = NULL)
     remDr <- rD[["client"]]
 
     Downloaded_Files <- data.frame(Measure = character(),
@@ -69,19 +74,15 @@
             
             webElem <- remDr$findElement(using = "id", "ctl00_MainContent_ctl07_lblSelectAll")
             webElem$clickElement()
-            
             ##
             ##    Select the download as excel option
             ##
             Prelist <- list.files("Data_Raw")
-               Sys.sleep(5)   
                option <- remDr$findElement(using = 'xpath', "//*/option[@value = 'xls']")
                option$clickElement()
-               Sys.sleep(5)
-               
                webElem <- remDr$findElement(using = "name", "ctl00$MainContent$btnGo")
                webElem$clickElement()
-               Sys.sleep(5)            
+               Sys.sleep(5)
             Postlist <- list.files("Data_Raw")
             File <- Postlist[!(Postlist %in% Prelist)]
 
@@ -115,10 +116,8 @@
             ##    Select the download as excel option
             ##
             Prelist <- list.files("Data_Raw")
-               Sys.sleep(5)   
                option <- remDr$findElement(using = 'xpath', "//*/option[@value = 'xls']")
                option$clickElement()
-               Sys.sleep(5)
                webElem <- remDr$findElement(using = "name", "ctl00$MainContent$btnGo")
                webElem$clickElement()
                Sys.sleep(5)
@@ -161,10 +160,8 @@
             ##    Select the download as excel option
             ##
             Prelist <- list.files("Data_Raw")
-               Sys.sleep(5)   
                option <- remDr$findElement(using = 'xpath', "//*/option[@value = 'xls']")
                option$clickElement()
-               Sys.sleep(5)
                webElem <- remDr$findElement(using = "name", "ctl00$MainContent$btnGo")
                webElem$clickElement()
                Sys.sleep(5)
@@ -208,7 +205,6 @@
             ##    Select the download as excel option
             ##
             Prelist <- list.files("Data_Raw")
-               Sys.sleep(5)   
                option <- remDr$findElement(using = 'xpath', "//*/option[@value = 'xls']")
                option$clickElement()
                webElem <- remDr$findElement(using = "name", "ctl00$MainContent$btnGo")
@@ -251,7 +247,6 @@
             ##    Select the download as excel option
             ##
             Prelist <- list.files("Data_Raw")
-               Sys.sleep(5)   
                option <- remDr$findElement(using = 'xpath', "//*/option[@value = 'xls']")
                option$clickElement()
                webElem <- remDr$findElement(using = "name", "ctl00$MainContent$btnGo")
@@ -296,7 +291,6 @@
             ##    Select the download as excel option
             ##
             Prelist <- list.files("Data_Raw")
-               Sys.sleep(5)   
                option <- remDr$findElement(using = 'xpath', "//*/option[@value = 'xls']")
                option$clickElement()
                
@@ -350,7 +344,6 @@
             ##    Select the download as excel option
             ##
             Prelist <- list.files("Data_Raw")
-               Sys.sleep(5)   
                option <- remDr$findElement(using = 'xpath', "//*/option[@value = 'xls']")
                option$clickElement()
                
@@ -396,7 +389,6 @@
             ##    Select the download as excel option
             ##
             Prelist <- list.files("Data_Raw")
-               Sys.sleep(5)   
                option <- remDr$findElement(using = 'xpath', "//*/option[@value = 'xls']")
                option$clickElement()
                
@@ -433,7 +425,6 @@
             ##    Select the download as excel option
             ##
             Prelist <- list.files("Data_Raw")
-               Sys.sleep(5)   
                option <- remDr$findElement(using = 'xpath', "//*/option[@value = 'xls']")
                option$clickElement()
                
@@ -478,7 +469,6 @@
             ##    Select the download as excel option
             ##
             Prelist <- list.files("Data_Raw")
-               Sys.sleep(5)   
                option <- remDr$findElement(using = 'xpath', "//*/option[@value = 'xls']")
                option$clickElement()
                
@@ -523,7 +513,6 @@
             ##    Select the download as excel option
             ##
             Prelist <- list.files("Data_Raw")
-               Sys.sleep(5)   
                option <- remDr$findElement(using = 'xpath', "//*/option[@value = 'xls']")
                option$clickElement()
                
@@ -579,7 +568,6 @@
             ##    Select the download as excel option
             ##
             Prelist <- list.files("Data_Raw")
-               Sys.sleep(5)   
                option <- remDr$findElement(using = 'xpath', "//*/option[@value = 'xls']")
                option$clickElement()
                
@@ -598,6 +586,76 @@
             ##
             webElem <- remDr$findElement(using = "id", "ctl00_headerUserControl_browseTab")
             webElem$clickElement()
+
+         ##
+         ##       Grab some Unemployment measures
+         ##    	Quarterly Employment Survey - QEM
+         ##
+         
+         webElem <- remDr$findElement(using = "link text", "Work income and spending")
+         webElem$sendKeysToElement(list(key = "enter"))
+         Sys.sleep(3)
+         
+
+         webElem <- remDr$findElement(using = "link text", "Household Labour Force Survey - HLF")
+         webElem$sendKeysToElement(list(key = "enter"))
+         Sys.sleep(3)
+      
+         ##
+         ##    	Total Paid Hours by Industry (ANZSIC06) (Qrtly-Mar/Jun/Sep/Dec)
+         ##
+            Measure <- "Labour Force Status by Sex by Age Group (Qrtly-Mar/Jun/Sep/Dec)"
+            Focus   <- "Unemployment"
+            
+            webElem <- remDr$findElement(using = "link text", Measure)
+            webElem$sendKeysToElement(list(key = "enter"))
+            Sys.sleep(3)
+         
+            ##
+            ##    Select all of the box elements
+            ##
+            webElem <- remDr$findElement(using = "id", "ctl00_MainContent_ctl02_lblSelectAll")
+            webElem$clickElement()
+
+            webElem <- remDr$findElement(using = "id", "ctl00_MainContent_ctl04_lblSelectAll")
+            webElem$clickElement()
+
+            webElem <- remDr$findElement(using = "id", "ctl00_MainContent_ctl07_lblSelectAll")
+            webElem$clickElement()
+            
+            webElem <- remDr$findElement(using = "id", "ctl00_MainContent_ctl09_lblSelectAll")
+            webElem$clickElement()
+            
+            ##
+            ##    Select the download as excel option
+            ##
+
+            Prelist <- list.files("Data_Raw")
+               option <- remDr$findElement(using = 'xpath', "//*/option[@value = 'xls']")
+               option$clickElement()
+               
+               webElem <- remDr$findElement(using = "name", "ctl00$MainContent$btnGo")
+               webElem$clickElement()
+               Sys.sleep(2)
+               webElem$acceptAlert()   ## THIS TURNS OFF THE ANNOYING ALERT BUTTON!!! What is mission it was to find this command              
+               Sys.sleep(5)
+               
+            Postlist <- list.files("Data_Raw")
+            File <- Postlist[!(Postlist %in% Prelist)]
+
+
+
+            Downloaded_Files <- rbind(Downloaded_Files,
+                                      data.frame(Measure = Measure,
+                                                 File    = File,
+                                                 Focus   = Focus))
+            ##
+            ##    Go Back to main page
+            ##
+            webElem <- remDr$findElement(using = "id", "ctl00_headerUserControl_browseTab")
+            webElem$clickElement()
+
+
      
    ##
    ## Lets leave it at that for the moment :)
