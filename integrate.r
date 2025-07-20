@@ -22,7 +22,7 @@
    ##    Clear the decks and load up some functionality
    ##
       rm(list=ls(all=TRUE))
-      options(scipen = 999)
+      
    ##
    ##    Core libraries
    ##
@@ -41,6 +41,10 @@
       library(RDCOMClient)
       library(extrafont)
       library(tictoc)
+
+      library(sysfonts)
+      library(showtext)
+                  
    ##
    ##    Project-specific libraries
    ##
@@ -49,26 +53,41 @@
       library(textclean)
       library(RSelenium)
       library(splines)
-      library(forecast)
+      library(strucchange)
+      library(lmtest)
+      library(scales)
+      library(dynlm)
+      library(systemfit)
+      library(tseries)
+      library(cluster)
       library(nlme)
       library(plm)
       library(systemfit)
+      library(micEconCES)      
+      library(forecast)
+      library(grid)
+      library(gridExtra)
 
    ##
    ##    Set working directory
    ##
-      setwd("C:/From BigDisk/GDP_Analysis")
+      setwd("C:\\From BigDisk\\GDP_Analysis")
 
       ##
       ##    STEP 1:  Update the trade stats
       ##
-      #   source("C:/From BigDisk/Trade_Modelling/integrate.r")
+         source("C:/Work_Related_Projects/Trade_Modelling/integrate.r")
          
       ##
       ##    STEP 2:  Update the Reserve Bank stats. This isn't working yet because the RB blocks
       ##             screen scraping :-/
       ##
-      #      source("C:/From BigDisk/RBNZ_Analysis/integrate.r")
+         source("C:/Work_Related_Projects/RBNZ_Analysis/integrate.r")
+
+      ##
+      ## Reset the working directory
+      ##
+      setwd("C:\\GIT_Projects\\GDP_Analysis")
 
       ##
       ##    STEP 3: Grab some Stats NZ data.
@@ -91,6 +110,7 @@
          source("Programmes/Clean_PPI.r")
          source("Programmes/Clean_Capital_Stock.r")
          source("Programmes/Clean_QES.r")
+         source("Programmes/Clean_Unemployment.r")
          
       ##
       ##    STEP 5: Estimate a long run and short run production function
