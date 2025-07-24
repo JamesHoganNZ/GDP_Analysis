@@ -547,6 +547,19 @@
                 geom_path(size = 1, linejoin = "mitre", lineend = "butt", colour = c("#7b1244")) +
                 geom_point(size = 1.5, colour = c("#0094c5")) +
                 geom_text(aes(label=format(TimePeriod, "%Y")), size=7, nudge_x = 0.003) +
+
+               ##
+               ##    Make explicit the estimated bit below
+               ##
+                geom_point(size = 3, colour = "red", data = Output_Gap[(month(Output_Gap$TimePeriod) == 3) & (year(Output_Gap$TimePeriod) > 2023),]) +
+                geom_text(aes(label=format(TimePeriod, "%Y")), size=7, nudge_x = 0.003, colour = "red", data = Output_Gap[(month(Output_Gap$TimePeriod) == 3) & (year(Output_Gap$TimePeriod) > 2023),]) +
+                geom_path(size = 1, linejoin = "mitre", lineend = "butt", colour = "red", data = Output_Gap[(month(Output_Gap$TimePeriod) == 3) & (year(Output_Gap$TimePeriod) > 2022),]) +
+                geom_text(x= -0.0575, y=0.053, size=13, label="Estimated Years",family ="MyriadPro-Light", hjust = 0, colour = "red") +
+               ##
+               ##    Make explicit the estimated bit above
+               ##
+
+
                 scale_x_continuous(labels = percent, breaks = seq(from = -0.08, to = 0.05, by =0.01)) +
                 scale_y_continuous(labels = percent, breaks = seq(from = 0, to = 0.13, by =0.01)) +                
 
