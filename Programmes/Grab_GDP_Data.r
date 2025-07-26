@@ -314,6 +314,64 @@
             webElem$clickElement()
 
       ##
+      ##    	Grab the Sector Accountsd
+      ##
+            Measure <- "Balance Sheet, Curr. Prices, Annual, Households (Annual-Mar)"
+            Focus   <- "Household Balance Sheet"
+            
+            webElem <- remDr$findElement(using = "link text", Measure)
+            webElem$sendKeysToElement(list(key = "enter"))
+            Sys.sleep(3)
+            ##
+            ##    Select all of the box elements
+            ##
+            webElem <- remDr$findElement(using = "id", "ctl00_MainContent_ctl02_lblSelectAll")
+            webElem$clickElement()
+
+            webElem <- remDr$findElement(using = "id", "ctl00_MainContent_ctl04_lblSelectAll")
+            webElem$clickElement()
+
+            webElem <- remDr$findElement(using = "id", "ctl00_MainContent_ctl07_lblSelectAll")
+            webElem$clickElement()
+            
+            webElem <- remDr$findElement(using = "id", "ctl00_MainContent_ctl09_lblSelectAll")
+            webElem$clickElement()
+            
+            webElem <- remDr$findElement(using = "id", "ctl00_MainContent_ctl12_lblSelectAll")
+            webElem$clickElement()
+
+            webElem <- remDr$findElement(using = "id", "ctl00_MainContent_ctl14_lblSelectAll")
+            webElem$clickElement()
+            
+            ##
+            ##    Select the download as excel option
+            ##
+            Prelist <- list.files("Data_Raw")
+               option <- remDr$findElement(using = 'xpath', "//*/option[@value = 'xls']")
+               option$clickElement()
+               
+               webElem <- remDr$findElement(using = "name", "ctl00$MainContent$btnGo")
+               webElem$clickElement()
+               Sys.sleep(5)
+               
+            Postlist <- list.files("Data_Raw")
+            File <- Postlist[!(Postlist %in% Prelist)]
+
+            Downloaded_Files <- rbind(Downloaded_Files,
+                                      data.frame(Measure = Measure,
+                                                 File    = File,
+                                                 Focus   = Focus))
+            ##
+            ##    Go Back to main page
+            ##
+            webElem <- remDr$findElement(using = "id", "ctl00_headerUserControl_browseTab")
+            webElem$clickElement()
+
+
+
+
+
+      ##
       ## Grab some price information
       ##
          webElem <- remDr$findElement(using = "link text", "Consumers Price Index - CPI")
@@ -654,7 +712,6 @@
             ##
             webElem <- remDr$findElement(using = "id", "ctl00_headerUserControl_browseTab")
             webElem$clickElement()
-
 
      
    ##

@@ -1,0 +1,1261 @@
+<html xmlns:x="urn:schemas-microsoft-com:office:excel">
+	<head>
+		<meta http-equiv="Content-Type" content="charset=windows-1252" />
+		<!--[if gte mso 9]>
+		<xml>
+			<x:ExcelWorkbook>
+				<x:ExcelWorksheets>
+					<x:ExcelWorksheet>
+						<x:Name>matrix</x:Name>
+						<x:WorksheetOptions>
+							<x:Print>
+								<x:ValidPrinterInfo/>
+							</x:Print>
+						</x:WorksheetOptions>
+					</x:ExcelWorksheet>
+				</x:ExcelWorksheets>
+			</x:ExcelWorkbook>
+		</xml>
+		<![endif]-->
+	</head>
+	<body>
+		<style>
+			.stub1 {
+				mso-style-parent:style0;
+				mso-number-format:\@;
+				vertical-align:middle;
+			}
+			.headfirst {
+				mso-style-parent:style0;
+				mso-number-format:\@;
+			}
+			.headlast {
+				mso-style-parent:style0;
+				mso-number-format:\@;
+			}
+			.headmid {
+				mso-style-parent:style0;
+				mso-number-format:\@;
+			}
+			.title
+				mso-style-parent:style0;
+				text-align:left;
+			}
+		</style>
+<table class="pxtable" cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<th colspan="58">Balance Sheet, Curr. Prices, Annual, Households (Annual-Mar)</th>
+	</tr>
+	<tr>
+		<td class="headfirst" colspan="1" rowspan="5">&nbsp;</td>
+		<th class="headfirst" colspan="57">Current Prices</th>
+	</tr>
+	<tr>
+		<th class="headmid" colspan="57">Closing balance sheet</th>
+	</tr>
+	<tr>
+		<th class="headmid" colspan="1">Total assets</th>
+		<th class="headmid" colspan="1">Financial assets</th>
+		<th class="headmid" colspan="1">Monetary gold and special drawing rights (asset)</th>
+		<th class="headmid" colspan="1">Currency and deposits (asset)</th>
+		<th class="headmid" colspan="1">Currency (asset)</th>
+		<th class="headmid" colspan="1">Transferable deposits (asset)</th>
+		<th class="headmid" colspan="1">Other deposits (asset)</th>
+		<th class="headmid" colspan="1">Debt securities (asset)</th>
+		<th class="headmid" colspan="1">Loans (assets)</th>
+		<th class="headmid" colspan="1">Equity and investment fund shares (asset)</th>
+		<th class="headmid" colspan="1">Equity (asset)</th>
+		<th class="headmid" colspan="1">Investment fund shares/units (asset)</th>
+		<th class="headmid" colspan="1">Insurance, pension and standardised guarantee schemes (asset)</th>
+		<th class="headmid" colspan="1">Non-life insurance technical provisions (asset)</th>
+		<th class="headmid" colspan="1">Life insurance and annuity entitlements (asset)</th>
+		<th class="headmid" colspan="1">Pension entitlements (asset)</th>
+		<th class="headmid" colspan="1">Claims of pension funds on pension managers (asset)</th>
+		<th class="headmid" colspan="1">Financial derivatives and employee stock options (asset)</th>
+		<th class="headmid" colspan="1">Financial derivatives (asset)</th>
+		<th class="headmid" colspan="1">Other accounts receivable (asset)</th>
+		<th class="headmid" colspan="1">Financial liabilities</th>
+		<th class="headmid" colspan="1">Monetary gold and special drawing rights (liability)</th>
+		<th class="headmid" colspan="1">Monetary gold (liability)</th>
+		<th class="headmid" colspan="1">Special drawing rights (liability)</th>
+		<th class="headmid" colspan="1">Currency and deposits (liability)</th>
+		<th class="headmid" colspan="1">Currency (liability)</th>
+		<th class="headmid" colspan="1">Transferable deposits (liability)</th>
+		<th class="headmid" colspan="1">Other deposits (liability)</th>
+		<th class="headmid" colspan="1">Debt securities (liability)</th>
+		<th class="headmid" colspan="1">Short-term debt securities (liability)</th>
+		<th class="headmid" colspan="1">Long-term debt securities (liability)</th>
+		<th class="headmid" colspan="1">Loans (liability)</th>
+		<th class="headmid" colspan="1">Short-term loans (liability)</th>
+		<th class="headmid" colspan="1">Long-term loans (liability)</th>
+		<th class="headmid" colspan="1">Equity and investment fund shares (liability)</th>
+		<th class="headmid" colspan="1">Equity (liability)</th>
+		<th class="headmid" colspan="1">Investment fund shares/units (liability)</th>
+		<th class="headmid" colspan="1">Insurance, pension and standardised guarantee schemes (liability)</th>
+		<th class="headmid" colspan="1">Non-life insurance technical provisions (liability)</th>
+		<th class="headmid" colspan="1">Life insurance and annuity entitlements (liability)</th>
+		<th class="headmid" colspan="1">Pension entitlements (liability)</th>
+		<th class="headmid" colspan="1">Claims of pension funds on pension managers (liability)</th>
+		<th class="headmid" colspan="1">Financial derivatives and employee stock options (liability)</th>
+		<th class="headmid" colspan="1">Financial derivatives (liability)</th>
+		<th class="headmid" colspan="1">Other accounts payable (liability)</th>
+		<th class="headmid" colspan="1">Trade credits and advances payable (liability)</th>
+		<th class="headmid" colspan="1">Other accounts payable nec (liability)</th>
+		<th class="headmid" colspan="1">Non-financial assets</th>
+		<th class="headmid" colspan="1">Produced non-financial assets</th>
+		<th class="headmid" colspan="1">Fixed assets</th>
+		<th class="headmid" colspan="1">Inventories by type of inventory</th>
+		<th class="headmid" colspan="1">Non-produced non-financial assets</th>
+		<th class="headmid" colspan="1">Natural resources</th>
+		<th class="headmid" colspan="1">Contracts, leases and licences</th>
+		<th class="headmid" colspan="1">Goodwill and marketing assets</th>
+		<th class="headmid" colspan="1">Net worth</th>
+		<th class="headmid" colspan="1">Total liabilities (financial liablities and net worth)</th>
+	</tr>
+	<tr>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+		<th class="headmid" colspan="1">Households</th>
+	</tr>
+	<tr>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+		<th class="headlast" colspan="1">All control</th>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2007</td>
+		<td style="white-space: nowrap;">1,071,770</td>
+		<td style="white-space: nowrap;">615,088</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">81,849</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,763</td>
+		<td style="white-space: nowrap;">810</td>
+		<td style="white-space: nowrap;">487,319</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">41,347</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">122,864</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">122,864</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">456,682</td>
+		<td style="white-space: nowrap;">162,359</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">294,323</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">948,906</td>
+		<td style="white-space: nowrap;">1,071,770</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2008</td>
+		<td style="white-space: nowrap;">1,114,346</td>
+		<td style="white-space: nowrap;">636,320</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">89,777</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">4,513</td>
+		<td style="white-space: nowrap;">730</td>
+		<td style="white-space: nowrap;">501,553</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">39,747</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">135,746</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">135,746</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">478,026</td>
+		<td style="white-space: nowrap;">173,378</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">304,648</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">978,600</td>
+		<td style="white-space: nowrap;">1,114,346</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2009</td>
+		<td style="white-space: nowrap;">1,075,777</td>
+		<td style="white-space: nowrap;">638,402</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">97,973</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">5,574</td>
+		<td style="white-space: nowrap;">786</td>
+		<td style="white-space: nowrap;">497,033</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">37,036</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">138,782</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">138,782</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">437,375</td>
+		<td style="white-space: nowrap;">178,689</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">258,686</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">936,995</td>
+		<td style="white-space: nowrap;">1,075,777</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2010</td>
+		<td style="white-space: nowrap;">1,120,994</td>
+		<td style="white-space: nowrap;">652,979</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">99,118</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">5,588</td>
+		<td style="white-space: nowrap;">765</td>
+		<td style="white-space: nowrap;">503,822</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">43,685</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">142,697</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">142,697</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">468,016</td>
+		<td style="white-space: nowrap;">180,376</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">287,640</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">978,297</td>
+		<td style="white-space: nowrap;">1,120,994</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2011</td>
+		<td style="white-space: nowrap;">1,137,803</td>
+		<td style="white-space: nowrap;">675,958</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">103,937</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">5,509</td>
+		<td style="white-space: nowrap;">670</td>
+		<td style="white-space: nowrap;">508,425</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">57,416</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">145,108</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">145,108</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">461,845</td>
+		<td style="white-space: nowrap;">182,117</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">279,728</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">992,696</td>
+		<td style="white-space: nowrap;">1,137,803</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2012</td>
+		<td style="white-space: nowrap;">1,155,662</td>
+		<td style="white-space: nowrap;">686,179</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">109,218</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">5,520</td>
+		<td style="white-space: nowrap;">541</td>
+		<td style="white-space: nowrap;">510,236</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">60,664</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">147,777</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">147,777</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">469,483</td>
+		<td style="white-space: nowrap;">187,892</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">281,591</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,007,885</td>
+		<td style="white-space: nowrap;">1,155,662</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2013</td>
+		<td style="white-space: nowrap;">1,240,690</td>
+		<td style="white-space: nowrap;">732,331</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">117,817</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">5,313</td>
+		<td style="white-space: nowrap;">478</td>
+		<td style="white-space: nowrap;">543,490</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">65,232</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">154,463</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">154,463</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">508,359</td>
+		<td style="white-space: nowrap;">197,428</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">310,931</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,086,227</td>
+		<td style="white-space: nowrap;">1,240,690</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2014</td>
+		<td style="white-space: nowrap;">1,328,337</td>
+		<td style="white-space: nowrap;">780,652</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">126,664</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">5,249</td>
+		<td style="white-space: nowrap;">419</td>
+		<td style="white-space: nowrap;">580,186</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">68,133</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">163,473</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">163,473</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">547,685</td>
+		<td style="white-space: nowrap;">210,998</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">336,687</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,164,864</td>
+		<td style="white-space: nowrap;">1,328,337</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2015</td>
+		<td style="white-space: nowrap;">1,446,746</td>
+		<td style="white-space: nowrap;">850,826</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">139,359</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">5,107</td>
+		<td style="white-space: nowrap;">378</td>
+		<td style="white-space: nowrap;">629,075</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">76,906</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">171,656</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">171,656</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">595,920</td>
+		<td style="white-space: nowrap;">226,620</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">369,300</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,275,089</td>
+		<td style="white-space: nowrap;">1,446,746</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2016</td>
+		<td style="white-space: nowrap;">1,552,563</td>
+		<td style="white-space: nowrap;">872,968</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">153,808</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">5,246</td>
+		<td style="white-space: nowrap;">328</td>
+		<td style="white-space: nowrap;">631,059</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">82,527</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">183,664</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">183,664</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">679,595</td>
+		<td style="white-space: nowrap;">244,819</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">434,776</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,368,899</td>
+		<td style="white-space: nowrap;">1,552,563</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2017</td>
+		<td style="white-space: nowrap;">1,734,123</td>
+		<td style="white-space: nowrap;">962,132</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">163,924</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">4,749</td>
+		<td style="white-space: nowrap;">290</td>
+		<td style="white-space: nowrap;">703,530</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">89,638</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">198,796</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">198,796</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">771,991</td>
+		<td style="white-space: nowrap;">265,472</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">506,519</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,535,327</td>
+		<td style="white-space: nowrap;">1,734,123</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2018</td>
+		<td style="white-space: nowrap;">1,863,474</td>
+		<td style="white-space: nowrap;">1,062,217</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">175,441</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,686</td>
+		<td style="white-space: nowrap;">290</td>
+		<td style="white-space: nowrap;">785,739</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">97,060</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">211,378</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">211,378</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">801,257</td>
+		<td style="white-space: nowrap;">285,801</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">515,457</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,652,096</td>
+		<td style="white-space: nowrap;">1,863,474</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2019</td>
+		<td style="white-space: nowrap;">1,950,466</td>
+		<td style="white-space: nowrap;">1,116,972</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">184,730</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,429</td>
+		<td style="white-space: nowrap;">290</td>
+		<td style="white-space: nowrap;">821,687</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">106,835</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">225,314</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">225,314</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">833,494</td>
+		<td style="white-space: nowrap;">304,311</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">529,183</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,725,152</td>
+		<td style="white-space: nowrap;">1,950,466</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2020</td>
+		<td style="white-space: nowrap;">2,043,762</td>
+		<td style="white-space: nowrap;">1,137,865</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">196,071</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,300</td>
+		<td style="white-space: nowrap;">290</td>
+		<td style="white-space: nowrap;">827,854</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">110,351</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">239,400</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">239,400</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">905,896</td>
+		<td style="white-space: nowrap;">322,757</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">583,139</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,804,361</td>
+		<td style="white-space: nowrap;">2,043,762</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2021</td>
+		<td style="white-space: nowrap;">2,394,537</td>
+		<td style="white-space: nowrap;">1,278,639</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">212,312</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,399</td>
+		<td style="white-space: nowrap;">290</td>
+		<td style="white-space: nowrap;">927,867</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">134,770</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">256,025</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">256,025</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,115,898</td>
+		<td style="white-space: nowrap;">356,779</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">759,119</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,138,512</td>
+		<td style="white-space: nowrap;">2,394,537</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2022</td>
+		<td style="white-space: nowrap;">2,750,199</td>
+		<td style="white-space: nowrap;">1,476,711</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">226,930</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,521</td>
+		<td style="white-space: nowrap;">290</td>
+		<td style="white-space: nowrap;">1,102,933</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">143,038</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">277,122</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">277,122</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,273,487</td>
+		<td style="white-space: nowrap;">414,064</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">859,423</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,473,077</td>
+		<td style="white-space: nowrap;">2,750,199</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2023</td>
+		<td style="white-space: nowrap;">2,691,504</td>
+		<td style="white-space: nowrap;">1,527,440</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">237,859</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">3,732</td>
+		<td style="white-space: nowrap;">290</td>
+		<td style="white-space: nowrap;">1,141,799</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">143,759</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">288,012</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">288,012</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">0</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">1,164,064</td>
+		<td style="white-space: nowrap;">464,848</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">699,216</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">..</td>
+		<td style="white-space: nowrap;">2,403,492</td>
+		<td style="white-space: nowrap;">2,691,504</td>
+	</tr>
+	<tr>
+		<td class="footnote" colspan="58">
+			<a id="information">
+				<b>Table information:</b>
+			</a>
+			<br />Units:<br />$, Magnitude = Millions<br /><br /><a id="footnotes"><b>Footnotes:</b></a><br /> <br />Symbols:<br />.. figure not available<br />C: Confidential<br />E: Early Estimate<br />P: Provisional<br />R: Revised<br />S: Suppressed<br /><br />Status flags are not displayed<br /><br />Table reference: <br />SNE245AA<br /><br />Last updated:<br />29 November 2024 10:45am<br /><br />Source: Statistics New Zealand<br />Contact: Information Centre<br />Telephone: 0508 525 525<br />Email:<a href="mailto:info@stats.govt.nz">info@stats.govt.nz</a><br /><br /><br /></td>
+	</tr>
+</table>	</body>
+</html>

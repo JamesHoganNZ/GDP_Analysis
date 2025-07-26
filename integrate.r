@@ -76,13 +76,13 @@
       ##
       ##    STEP 1:  Update the trade stats
       ##
-         source("C:/Work_Related_Projects/Trade_Modelling/integrate.r")
+         #source("C:/Work_Related_Projects/Trade_Modelling/integrate.r")
          
       ##
       ##    STEP 2:  Update the Reserve Bank stats. This isn't working yet because the RB blocks
       ##             screen scraping :-/
       ##
-         source("C:/Work_Related_Projects/RBNZ_Analysis/integrate.r")
+         #source("C:/Work_Related_Projects/RBNZ_Analysis/integrate.r")
 
       ##
       ## Reset the working directory
@@ -92,11 +92,12 @@
       ##
       ##    STEP 3: Grab some Stats NZ data.
       ##
-         Publish_Date <- "20250631"
+         Publish_Date <- "20250725"
          save(Publish_Date, file = "Data_Intermediate/Publish_Date.rda")
          
-         source("Programmes/Grab_GDP_Data.r") # This grabs a whole heap of info off InfoShare
+         source("Programmes/Grab_GDP_Data.r")     # This grabs a whole heap of info off InfoShare
          source("Programmes/Read_Spreadsheets.r") # This reads in the above data
+         source("Programmes/Read_CSVs.r")         # This reads in the institutional sector accounts
          
       ##
       ##    STEP 4: Data Cleaning - make it tidy
@@ -111,9 +112,16 @@
          source("Programmes/Clean_Capital_Stock.r")
          source("Programmes/Clean_QES.r")
          source("Programmes/Clean_Unemployment.r")
-         
+         source("Programmes/Clean_institutional_Sector_Accounts.r")
+
       ##
       ##    STEP 5: Estimate a long run and short run production function
+      ##
+         source("Programmes/New_Zealand_Production_Function.r")
+         
+      ##
+      ##    STEP 6: Since 2021 New Zealand's been economically slammed. But as the production functions is showing,
+      ##            its not happening on the supply side. Its on the demand side. Someone say fucking Reserve Bank...
       ##
          source("Programmes/New_Zealand_Production_Function.r")
       ##

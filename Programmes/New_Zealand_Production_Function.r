@@ -31,18 +31,21 @@
    ##
    ##    Load data from somewhere  
    ##
-      load("Data_Output/ConstantPrice_SA_Qtr_GDP_Published20250631.rda")
-      load("Data_Output/ConstantPrice_Actual_Annual_CapitalStock_Published20250631.rda")
-      load("Data_Output/ConstantPrice_Actual_Qtr_PaidHours_Published20250631.rda")
-      load("Data_Output/Household_Labour_Force_Survey_Published20250631.rda")
+      load("Data_Output/ConstantPrice_SA_Qtr_GDP_Published20250725.rda")
+      load("Data_Output/ConstantPrice_Actual_Annual_CapitalStock_Published20250725.rda")
+      load("Data_Output/ConstantPrice_Actual_Qtr_PaidHours_Published20250725.rda")
+      load("Data_Output/Household_Labour_Force_Survey_Published20250725.rda")
+      load("Data_Output/CurrentPrice_Actual_Qtr_CPIAllGroup_Published20250725.rda")
       load("Data_Intermediate/Downloaded_Files.rda")                
    ##
    ## Step 1: Check out the Industries and move each data source to a common industry definition
    ##
-      GDP        <- unique(ConstantPrice_SA_Qtr_GDP_Published20250631$Industry)
-      CapStock   <- unique(ConstantPrice_Actual_Annual_CapitalStock_Published20250631$Industry)
-      Labour     <- unique(ConstantPrice_Actual_Qtr_PaidHours_Published20250631$Industry)
-      Unemployed <- Household_Labour_Force_Survey_Published20250631
+      GDP        <- unique(ConstantPrice_SA_Qtr_GDP_Published20250725$Industry)
+      CapStock   <- unique(ConstantPrice_Actual_Annual_CapitalStock_Published20250725$Industry)
+      Labour     <- unique(ConstantPrice_Actual_Qtr_PaidHours_Published20250725$Industry)
+      Unemployed <- Household_Labour_Force_Survey_Published20250725
+      CPI        <- data.frame(CurrentPrice_Actual_Qtr_CPIAllGroup_Published20250725)
+
       
       GDP[!(GDP %in% CapStock)] # Only the unallocated in GDP is different
       #t(t(CapStock))      # These were used to make the below mapping
@@ -50,17 +53,17 @@
       Reclassify_Industry <- data.table(CapStock = c("Accommodation and Food Services","Administrative and Support Services","Agriculture","Arts and Recreation Services","Central Government Administration, Defence and Public Safety","Construction","Education and Training","Electricity, Gas, Water and Waste Services","Financial and Insurance Services","Fishing, Aquaculture and Agriculture, Forestry and Fishing Support Services","Food, Beverage and Tobacco Product Manufacturing","Forestry and Logging","Furniture and Other Manufacturing","Health Care and Social Assistance","Information Media and Telecommunications","Local Government Administration","Metal Product Manufacturing","Mining","Non-Metallic Mineral Product Manufacturing","Other Services","Owner-Occupied Property Operation (National Accounts Only)","Petroleum, Chemical, Polymer and Rubber Product Manufacturing","Printing","Professional, Scientific and Technical Services","Rental, Hiring and Real Estate Services","Retail Trade","Textile, Leather, Clothing and Footwear Manufacturing","Transport Equipment, Machinery and Equipment Manufacturing","Transport, Postal and Warehousing","Wholesale Trade","Wood and Paper Products Manufacturing"),
                                         Labour   = c("Accommodation and Food Services","Professional, Scientific, Technical, Administrative and Support Services","EXCLUDED FROM QES","Arts, Recreation and Other Services","Public Administration and Safety","Construction","Education and Training","Electricity, Gas, Water and Waste Services","Financial and Insurance Services","EXCLUDED FROM QES","Manufacturing","Forestry and Mining","Manufacturing","Health Care and Social Assistance","Information Media and Telecommunications","Public Administration and Safety","Manufacturing","Forestry and Mining","Manufacturing","Arts, Recreation and Other Services","EXCLUDED FROM QES","Manufacturing","Manufacturing","Professional, Scientific, Technical, Administrative and Support Services","Rental, Hiring and Real Estate Services","Retail Trade","Manufacturing","Manufacturing","Transport, Postal and Warehousing","Wholesale Trade","Manufacturing"))
 
-      GDP <- merge(ConstantPrice_SA_Qtr_GDP_Published20250631,
+      GDP <- merge(ConstantPrice_SA_Qtr_GDP_Published20250725,
                    Reclassify_Industry,
                    by.x = c("Industry"),
                    by.y = c("CapStock"))
 
-      CapStock <- merge(ConstantPrice_Actual_Annual_CapitalStock_Published20250631,
+      CapStock <- merge(ConstantPrice_Actual_Annual_CapitalStock_Published20250725,
                         Reclassify_Industry,
                         by.x = c("Industry"),
                         by.y = c("CapStock"))
                         
-      Labour <- ConstantPrice_Actual_Qtr_PaidHours_Published20250631
+      Labour <- ConstantPrice_Actual_Qtr_PaidHours_Published20250725
       
       names(Labour)[names(Labour) == "Industry"] <- "Labour"
 
@@ -535,14 +538,14 @@
                                          ),],
                              by.x = c("TimePeriod"),
                              by.y = c("Period"))
-         names(Output_Gap)[names(Output_Gap) == 'value'] = "Unemployment_Rate"
+         names(Output_Gap)[names(Output_Gap) == 'Value'] = "Unemployment_Rate"
          ##
          ##    Quite a clear cyclical pattern showing up when you look at the points of a 
          ##       scattergraph, by year
          ##
       showtext_auto()
          
-         ggplot(Output_Gap[(month(Output_Gap$TimePeriod) == 3),], aes(x=Output_Gap/100, y=Value/100))     +
+         ggplot(Output_Gap[(month(Output_Gap$TimePeriod) == 3),], aes(x=Output_Gap/100, y=Unemployment_Rate/100))     +
                 geom_smooth(method=lm) +
                 geom_path(size = 1, linejoin = "mitre", lineend = "butt", colour = c("#7b1244")) +
                 geom_point(size = 1.5, colour = c("#0094c5")) +
@@ -601,7 +604,7 @@
          
          ggplot(Output_Gap[(month(Output_Gap$TimePeriod) == 3) &
                            (year(Output_Gap$TimePeriod) >= 1992) *
-                           (year(Output_Gap$TimePeriod) <= 2017),], aes(x=Output_Gap/100, y=Value/100))     +
+                           (year(Output_Gap$TimePeriod) <= 2017),], aes(x=Output_Gap/100, y=Unemployment_Rate/100))     +
                 geom_smooth(method=lm) +
                 geom_path(size = 1, linejoin = "mitre", lineend = "butt", colour = c("#7b1244")) +
                 geom_point(size = 1.5, colour = c("#0094c5")) +
@@ -651,14 +654,35 @@
         ##
         ##     Regress it...
         ##
-         OLS_Unemployment <- lm(log(Value) ~ log(Output_Gap), data=Output_Gap)
+         OLS_Unemployment <- lm(log(Unemployment_Rate) ~ log(Output_Gap), data=Output_Gap)
          summary(OLS_Unemployment)
 
-         GLS_Unemployment <- gls(log(Value) ~ log(Output_Gap), 
+         GLS_Unemployment <- gls(log(Unemployment_Rate) ~ log(Output_Gap), 
                                   data=Output_Gap[!is.na(Output_Gap$Output_Gap),],
                                   correlation = corAR1(form = ~ TimePeriod))
          summary(GLS_Unemployment)
-
+  
+  
+  ##
+  ##     How much of these recession periods as related to inflation?
+  ##
+      CPI_Annual_Inflation    <- NA
+      CPI_Quarterly_Inflation <- NA
+      for(i in nrow(CPI):4)
+      {
+         CPI$CPI_Annual_Inflation[i]  <-( CPI$Value[i]/CPI$Value[(i-4)] -1)*100
+      }
+  
+      for(i in nrow(CPI):1)
+      {
+         CPI$CPI_Quarterly_Inflation[i] <- (CPI$Value[i]/CPI$Value[(i-1)] -1)*100
+      }
+      CPI$CPI <- CPI$Value
+  
+      Output_Gap <- merge(Output_Gap,
+                          CPI[,c("Period", "CPI", "CPI_Annual_Inflation", "CPI_Quarterly_Inflation")],
+                          by.x = c("TimePeriod"),
+                          by.y = c("Period"))
 
   ##
   ##     Save the output sets
@@ -666,13 +690,65 @@
    save(Actual_Expected, file= "Data_Output/Actual_Expected.rda")
    save(Output_Gap, file= "Data_Output/Output_Gap.rda")
   
-  
+      ##
+      ##    Graph it
+      ##
+         
+         ggplot(Output_Gap, aes(y=Output_Gap/100, x=CPI_Quarterly_Inflation /100))     +
+                geom_smooth(method=lm) +
+                geom_path(size = 1, linejoin = "mitre", lineend = "butt", colour = c("#7b1244")) +
+                geom_point(size = 1.5, colour = c("#0094c5")) +
+                geom_text(aes(label=format(TimePeriod, "%Y")), size=7, nudge_x = 0.003)
 
-   ##
-   ## Save files our produce some final output of something
-   ##
-      save(xxxx, file = 'Data_Intermediate/xxxxxxxxxxxxx.rda')
-      save(xxxx, file = 'Data_Output/xxxxxxxxxxxxx.rda')
+                +
+
+               ##
+               ##    Make explicit the estimated bit below
+               ##
+                geom_point(size = 3, colour = "red", data = Output_Gap[(month(Output_Gap$TimePeriod) == 3) & (year(Output_Gap$TimePeriod) > 2023),]) +
+                geom_text(aes(label=format(TimePeriod, "%Y")), size=7, nudge_x = 0.003, colour = "red", data = Output_Gap[(month(Output_Gap$TimePeriod) == 3) & (year(Output_Gap$TimePeriod) > 2023),]) +
+                geom_path(size = 1, linejoin = "mitre", lineend = "butt", colour = "red", data = Output_Gap[(month(Output_Gap$TimePeriod) == 3) & (year(Output_Gap$TimePeriod) > 2022),]) +
+                geom_text(x= -0.0575, y=0.053, size=13, label="Estimated Years",family ="MyriadPro-Light", hjust = 0, colour = "red") +
+               ##
+               ##    Make explicit the estimated bit above
+               ##
+
+
+                scale_x_continuous(labels = percent, breaks = seq(from = -0.08, to = 0.05, by =0.01)) +
+                scale_y_continuous(labels = percent, breaks = seq(from = 0, to = 0.13, by =0.01)) +                
+
+                geom_vline(xintercept = 0, size=2, alpha = 0.3, colour = SPCColours("Green")) +
+
+                geom_text(x= -0.02, y=0.11, size=13, label="Below Potential",family ="MyriadPro-Light", hjust = 0,colour = SPCColours("Gold")) +
+                geom_text(x= -0.02, y=0.11, size=13, label="Above Potential",  family ="MyriadPro-Light", hjust = -1.155,colour = SPCColours("Gold")) +
+
+                ylab("Unemployment Rate\n") +
+                xlab("\nGross Domestic Product Output Gap\n(Actual GDP / Expected GDP)") +                
+                labs(title="The New Zealand Business Cycle\n")  +         
+         
+                theme_bw(base_size=12, base_family =  "Calibri") %+replace%
+                theme(legend.title.align=0.5,
+                      plot.margin = unit(c(1,3,1,1),"mm"),
+                      panel.border = element_blank(),
+                      strip.background =  element_rect(fill   = SPCColours("Light_Blue")),
+                      strip.text = element_text(colour = "white", 
+                                                size   = 13,
+                                                family = "MyriadPro-Bold",
+                                                margin = margin(1.25,1.25,1.25,1.25, unit = "mm")),
+                      panel.spacing = unit(1, "lines"),                                              
+                      legend.text   = element_text(size = 10, family = "MyriadPro-Regular"),
+                      plot.title    = element_text(size = 44, colour = SPCColours("Dark_Blue"),  family = "MyriadPro-Bold"),
+                      plot.subtitle = element_text(size = 14, colour = SPCColours("Light_Blue"), family = "MyriadPro-Light"),
+                      plot.caption  = element_text(size = 10,  colour = SPCColours("Dark_Blue"), family = "MyriadPro-Light", hjust = 1.0),
+                      plot.tag      = element_text(size =  9, colour = SPCColours("Red")),
+                      axis.title    = element_text(size = 24, colour = SPCColours("Dark_Blue")),
+                      axis.text.x   = element_text(size = 22, colour = SPCColours("Dark_Blue"), angle = 00, margin = margin(t = 10, r = 0,  b = 0, l = 0, unit = "pt"),hjust = 0.5),
+                      axis.text.y   = element_text(size = 22, colour = SPCColours("Dark_Blue"), angle = 00, margin = margin(t = 0,  r = 10, b = 0, l = 0, unit = "pt"),hjust = 1.0),
+                      legend.key.width = unit(1, "cm"),
+                      legend.spacing.y = unit(1, "cm"),
+                      legend.margin = margin(10, 10, 10, 10),
+                      legend.position  = "bottom")
+  
 ##
 ##    And we're done
 ##
