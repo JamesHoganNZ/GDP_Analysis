@@ -92,7 +92,7 @@
       ##
       ##    STEP 3: Grab some Stats NZ data.
       ##
-         Publish_Date <- "20250631"
+         Publish_Date <- "20250731"
          save(Publish_Date, file = "Data_Intermediate/Publish_Date.rda")
          
          source("Programmes/Grab_GDP_Data.r") # This grabs a whole heap of info off InfoShare
@@ -111,11 +111,32 @@
          source("Programmes/Clean_Capital_Stock.r")
          source("Programmes/Clean_QES.r")
          source("Programmes/Clean_Unemployment.r")
+      ##
+      ##    STEP 5: I now have to download some idiot RBNZ files manually these are:
+      ##
+      ##       hc5: Sector lending (registered banks and non-bank lending institutions) - C5
+      ##       c12: Credit card statistics: business and personal balances outstanding and interest rates, at month end - C12
+      ##       c50: Broad money, domestic credit and private sector credit (depository corporations) - C50
+      ##       hb3: Retail interest rates: Weighted average lending and deposits - B3
+      ##       s34: Banks: Assets - Loans & Repos by Industry - S34
+      ##       s41: Banks: Liabilities - Deposits by industry - S41
+      ##
+      ##
+      ##
+         source("Programmes/Read_Spreadsheets.r")
+         source("Programmes/Clean_RBNZ_Data.r")
          
       ##
-      ##    STEP 5: Estimate a long run and short run production function
+      ##    STEP 6: Estimate a long run and short run production function
       ##
          source("Programmes/New_Zealand_Production_Function.r")
+         
+      ##
+      ##    STEP 5: Price dynamics.... what can we do to understand price?
+      ##
+         source("Programmes/New_Zealand_Price_Dynamics.r")
+
+
       ##
       ##    STEP x: Final output
       ##
