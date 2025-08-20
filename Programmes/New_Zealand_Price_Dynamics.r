@@ -1,22 +1,20 @@
 ##
-##    Programme:  New_Zealand_Production_Function.r
+##    Programme:  New_Zealand_Price_Dynamics.r
 ##
-##    Objective:  Now all of the InfoShare data has been read in, lets try estimating a production function
-##                as an error correction model, based on constant price GDP, Capital and Labour.
+##    Objective:  
 ##
-##                There's a couple of issues: 
-##                1. The Capital Stock measure is annual, so I'll take the spline to interpolate the quarters.
-##                   For the last year, I'll extrapolate it out by GFKF.
 ##
-##                2. The Quarterly Employment Survey labour measure is quarterly actuals, which will need seasonally
-##                   adjusted to match with the SA GDP measure.
 ##
-##                3. The industries are bound to not be on the same definition.
 ##
-##                4. There's no gaurantee that the macro level function will look anything like the micro level
-##                   industry functions, or share similar short run dynamics.
 ##
-##    Author:     James Hogan, started 27 June 2025
+##
+##
+##
+##
+##
+##
+##
+##    Author:     James Hogan, started 20 August 2025
 ##
 ##
    ##
@@ -31,18 +29,73 @@
    ##
    ##    Load data from somewhere  
    ##
-      load("Data_Output/ConstantPrice_SA_Qtr_GDP_Published20250731.rda")
-      load("Data_Output/ConstantPrice_Actual_Annual_CapitalStock_Published20250731.rda")
-      load("Data_Output/ConstantPrice_Actual_Qtr_PaidHours_Published20250731.rda")
-      load("Data_Output/Household_Labour_Force_Survey_Published20250731.rda")
+      load("Data_Output/ConstantPrice_SA_Qtr_GDP_Published20250631.rda")
+      load("Data_Output/Broad_Money20250731.rda")
+      load("Data_Output/Credit_Card_Stats20250731.rda")
+      load("Data_Output/Deposits_by_Industry20250731.rda")
+      load("Data_Output/Loans_by_Industry20250731.rda")
+      load("Data_Output/Retail_Interest_Rates20250731.rda")
+      load("Data_Output/Sector_lending20250731.rda")
+
+      load("Data_Output/CurrentPrice_SA_Qtr_CPILevel3_Published20250731.rda")
+      load("Data_Output/CurrentPrice_Actual_Qtr_CPINonStd_Less_Published20250731.rda")
+      load("Data_Output/CurrentPrice_Actual_Qtr_CPIAllGroup_Published20250731.rda")
+
+      load("Data_Output/CurrentPrice_SA_Qtr_CPILevel2_Published20250731.rda")
+      load("Data_Output/CurrentPrice_Actual_Qtr_CPILevel2TradableNonTrad_Published20250731.rda")
+      load("Data_Output/CurrentPrice_Actual_Qtr_CPILevel2_Published20250731.rda")
+
+
+      load("Data_Output/CurrentPrice_Actual_Qtr_CPILevel1_Published20250731.rda")
+      load("Data_Output/CurrentPrice_Actual_Qtr_CPIRegional_Published20250731.rda")
+      load("Data_Output/CurrentPrice_Actual_Qtr_NonStd_Published20250731.rda")
+      load("Data_Output/CurrentPrice_SA_Qtr_CPILevel1_Published20250731.rda")
+      load("Data_Output/CurrentPrice_SA_Qtr_CPITradableNonTrad_Published20250731.rda")
       load("Data_Intermediate/Downloaded_Files.rda")                
+
+      ##
+      ##    Grab the production function output
+      ##
+      load("Data_Output/Actual_Expected.rda")
+      load("Data_Output/Output_Gap.rda")
+
+   ##
+   ## Step 1: Simplify these names
+   ##
+      CPI_Level1_Actual <- CurrentPrice_Actual_Qtr_CPILevel1_Published20250731
+      CPI_Level2_Actual <- CurrentPrice_Actual_Qtr_CPILevel2_Published20250731
+      CPI_Level3_Actual <- CurrentPrice_SA_Qtr_CPILevel3_Published20250731
+      CPI_NonStd_Less   <- CurrentPrice_Actual_Qtr_CPINonStd_Less_Published20250731
+
+      t(t(unique(CPI_NonStd_Less$CPI_Item)))
+      t(t(unique(CPI_Level1_Actual$Group)))
+      t(t(unique(CPI_Level2_Actual$Subgroup)))
+      t(t(unique(CPI_Level3_Actual$Class)))
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+      CPI_NonStd_Less <- CurrentPrice_Actual_Qtr_CPINonStd_Less_Published20250731
+
+
+
    ##
    ## Step 1: Check out the Industries and move each data source to a common industry definition
    ##
-      GDP        <- unique(ConstantPrice_SA_Qtr_GDP_Published20250731$Industry)
-      CapStock   <- unique(ConstantPrice_Actual_Annual_CapitalStock_Published20250731$Industry)
-      Labour     <- unique(ConstantPrice_Actual_Qtr_PaidHours_Published20250731$Industry)
-      Unemployed <- Household_Labour_Force_Survey_Published20250731
+      GDP        <- unique(ConstantPrice_SA_Qtr_GDP_Published20250631$Industry)      
+      CapStock   <- unique(ConstantPrice_Actual_Annual_CapitalStock_Published20250631$Industry)
+      Labour     <- unique(ConstantPrice_Actual_Qtr_PaidHours_Published20250631$Industry)
+      Unemployed <- Household_Labour_Force_Survey_Published20250631
       
       GDP[!(GDP %in% CapStock)] # Only the unallocated in GDP is different
       #t(t(CapStock))      # These were used to make the below mapping
@@ -50,17 +103,17 @@
       Reclassify_Industry <- data.table(CapStock = c("Accommodation and Food Services","Administrative and Support Services","Agriculture","Arts and Recreation Services","Central Government Administration, Defence and Public Safety","Construction","Education and Training","Electricity, Gas, Water and Waste Services","Financial and Insurance Services","Fishing, Aquaculture and Agriculture, Forestry and Fishing Support Services","Food, Beverage and Tobacco Product Manufacturing","Forestry and Logging","Furniture and Other Manufacturing","Health Care and Social Assistance","Information Media and Telecommunications","Local Government Administration","Metal Product Manufacturing","Mining","Non-Metallic Mineral Product Manufacturing","Other Services","Owner-Occupied Property Operation (National Accounts Only)","Petroleum, Chemical, Polymer and Rubber Product Manufacturing","Printing","Professional, Scientific and Technical Services","Rental, Hiring and Real Estate Services","Retail Trade","Textile, Leather, Clothing and Footwear Manufacturing","Transport Equipment, Machinery and Equipment Manufacturing","Transport, Postal and Warehousing","Wholesale Trade","Wood and Paper Products Manufacturing"),
                                         Labour   = c("Accommodation and Food Services","Professional, Scientific, Technical, Administrative and Support Services","EXCLUDED FROM QES","Arts, Recreation and Other Services","Public Administration and Safety","Construction","Education and Training","Electricity, Gas, Water and Waste Services","Financial and Insurance Services","EXCLUDED FROM QES","Manufacturing","Forestry and Mining","Manufacturing","Health Care and Social Assistance","Information Media and Telecommunications","Public Administration and Safety","Manufacturing","Forestry and Mining","Manufacturing","Arts, Recreation and Other Services","EXCLUDED FROM QES","Manufacturing","Manufacturing","Professional, Scientific, Technical, Administrative and Support Services","Rental, Hiring and Real Estate Services","Retail Trade","Manufacturing","Manufacturing","Transport, Postal and Warehousing","Wholesale Trade","Manufacturing"))
 
-      GDP <- merge(ConstantPrice_SA_Qtr_GDP_Published20250731,
+      GDP <- merge(ConstantPrice_SA_Qtr_GDP_Published20250631,
                    Reclassify_Industry,
                    by.x = c("Industry"),
                    by.y = c("CapStock"))
 
-      CapStock <- merge(ConstantPrice_Actual_Annual_CapitalStock_Published20250731,
+      CapStock <- merge(ConstantPrice_Actual_Annual_CapitalStock_Published20250631,
                         Reclassify_Industry,
                         by.x = c("Industry"),
                         by.y = c("CapStock"))
                         
-      Labour <- ConstantPrice_Actual_Qtr_PaidHours_Published20250731
+      Labour <- ConstantPrice_Actual_Qtr_PaidHours_Published20250631
       
       names(Labour)[names(Labour) == "Industry"] <- "Labour"
 
@@ -652,7 +705,8 @@
   ##
    save(Actual_Expected, file= "Data_Output/Actual_Expected.rda")
    save(Output_Gap, file= "Data_Output/Output_Gap.rda")
-
+  
+  
 ##
 ##    And we're done
 ##

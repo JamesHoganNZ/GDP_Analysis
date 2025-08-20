@@ -325,6 +325,374 @@
          webElem <- remDr$findElement(using = "link text", "Consumers Price Index - CPI")
          webElem$sendKeysToElement(list(key = "enter"))
          Sys.sleep(3)
+
+         ##
+         ##    	CPI Level 2 Subgroups for New Zealand (Qrtly-Mar/Jun/Sep/Dec)
+         ##
+            Measure <- "CPI Level 2 Subgroups for New Zealand (Qrtly-Mar/Jun/Sep/Dec)"
+            Focus   <- "Consumer Prices"
+            
+            webElem <- remDr$findElement(using = "link text", Measure)
+            webElem$sendKeysToElement(list(key = "enter"))
+            Sys.sleep(3)
+            ##
+            ##    Select all of the box elements
+            ##
+            webElem <- remDr$findElement(using = "id", "ctl00_MainContent_ctl02_lblSelectAll")
+            webElem$clickElement()
+
+            webElem <- remDr$findElement(using = "id", "ctl00_MainContent_ctl04_lblSelectAll")
+            webElem$clickElement()
+
+            ##
+            ##    Select the download as excel option
+            ##
+            Prelist <- list.files("Data_Raw")
+               Sys.sleep(5)   
+               option <- remDr$findElement(using = 'xpath', "//*/option[@value = 'xls']")
+               option$clickElement()
+               
+               webElem <- remDr$findElement(using = "name", "ctl00$MainContent$btnGo")
+               webElem$clickElement()
+               Sys.sleep(5)
+            Postlist <- list.files("Data_Raw")
+            File <- Postlist[!(Postlist %in% Prelist)]
+
+            Downloaded_Files <- rbind(Downloaded_Files,
+                                      data.frame(Measure = Measure,
+                                                 File    = File,
+                                                 Focus   = Focus))
+            ##
+            ##    Go Back to main page
+            ##
+            webElem <- remDr$findElement(using = "id", "ctl00_headerUserControl_browseTab")
+            webElem$clickElement()
+            ##
+            ##    Go Back to main page
+            ##
+            remDr$navigate(Base_URL)
+
+         ##
+         ##    	CPI Level 2 Subgroups for New Zealand, Seasonally adjusted (Qrtly-Mar/Jun/Sep/Dec)
+         ##
+            Measure <- "CPI Level 2 Subgroups for New Zealand, Seasonally adjusted (Qrtly-Mar/Jun/Sep/Dec)"
+            Focus   <- "Consumer Prices"
+            
+            webElem <- remDr$findElement(using = "link text", Measure)
+            webElem$sendKeysToElement(list(key = "enter"))
+            Sys.sleep(3)
+            ##
+            ##    Select all of the box elements
+            ##
+            webElem <- remDr$findElement(using = "id", "ctl00_MainContent_ctl02_lblSelectAll")
+            webElem$clickElement()
+
+            webElem <- remDr$findElement(using = "id", "ctl00_MainContent_ctl04_lblSelectAll")
+            webElem$clickElement()
+
+            webElem <- remDr$findElement(using = "id", "ctl00_MainContent_ctl07_lblSelectAll")
+            webElem$clickElement()
+
+            ##
+            ##    Select the download as excel option
+            ##
+            Prelist <- list.files("Data_Raw")
+               Sys.sleep(5)   
+               option <- remDr$findElement(using = 'xpath', "//*/option[@value = 'xls']")
+               option$clickElement()
+               
+               webElem <- remDr$findElement(using = "name", "ctl00$MainContent$btnGo")
+               webElem$clickElement()
+               Sys.sleep(5)
+            Postlist <- list.files("Data_Raw")
+            File <- Postlist[!(Postlist %in% Prelist)]
+
+            Downloaded_Files <- rbind(Downloaded_Files,
+                                      data.frame(Measure = Measure,
+                                                 File    = File,
+                                                 Focus   = Focus))
+            ##
+            ##    Go Back to main page
+            ##
+            webElem <- remDr$findElement(using = "id", "ctl00_headerUserControl_browseTab")
+            webElem$clickElement()
+            ##
+            ##    Go Back to main page
+            ##
+            remDr$navigate(Base_URL)
+
+         ##
+         ##    	CPI Level 2 Subgroups Tradables and Non-tradables (Qrtly-Mar/Jun/Sep/Dec)
+         ##
+            Measure <- "CPI Level 2 Subgroups Tradables and Non-tradables (Qrtly-Mar/Jun/Sep/Dec)"
+            Focus   <- "Consumer Prices"
+            
+            webElem <- remDr$findElement(using = "link text", Measure)
+            webElem$sendKeysToElement(list(key = "enter"))
+            Sys.sleep(3)
+            ##
+            ##    Select all of the box elements
+            ##
+            webElem <- remDr$findElement(using = "id", "ctl00_MainContent_ctl02_lblSelectAll")
+            webElem$clickElement()
+
+            webElem <- remDr$findElement(using = "id", "ctl00_MainContent_ctl04_lblSelectAll")
+            webElem$clickElement()
+
+            webElem <- remDr$findElement(using = "id", "ctl00_MainContent_ctl07_lblSelectAll")
+            webElem$clickElement()
+
+            ##
+            ##    Select the download as excel option
+            ##
+            Prelist <- list.files("Data_Raw")
+               Sys.sleep(5)   
+               option <- remDr$findElement(using = 'xpath', "//*/option[@value = 'xls']")
+               option$clickElement()
+               
+               webElem <- remDr$findElement(using = "name", "ctl00$MainContent$btnGo")
+               webElem$clickElement()
+               Sys.sleep(5)
+            Postlist <- list.files("Data_Raw")
+            File <- Postlist[!(Postlist %in% Prelist)]
+
+            Downloaded_Files <- rbind(Downloaded_Files,
+                                      data.frame(Measure = Measure,
+                                                 File    = File,
+                                                 Focus   = Focus))
+            ##
+            ##    Go Back to main page
+            ##
+            webElem <- remDr$findElement(using = "id", "ctl00_headerUserControl_browseTab")
+            webElem$clickElement()
+            ##
+            ##    Go Back to main page
+            ##
+            remDr$navigate(Base_URL)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         ##
+         ##    	CPI Level 1 Groups for New Zealand (Qrtly-Mar/Jun/Sep/Dec)
+         ##
+            Measure <- "CPI Level 1 Groups for New Zealand (Qrtly-Mar/Jun/Sep/Dec)"
+            Focus   <- "Consumer Prices"
+            
+            webElem <- remDr$findElement(using = "link text", Measure)
+            webElem$sendKeysToElement(list(key = "enter"))
+            Sys.sleep(3)
+            ##
+            ##    Select all of the box elements
+            ##
+            webElem <- remDr$findElement(using = "id", "ctl00_MainContent_ctl02_lblSelectAll")
+            webElem$clickElement()
+
+            webElem <- remDr$findElement(using = "id", "ctl00_MainContent_ctl04_lblSelectAll")
+            webElem$clickElement()
+
+            ##
+            ##    Select the download as excel option
+            ##
+            Prelist <- list.files("Data_Raw")
+               Sys.sleep(5)   
+               option <- remDr$findElement(using = 'xpath', "//*/option[@value = 'xls']")
+               option$clickElement()
+               
+               webElem <- remDr$findElement(using = "name", "ctl00$MainContent$btnGo")
+               webElem$clickElement()
+               Sys.sleep(5)
+            Postlist <- list.files("Data_Raw")
+            File <- Postlist[!(Postlist %in% Prelist)]
+
+            Downloaded_Files <- rbind(Downloaded_Files,
+                                      data.frame(Measure = Measure,
+                                                 File    = File,
+                                                 Focus   = Focus))
+            ##
+            ##    Go Back to main page
+            ##
+            webElem <- remDr$findElement(using = "id", "ctl00_headerUserControl_browseTab")
+            webElem$clickElement()
+            ##
+            ##    Go Back to main page
+            ##
+            remDr$navigate(Base_URL)
+
+         ##
+         ##    	CPI Level 1 Groups for New Zealand, Seasonally adjusted (Qrtly-Mar/Jun/Sep/Dec)
+         ##
+            Measure <- "CPI Level 1 Groups for New Zealand, Seasonally adjusted (Qrtly-Mar/Jun/Sep/Dec)"
+            Focus   <- "Consumer Prices"
+            
+            webElem <- remDr$findElement(using = "link text", Measure)
+            webElem$sendKeysToElement(list(key = "enter"))
+            Sys.sleep(3)
+            ##
+            ##    Select all of the box elements
+            ##
+            webElem <- remDr$findElement(using = "id", "ctl00_MainContent_ctl02_lblSelectAll")
+            webElem$clickElement()
+
+            webElem <- remDr$findElement(using = "id", "ctl00_MainContent_ctl04_lblSelectAll")
+            webElem$clickElement()
+
+            webElem <- remDr$findElement(using = "id", "ctl00_MainContent_ctl07_lblSelectAll")
+            webElem$clickElement()
+            
+            ##
+            ##    Select the download as excel option
+            ##
+            Prelist <- list.files("Data_Raw")
+               Sys.sleep(5)   
+               option <- remDr$findElement(using = 'xpath', "//*/option[@value = 'xls']")
+               option$clickElement()
+               
+               webElem <- remDr$findElement(using = "name", "ctl00$MainContent$btnGo")
+               webElem$clickElement()
+               Sys.sleep(5)
+            Postlist <- list.files("Data_Raw")
+            File <- Postlist[!(Postlist %in% Prelist)]
+
+            Downloaded_Files <- rbind(Downloaded_Files,
+                                      data.frame(Measure = Measure,
+                                                 File    = File,
+                                                 Focus   = Focus))
+            ##
+            ##    Go Back to main page
+            ##
+            webElem <- remDr$findElement(using = "id", "ctl00_headerUserControl_browseTab")
+            webElem$clickElement()
+            ##
+            ##    Go Back to main page
+            ##
+            remDr$navigate(Base_URL)
+            
+         ##
+         ##    	CPI Non-standard All Groups Less/Plus Selected Groupings for New Zealand (Qrtly-Mar/Jun/Sep/Dec)
+         ##
+            Measure <- "CPI Non-standard All Groups Less/Plus Selected Groupings for New Zealand (Qrtly-Mar/Jun/Sep/Dec)"
+            Focus   <- "Consumer Prices"
+            
+            webElem <- remDr$findElement(using = "link text", Measure)
+            webElem$sendKeysToElement(list(key = "enter"))
+            Sys.sleep(3)
+            ##
+            ##    Select all of the box elements
+            ##
+            webElem <- remDr$findElement(using = "id", "ctl00_MainContent_ctl02_lblSelectAll")
+            webElem$clickElement()
+
+            webElem <- remDr$findElement(using = "id", "ctl00_MainContent_ctl04_lblSelectAll")
+            webElem$clickElement()
+            
+            ##
+            ##    Select the download as excel option
+            ##
+            Prelist <- list.files("Data_Raw")
+               Sys.sleep(5)   
+               option <- remDr$findElement(using = 'xpath', "//*/option[@value = 'xls']")
+               option$clickElement()
+               
+               webElem <- remDr$findElement(using = "name", "ctl00$MainContent$btnGo")
+               webElem$clickElement()
+               Sys.sleep(5)
+            Postlist <- list.files("Data_Raw")
+            File <- Postlist[!(Postlist %in% Prelist)]
+
+            Downloaded_Files <- rbind(Downloaded_Files,
+                                      data.frame(Measure = Measure,
+                                                 File    = File,
+                                                 Focus   = Focus))
+            ##
+            ##    Go Back to main page
+            ##
+            webElem <- remDr$findElement(using = "id", "ctl00_headerUserControl_browseTab")
+            webElem$clickElement()
+            ##
+            ##    Go Back to main page
+            ##
+            remDr$navigate(Base_URL)
+            
+
+            
+         ##
+         ##    	CPI Regional Groups (Broad Regions) (Qrtly-Mar/Jun/Sep/Dec)
+         ##
+            Measure <- "CPI Regional Groups (Broad Regions) (Qrtly-Mar/Jun/Sep/Dec)"
+            Focus   <- "Consumer Prices"
+            
+            webElem <- remDr$findElement(using = "link text", Measure)
+            webElem$sendKeysToElement(list(key = "enter"))
+            Sys.sleep(3)
+            ##
+            ##    Select all of the box elements
+            ##
+            webElem <- remDr$findElement(using = "id", "ctl00_MainContent_ctl02_lblSelectAll")
+            webElem$clickElement()
+
+            webElem <- remDr$findElement(using = "id", "ctl00_MainContent_ctl04_lblSelectAll")
+            webElem$clickElement()
+
+            webElem <- remDr$findElement(using = "id", "ctl00_MainContent_ctl07_lblSelectAll")
+            webElem$clickElement()
+            
+            ##
+            ##    Select the download as excel option
+            ##
+            Prelist <- list.files("Data_Raw")
+               Sys.sleep(5)   
+               option <- remDr$findElement(using = 'xpath', "//*/option[@value = 'xls']")
+               option$clickElement()
+               
+               webElem <- remDr$findElement(using = "name", "ctl00$MainContent$btnGo")
+               webElem$clickElement()
+               Sys.sleep(5)
+            Postlist <- list.files("Data_Raw")
+            File <- Postlist[!(Postlist %in% Prelist)]
+
+            Downloaded_Files <- rbind(Downloaded_Files,
+                                      data.frame(Measure = Measure,
+                                                 File    = File,
+                                                 Focus   = Focus))
+            ##
+            ##    Go Back to main page
+            ##
+            webElem <- remDr$findElement(using = "id", "ctl00_headerUserControl_browseTab")
+            webElem$clickElement()
+            ##
+            ##    Go Back to main page
+            ##
+            remDr$navigate(Base_URL)
+            
+
       
          ##
          ##    	CPI Level 3 Classes for New Zealand, Seasonally adjusted (Qrtly-Mar/Jun/Sep/Dec)
@@ -376,9 +744,9 @@
             
             
          ##
-         ##    	CPI Non-standard All Groups Less/Plus Selected Groupings for New Zealand (Qrtly-Mar/Jun/Sep/Dec)
+         ##    	CPI Non-standard Selected Quarterly Groupings for New Zealand (Qrtly-Mar/Jun/Sep/Dec)
          ##
-            Measure <- "CPI Non-standard All Groups Less/Plus Selected Groupings for New Zealand (Qrtly-Mar/Jun/Sep/Dec)"
+            Measure <- "CPI Non-standard Selected Quarterly Groupings for New Zealand (Qrtly-Mar/Jun/Sep/Dec)"
             Focus   <- "Consumer Prices"
             
             webElem <- remDr$findElement(using = "link text", Measure)
@@ -412,6 +780,50 @@
                                                  Focus   = Focus))
             webElem <- remDr$findElement(using = "id", "ctl00_headerUserControl_browseTab")
             webElem$clickElement()
+            
+         ##
+         ##    	CPI Non-standard Tradable & Non-tradable series,Seasonally adjusted (Qrtly-Mar/Jun/Sep/Dec)
+         ##
+            Measure <- "CPI Non-standard Tradable & Non-tradable series,Seasonally adjusted (Qrtly-Mar/Jun/Sep/Dec)"
+            Focus   <- "Consumer Prices"
+            
+            webElem <- remDr$findElement(using = "link text", Measure)
+            webElem$sendKeysToElement(list(key = "enter"))
+            Sys.sleep(3)
+            ##
+            ##    Select all of the box elements
+            ##
+            webElem <- remDr$findElement(using = "id", "ctl00_MainContent_ctl02_lblSelectAll")
+            webElem$clickElement()
+
+            webElem <- remDr$findElement(using = "id", "ctl00_MainContent_ctl04_lblSelectAll")
+            webElem$clickElement()
+
+            webElem <- remDr$findElement(using = "id", "ctl00_MainContent_ctl07_lblSelectAll")
+            webElem$clickElement()
+
+            ##
+            ##    Select the download as excel option
+            ##
+            Prelist <- list.files("Data_Raw")
+               Sys.sleep(5)   
+               option <- remDr$findElement(using = 'xpath', "//*/option[@value = 'xls']")
+               option$clickElement()
+               
+               webElem <- remDr$findElement(using = "name", "ctl00$MainContent$btnGo")
+               webElem$clickElement()
+               Sys.sleep(5)
+            Postlist <- list.files("Data_Raw")
+            File <- Postlist[!(Postlist %in% Prelist)]
+
+            Downloaded_Files <- rbind(Downloaded_Files,
+                                      data.frame(Measure = Measure,
+                                                 File    = File,
+                                                 Focus   = Focus))
+            webElem <- remDr$findElement(using = "id", "ctl00_headerUserControl_browseTab")
+            webElem$clickElement()
+            
+            
          ##
          ##    	CPI All Groups for New Zealand (Qrtly-Mar/Jun/Sep/Dec)
          ##
@@ -648,7 +1060,7 @@
                
                webElem <- remDr$findElement(using = "name", "ctl00$MainContent$btnGo")
                webElem$clickElement()
-               Sys.sleep(2)
+               Sys.sleep(10)
                webElem$acceptAlert()   ## THIS TURNS OFF THE ANNOYING ALERT BUTTON!!! What is mission it was to find this command              
                Sys.sleep(5)
                
