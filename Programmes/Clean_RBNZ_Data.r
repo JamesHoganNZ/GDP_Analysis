@@ -57,7 +57,7 @@
          month(HB3$Period) <- month(HB3$Period) + 1
          HB3$Period <- HB3$Period - 1
          
-         HB3$Value  <- as.numeric(str_replace_all(HB3$value, "\\.\\.",""))
+         HB3$Value  <- as.numeric(str_replace_all(HB3$value, ",",""))
          HB3 <- HB3[!is.na(HB3$Value) &  !is.na(HB3$Period),]
 
          HB3 <- merge(HB3,
@@ -97,7 +97,7 @@
          month(HC5$Period) <- month(HC5$Period) + 1
          HC5$Period <- HC5$Period - 1
          
-         HC5$Value  <- as.numeric(str_replace_all(HC5$value, "\\.\\.",""))
+         HC5$Value  <- as.numeric(str_replace_all(HC5$value, ",",""))
          HC5 <- HC5[!is.na(HC5$Value) &  !is.na(HC5$Period),]
 
          HC5 <- merge(HC5,
@@ -136,7 +136,7 @@
          month(C12$Period) <- month(C12$Period) + 1
          C12$Period <- C12$Period - 1
          
-         C12$Value  <- as.numeric(str_replace_all(C12$value, "\\.\\.",""))
+         C12$Value  <- as.numeric(str_replace_all(C12$value, ",",""))
          C12 <- C12[!is.na(C12$Value) &  !is.na(C12$Period),]
 
          C12 <- merge(C12,
@@ -176,7 +176,7 @@
          month(hc50$Period) <- month(hc50$Period) + 1
          hc50$Period <- hc50$Period - 1
          
-         hc50$Value  <- as.numeric(str_replace_all(hc50$value, "\\.\\.",""))
+         hc50$Value  <- as.numeric(str_replace_all(hc50$value, ",",""))
          hc50 <- hc50[!is.na(hc50$Value) &  !is.na(hc50$Period),]
 
          hc50 <- merge(hc50,
@@ -215,7 +215,7 @@
          month(s34$Period) <- month(s34$Period) + 1
          s34$Period <- s34$Period - 1
          
-         s34$Value  <- as.numeric(str_replace_all(s34$value, "\\.\\.",""))
+         s34$Value  <- as.numeric(str_replace_all(s34$value, ",",""))
          s34 <- s34[!is.na(s34$Value) &  !is.na(s34$Period),]
 
          s34 <- merge(s34,
@@ -239,28 +239,29 @@
       ##
       ##   s41: Banks: Liabilities - Deposits by industry - S41
       ##
-         s34 <- All_Data[["hs41" ]]
-         Rename <- data.table(variable    = names(s34),
-                              Industry    = as.character(c("Period", s34[2,2:length(s34)])),
-                              Unit        = as.character(c("Period", s34[4,2:length(s34)])),
-                              RBNZ_Series = as.character(c("Period", s34[5,2:length(s34)])))
+         hs41 <- All_Data[["hs41" ]]
+         Rename <- data.table(variable    = names(hs41),
+                              Industry    = as.character(c("Period", hs41[2,2:length(hs41)])),
+                              Unit        = as.character(c("Period", hs41[4,2:length(hs41)])),
+                              RBNZ_Series = as.character(c("Period", hs41[5,2:length(hs41)])))
                               
  
-         s34 <- data.table::melt(s34,
-                                 id.var = c("V1"))
+         hs41 <- data.table::melt(hs41,
+                                 id.var = c("V1"),
+                                 variable.factor = FALSE)
                                  
-         s34$Period <- as.Date(paste0(s34$V1, "-01"), "%b %Y-%d")
+         hs41$Period <- as.Date(paste0(hs41$V1, "-01"), "%b %Y-%d")
                                                            
-         month(s34$Period) <- month(s34$Period) + 1
-         s34$Period <- s34$Period - 1
+         month(hs41$Period) <- month(hs41$Period) + 1
+         hs41$Period <- hs41$Period - 1
          
-         s34$Value  <- as.numeric(str_replace_all(s34$value, "\\.\\.",""))
-         s34 <- s34[!is.na(s34$Value) &  !is.na(s34$Period),]
+         hs41$Value  <- as.numeric(str_replace_all(hs41$value, ",",""))
+         hs41 <- hs41[!is.na(hs41$Value) &  !is.na(hs41$Period),]
 
-         s34 <- merge(s34,
+         hs41 <- merge(hs41,
                       Rename,
                       by = c("variable"))
-         Deposits_by_Industry <- s34[,c("Period", "Industry", "Unit", "RBNZ_Series","Value")]
+         Deposits_by_Industry <- hs41[,c("Period", "Industry", "Unit", "RBNZ_Series","Value")]
          Deposits_by_Industry <- Deposits_by_Industry[order(Deposits_by_Industry$Industry, 
                                                               Deposits_by_Industry$Unit, 
                                                               Deposits_by_Industry$RBNZ_Series, 
