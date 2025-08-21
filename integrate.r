@@ -67,6 +67,12 @@
       library(forecast)
       library(grid)
       library(gridExtra)
+      
+      library(urca)
+      library(quantmod)
+      library(sandwich)
+      library(vars)
+      library(tsm)
 
    ##
    ##    Set working directory
