@@ -147,7 +147,9 @@
       ##
       ##    STEP 5: Price dynamics.... what can we do to understand price?
       ##
-         source("Programmes/New_Zealand_Price_Dynamics.r")
+         source("Programmes/Money_Demand_Analytical_Set.r")
+         source("Programmes/New_Zealand_Price_Dynamics - Make Pictures.r")
+         source("Programmes/Money_Demand_Econometrics.r")
 
 
       ##
