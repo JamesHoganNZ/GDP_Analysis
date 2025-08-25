@@ -542,67 +542,92 @@ tsm::ac(Unit_Root@res)
 ##    Labour is nonstationary with trend, is lag 8
 ##    Log_Prices is nonstationary without trend, is lag 5
 ##
+      Analytical_Set
 
-   OLS <- lm(FisherDeflated_Household_Debt ~ Housing_Interest_Rate + Hours_Worked + Real_GDP + National_Prices.x, data=Analytical_Set)
-   summary(OLS)
-
-   OLS1 <- lm(Mortgages ~ Interest + Labour + GDP + Log_Prices, data=Analytical_Set)
-   summary(OLS)
-   
-   OLS2 <- lm(Mortgages ~ Interest + Labour + Log_Prices, data=Analytical_Set)
-   summary(OLS2)
-   anova(OLS1, OLS2)
-
-
-   
-  ##
-  ##  Test for Autocorrelation:  Extract the residuals and check out their autocorrelation function
-  ##        Autocorrelation in errors, looks like a AR(1) process
-  ##
-  ##     Autocorrelation underestimates the true variance of the estimates:  t-values are overstated 
-  ##
-      acf(OLS2$residuals)
-      pacf(OLS2$residuals)
-      dwtest(OLS2)
-
-  ##
-  ##  Test for Hetroskedasticity:  Breusch-Pagan test.  Yep, heaps of hetroskedasticity
-  ##     Hetroskedasticity overestimates the true variance of the estimates:  t-values are understated 
-  ##
-      bptest(OLS2)           
-  
-  ##
-  ##  Test for misspecification: Ramsey Reset test and test of structural break
-  ##
-      sctest(OLS2)
-      reset(OLS2)
+      VARselect(data.frame(Analytical_Set$Mortgages,
+                           Analytical_Set$Interest,
+                           Analytical_Set$Log_Prices,
+                           Analytical_Set$Labour), 
+                lag.max = 12, 
+                type = c("const"))    
+      ##
+      ##    Do some causality tests
+      ##
       
-      ocus <- efp(Mortgages ~ Interest + Labour + Log_Prices, type = "OLS-CUSUM", 
-                  data = Analytical_Set)
-      bound.ocus <- boundary(ocus, alpha = 0.05)
-      plot(ocus)
-      bp.inf <- breakpoints(Mortgages ~ Interest + Labour + Log_Prices, 
-                  data =Analytical_Set)
-      summary(bp.inf)
-      confint(bp.inf)
-##
-##    WTF...
-##
-    
+        VAR_Model <- VAR(data.frame(Mortgages = Analytical_Set$Mortgages,
+                                    Log_Prices = Analytical_Set$Log_Prices),
+                                  p = 12,
+                                  type = "const")
+                                  
+        causality(VAR_Model,cause = "Mortgages")  # mortgage demand does not cause prices to change.
+        causality(VAR_Model,cause = "Log_Prices") # But price changes do cause mortgage demand to change.
+      
+      
+        VAR_Model <- VAR(data.frame(Mortgages = Analytical_Set$Mortgages,
+                                    Labour = Analytical_Set$Labour),
+                                  p = 12,
+                                  type = "const")
+                                  
+        causality(VAR_Model,cause = "Mortgages")  # mortgage demand causes labour to change??
+        causality(VAR_Model,cause = "Labour")     # But labour demand does not cause mortgage demand to change??
+      
+      
+      
+      
+      jotest=ca.jo(data.frame(Analytical_Set$Log_Prices,
+                              Analytical_Set$Interest,
+                              Analytical_Set$Mortgages,
+                              Analytical_Set$Labour), 
+                              type="trace", 
+                              K=4, 
+                              ecdet="const", 
+                              spec="longrun")
+      summary(jotest)
+
+      vecm <- cajorls(jotest,r=1)
+      coeftest(vecm$rlm)
+      coef(summary(vecm$rlm))
+
+      dynamic_bit <- alphaols(jotest)
+      summary(dynamic_bit)
+       
+      cajo_beta_create <- function(cajo_o, cajorls_o) {
+            alfa <- coef(cajorls_o$rlm)[1, ]
+            residuals <- resid(cajorls_o$rlm)
+            N <- nrow(residuals)
+            sigma <- crossprod(residuals) / N
+            beta <- cajorls_o$beta
+            # standard errors
+            beta.se <- sqrt(diag(kronecker(solve(crossprod(cajo_o@RK[, -1])), solve(t(alfa) %*% solve(sigma) %*% alfa))))
+            beta.se2 <- c(NA, beta.se)
+            beta.t <- c(NA, beta[-1] / beta.se)
+            beta.pvalue <- dt(beta.t, df=cajorls_o$rlm$df.residual)     # p values
+
+            tr <- createTexreg(coef.names = as.character(rownames(beta)), coef = (-1)*as.numeric(beta), se = beta.se2, pvalues=beta.pvalue,
+            gof.names = c('Dummy'), gof=c(1), gof.decimal=c(FALSE))
+            return(tr)
+       }
+      cajo_beta_create(jotest, vecm)
       ##
-      ##    Do some cointergration
+      ##    Long term model
       ##
-         Analytical_Set
-         jotest=ca.jo(data.frame(Analytical_Set$Mortgages,
-                                 Analytical_Set$Interest,
-                                 Analytical_Set$Log_Prices,
-                                 Analytical_Set$GDP,
-                                 Analytical_Set$Labour), 
-                                 type="trace", 
-                                 K=5, 
-                                 ecdet="const", 
-                                 spec="longrun")
-         summary(jotest)
+      screenreg(cajo_beta_create(jotest, vecm))
+                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
       testStatistics <- jotest@teststat
