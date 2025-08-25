@@ -53,7 +53,10 @@
       load("Data_Output/CurrentPrice_Actual_Qtr_NonStd_Published20250731.rda")
       load("Data_Output/CurrentPrice_SA_Qtr_CPILevel1_Published20250731.rda")
       load("Data_Output/CurrentPrice_SA_Qtr_CPITradableNonTrad_Published20250731.rda")
-      load("Data_Intermediate/Downloaded_Files.rda")                
+      load("Data_Intermediate/Downloaded_Files.rda")     
+
+
+      load("Data_Intermediate/RAWDATA_XXTA.rda") 
 
       ##
       ##    Grab the production function output
@@ -61,6 +64,53 @@
       load("Data_Output/Actual_Expected.rda")
       load("Data_Output/Output_Gap.rda")
 
+   ##
+   ## Create a weighted average price index
+   ##
+      House_Prices <- data.table(RAWDATA_XXTA)
+      House_Prices$Date <- as.Date(House_Prices$Date, "%Y-%m-%d")
+      House_Prices <- House_Prices[,
+                                   list(Quantity_Sold = sum(as.numeric(Quantity), na.rm = TRUE),
+                                        Weighted_Quantity_Sold = sum(as.numeric(Quantity)*as.numeric(Fisher_PI), na.rm = TRUE),
+                                        National_Prices = sum(as.numeric(Quantity)*as.numeric(Fisher_PI), na.rm = TRUE) /  sum(as.numeric(Quantity), na.rm = TRUE)),
+                                   by = list(Date)]
+
+      ggplot(House_Prices, 
+             aes(x = Date, 
+                 y = National_Prices))     +
+             geom_line(size =.5) +
+             geom_point(size =.3)
+  ##
+   ## Interpolate fisher ideal price index
+   ##
+
+      F_Data <- House_Prices
+      y = F_Data$National_Prices[!is.nan(F_Data$National_Prices)]
+      x = F_Data$Date[!is.nan(F_Data$National_Prices)]
+      z = x + 1
+       ##
+       ##    Move time to a common basis
+       ##
+        int1 <- lubridate::interval(lubridate::ymd(z[1]),
+                                    lubridate::ymd(z[length(z)]))
+        New_Dates <- lubridate::ymd(z[1]) + months(0:(int1 %/% months(1)))
+        New_Dates <- New_Dates - 1      
+        New_Dates <- New_Dates[month(New_Dates) %in% c(1:12)]
+       ##
+       ##    Interpolate the Population values
+       ##
+        House_Prices <- data.frame()
+        House_Prices = tryCatch({ Hate <- smooth.spline(x,y)
+                          Y <- data.frame(Period = New_Dates,
+                                          National_Prices = predict(Hate, as.numeric(New_Dates))$y)
+                    }, warning = function(w) {
+                 }, error = function(e) {
+                 }, finally = {
+                 })
+                 
+         plot(House_Prices$Period, House_Prices$National_Prices)
+
+             
    ##
    ## Step 1: Simplify these names
    ##
@@ -279,8 +329,7 @@
          InterpReal_GDP$Real_GDP <- as.numeric(InterpReal_GDP$Value)
          plot(InterpReal_GDP$Period, InterpReal_GDP$Value)
 
-
-
+ 
 
              
 
@@ -290,7 +339,13 @@
       Real_Loans_By_Industry <- merge(Loans_By_Industry,
                                       InterpCPI,
                                       by = c("Period"))
-      Real_Loans_By_Industry$Real_Loans_By_Industry <- Real_Loans_By_Industry$Value.x / Real_Loans_By_Industry$Value.y
+      Real_Loans_By_Industry <- merge(Real_Loans_By_Industry,
+                                      House_Prices,
+                                      by = c("Period"))
+
+
+#     Real_Loans_By_Industry$Real_Loans_By_Industry <- Real_Loans_By_Industry$Value.x / Real_Loans_By_Industry$Value.y
+      Real_Loans_By_Industry$Real_Loans_By_Industry <- Real_Loans_By_Industry$Value.x / Real_Loans_By_Industry$National_Prices
 
       Real_Loans_By_Industry <- do.call(rbind, lapply(unique(Real_Loans_By_Industry$Industry), function(industry) {
                                                          X <- Real_Loans_By_Industry[Industry == industry,]
@@ -340,7 +395,7 @@
                    legend.position  = "none")
 
                       
-         ggsave("Graphical_Output/Household Loans - Qty.png", height =(1.5)*16.13, width = (1.75)*20.66, dpi = 165, units = c("cm"))
+         ggsave("Graphical_Output/Household Loans - Qty_Fisher_Ideal_Prices.png", height =(1.5)*16.13, width = (1.75)*20.66, dpi = 165, units = c("cm"))
 
       ggplot(Real_Loans_By_Industry[Industry == "Households - Total",], 
              aes(x = Period, 
@@ -350,7 +405,7 @@
              #geom_smooth(size =1, colour = SPCColours("Red")) +
              geom_point(size =1, colour = SPCColours("Purple")) +
              geom_hline(yintercept = 0, size = 1,  colour = SPCColours("Green")) +
-             scale_y_continuous(labels = scales::label_percent(),breaks = seq(from=-1.0, to=1.0, by=.10)) +
+             scale_y_continuous(labels = scales::label_percent(),breaks = seq(from=-2.0, to=2.0, by=.10)) +
              scale_x_date(date_breaks = "3 month", date_labels = "%Y-%m") +
              facet_grid(~Industry, scales="free") +
              labs(x = "\nTime Period", 
@@ -381,20 +436,25 @@
                    legend.position  = "none")
 
                       
-         ggsave("Graphical_Output/Household Loans - Monthly Change.png", height =(1.5)*16.13, width = (1.75)*20.66, dpi = 165, units = c("cm"))
+         ggsave("Graphical_Output/Household Loans - Monthly Change_Fisher_Ideal_Prices.png", height =(1.5)*16.13, width = (1.75)*20.66, dpi = 165, units = c("cm"))
 
 
 
    ##
    ##    Add interest rates
    ##
-      Household_Debt <- merge(Household_Debt,
+      Household_Debt <- merge(Real_Loans_By_Industry[Industry == "Households - Total",],
                               InterpCPI,
                               by = c("Period"))
+      Household_Debt <- merge(Household_Debt,
+                              House_Prices,
+                              by = c("Period"))
                               
-      Household_Debt$Real_Household_Debt <- Household_Debt$Value.x / Household_Debt$Value.y
+      Household_Debt$CPIDeflated_Household_Debt    <- Household_Debt$Value.x / Household_Debt$Value.y
+      Household_Debt$FisherDeflated_Household_Debt <- Household_Debt$Value.x / Household_Debt$National_Prices.x
 
-      Analytical_Set <- merge(Household_Debt[, c("Period", "Real_Household_Debt")],
+
+      Analytical_Set <- merge(Household_Debt[, c("Period", "CPIDeflated_Household_Debt", "FisherDeflated_Household_Debt", "National_Prices.x")],
                               Interest_Rates,
                               by = "Period")
       names(Analytical_Set)[names(Analytical_Set) == "Value"] <- "Housing_Interest_Rate"
@@ -417,10 +477,11 @@
      ##
      ##  Take the logs
      ##
-         Analytical_Set$Mortgages <- log(Analytical_Set$Real_Household_Debt)
+         Analytical_Set$Mortgages <- log(Analytical_Set$FisherDeflated_Household_Debt)
          Analytical_Set$Interest  <- log(Analytical_Set$Housing_Interest_Rate)
          Analytical_Set$Labour    <- log(Analytical_Set$Hours_Worked)
          Analytical_Set$GDP       <- log(Analytical_Set$Real_GDP)
+         Analytical_Set$Log_Prices<- log(Analytical_Set$National_Prices)
 
 
 ##
@@ -444,16 +505,47 @@ tsm::ac(Unit_Root@res)
 ##    Hours_Worked is nonstationary around a trend
 ##
 
-   OLS <- lm(Real_Household_Debt ~ Housing_Interest_Rate + Hours_Worked + Real_GDP, data=Analytical_Set)
+   OLS <- lm(FisherDeflated_Household_Debt ~ Housing_Interest_Rate + Hours_Worked + Real_GDP + National_Prices.x, data=Analytical_Set)
    summary(OLS)
 
-   OLS <- lm(Mortgages ~ Interest + Labour + GDP, data=Analytical_Set)
+   OLS1 <- lm(Mortgages ~ Interest + Labour + GDP + Log_Prices, data=Analytical_Set)
    summary(OLS)
+   OLS2 <- lm(Mortgages ~ Interest + Labour + Log_Prices, data=Analytical_Set)
+   summary(OLS2)
+   anova(OLS1, OLS2)
 
 
+   
+  ##
+  ##  Test for Autocorrelation:  Extract the residuals and check out their autocorrelation function
+  ##        Autocorrelation in errors, looks like a AR(1) process
+  ##
+  ##     Autocorrelation underestimates the true variance of the estimates:  t-values are overstated 
+  ##
+      acf(OLS2$residuals)
+      pacf(OLS2$residuals)
+      dwtest(OLS2)
 
-
-
+  ##
+  ##  Test for Hetroskedasticity:  Breusch-Pagan test.  Yep, heaps of hetroskedasticity
+  ##     Hetroskedasticity overestimates the true variance of the estimates:  t-values are understated 
+  ##
+      bptest(OLS2)           
+  
+  ##
+  ##  Test for misspecification: Ramsey Reset test and test of structural break
+  ##
+      sctest(OLS2)
+      reset(OLS2)
+      
+      ocus <- efp(Mortgages ~ Interest + Labour + Log_Prices, type = "OLS-CUSUM", 
+                  data = Analytical_Set)
+      bound.ocus <- boundary(ocus, alpha = 0.05)
+      plot(ocus)
+      bp.inf <- breakpoints(Mortgages ~ Interest + Labour + Log_Prices, 
+                  data =Analytical_Set)
+      summary(bp.inf)
+      confint(bp.inf)
 ##
 ##    WTF...
 ##
