@@ -25,7 +25,7 @@
    ##    Clear the decks and load up some functionality
    ##
       rm(list=ls(all=TRUE))
-      
+      options(scipen = 999)
    ##
    ##    Core libraries
    ##
@@ -76,6 +76,8 @@
       library(sandwich)
       library(vars)
       library(tsm)
+      library(texreg)
+
 
    ##
    ##    Set working directory

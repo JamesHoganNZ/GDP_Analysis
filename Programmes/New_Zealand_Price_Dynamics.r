@@ -489,8 +489,17 @@
 ##  significantly different from the critical value means that the data IS stationary 
 ##
 
-Unit_Root <-ur.df(Analytical_Set$Real_GDP, 
-                  lags = 24, 
+Unit_Root <-ur.df(Analytical_Set$Mortgages, 
+                  lags = 12, 
+                  selectlags = "AIC", 
+                  type = "trend")      
+summary(Unit_Root)
+plot.ts(Unit_Root@res, ylab = "Residuals")
+abline(h = 0, col = "red")
+tsm::ac(Unit_Root@res)
+
+Unit_Root <-ur.df(Analytical_Set$Interest, 
+                  lags = 12, 
                   selectlags = "AIC", 
                   type = "trend")      
 summary(Unit_Root)
@@ -499,10 +508,39 @@ abline(h = 0, col = "red")
 tsm::ac(Unit_Root@res)
 
 
+Unit_Root <-ur.df(Analytical_Set$Labour, 
+                  lags = 12, 
+                  selectlags = "AIC", 
+                  type = "trend")      
+summary(Unit_Root)
+plot.ts(Unit_Root@res, ylab = "Residuals")
+abline(h = 0, col = "red")
+tsm::ac(Unit_Root@res)
+
+
+Unit_Root <-ur.df(Analytical_Set$Log_Prices, 
+                  lags = 12, 
+                  selectlags = "AIC", 
+                  type = "trend")      
+summary(Unit_Root)
+plot.ts(Unit_Root@res, ylab = "Residuals")
+abline(h = 0, col = "red")
+tsm::ac(Unit_Root@res)
+
+Unit_Root <-ur.df(Analytical_Set$GDP, 
+                  lags = 12, 
+                  selectlags = "AIC", 
+                  type = "trend")      
+summary(Unit_Root)
+plot.ts(Unit_Root@res, ylab = "Residuals")
+abline(h = 0, col = "red")
+tsm::ac(Unit_Root@res)
+
 ##
-##    Real_Household_Debt is stationary around a trend
-##    Housing_Interest_Rate is stationary around a trend
-##    Hours_Worked is nonstationary around a trend
+##    Mortgages is non stationary without trend, is lag 4
+##    Interest is nonstationary without trend, is lag 4
+##    Labour is nonstationary with trend, is lag 8
+##    Log_Prices is nonstationary without trend, is lag 5
 ##
 
    OLS <- lm(FisherDeflated_Household_Debt ~ Housing_Interest_Rate + Hours_Worked + Real_GDP + National_Prices.x, data=Analytical_Set)
@@ -510,6 +548,7 @@ tsm::ac(Unit_Root@res)
 
    OLS1 <- lm(Mortgages ~ Interest + Labour + GDP + Log_Prices, data=Analytical_Set)
    summary(OLS)
+   
    OLS2 <- lm(Mortgages ~ Interest + Labour + Log_Prices, data=Analytical_Set)
    summary(OLS2)
    anova(OLS1, OLS2)
@@ -549,16 +588,203 @@ tsm::ac(Unit_Root@res)
 ##
 ##    WTF...
 ##
-   testicles <- merge(Real_Loans_By_Industry[Industry == "Households - Total", c("Period", "Industry", "Value.x", "Real_Loans_By_Industry")],
-                      Household_Debt[,c("Period", "Measure1", "Value.x", "Real_Household_Debt")],
-                      by = c("Period"))
+    
+      ##
+      ##    Do some cointergration
+      ##
+         Analytical_Set
+         jotest=ca.jo(data.frame(Analytical_Set$Mortgages,
+                                 Analytical_Set$Interest,
+                                 Analytical_Set$Log_Prices,
+                                 Analytical_Set$GDP,
+                                 Analytical_Set$Labour), 
+                                 type="trace", 
+                                 K=5, 
+                                 ecdet="const", 
+                                 spec="longrun")
+         summary(jotest)
 
 
+      testStatistics <- jotest@teststat
+      criticalValues <- jotest@criticalValues
+      
+   ##
+   ##    Estimate the dynamic component
+   ## 
+      dynamic_bit <- cajools(jotest,
+                         reg.number=NULL)
+      summary(dynamic_bit)
+      
+      dynamic_bit <- alphaols(jotest)
+      summary(dynamic_bit)
+
+   ##
+   ##    Derive the speed of adjustment, and test its significance
+   ##       Taken from here: https://stats.stackexchange.com/questions/96645/finding-significance-levels-for-cointegrating-coefficients-in-cajorls
+   ##
+   ##    The coefficients on ECT1 are the speeds of adjustment of the regression variable to disequilibrium in the long run position.
+   ##
+      jotest=ca.jo(data.frame(Analytical_Set$Mortgages,
+                           Analytical_Set$Interest,
+                           Analytical_Set$GDP,
+                           Analytical_Set$Log_Prices,
+                           Analytical_Set$Labour), 
+                           type="trace", 
+                           K=9, 
+                           ecdet="const", 
+                           spec="longrun")
+      summary(jotest)
+      
+      vecm <- cajorls(jotest,r=1)
+      coeftest(vecm$rlm)
+      coef(summary(vecm$rlm))
+
+      dynamic_bit <- alphaols(jotest)
+      summary(dynamic_bit)
+       
+      cajo_beta_create <- function(cajo_o, cajorls_o) {
+            alfa <- coef(cajorls_o$rlm)[1, ]
+            residuals <- resid(cajorls_o$rlm)
+            N <- nrow(residuals)
+            sigma <- crossprod(residuals) / N
+            beta <- cajorls_o$beta
+            # standard errors
+            beta.se <- sqrt(diag(kronecker(solve(crossprod(cajo_o@RK[, -1])), solve(t(alfa) %*% solve(sigma) %*% alfa))))
+            beta.se2 <- c(NA, beta.se)
+            beta.t <- c(NA, beta[-1] / beta.se)
+            beta.pvalue <- dt(beta.t, df=cajorls_o$rlm$df.residual)     # p values
+
+            tr <- createTexreg(coef.names = as.character(rownames(beta)), coef = (-1)*as.numeric(beta), se = beta.se2, pvalues=beta.pvalue,
+            gof.names = c('Dummy'), gof=c(1), gof.decimal=c(FALSE))
+            return(tr)
+       }
+      cajo_beta_create(jotest, vecm)
+      ##
+      ##    Long term model
+      ##
+      screenreg(cajo_beta_create(jotest, vecm))
+                        
 
 
+=======================================
+                              Model 1  
+---------------------------------------
+Analytical_Set.Mortgages.l8   -1.00    
+                                       
+Analytical_Set.Interest.l8    -0.07 *  
+                              (0.03)   
+Analytical_Set.Log_Prices.l8  -0.69 ***
+                              (0.05)   
+Analytical_Set.Labour.l8       1.75 ***
+                              (0.17)   
+constant                      52.89 ***
+                              (4.11)   
+---------------------------------------
+Dummy                          1       
+=======================================
+*** p < 0.001; ** p < 0.01; * p < 0.05
 
+##
+##    These two cointergrating relationships: Mortgages ~ interest + prices + GDP/Labour
+##                                            GDP ~ Labour
+##
 
-   testicles <- merge(Real_Loans_By_Industry[Real_Loans_By_Industry$Industry == "Households - Total", c("Period", "Industry", "Value.x", "Real_Loans_By_Industry")],
-                      Household_Debt[,c("Period", "Measure1", "Value.x", "Real_Household_Debt")],
-                      by = c("Period"))
+         jotest=ca.jo(data.frame(Analytical_Set$Mortgages,
+                                 Analytical_Set$Interest,
+                                 Analytical_Set$Log_Prices,
+                                 Analytical_Set$GDP), 
+                                 type="trace", 
+                                 K=8, 
+                                 ecdet="const", 
+                                 spec="longrun")
+         summary(jotest)
 
+      vecm <- cajorls(jotest,r=1)
+      coeftest(vecm$rlm)
+      coef(summary(vecm$rlm))
+
+      dynamic_bit <- alphaols(jotest)
+      summary(dynamic_bit)
+       
+      cajo_beta_create <- function(cajo_o, cajorls_o) {
+            alfa <- coef(cajorls_o$rlm)[1, ]
+            residuals <- resid(cajorls_o$rlm)
+            N <- nrow(residuals)
+            sigma <- crossprod(residuals) / N
+            beta <- cajorls_o$beta
+            # standard errors
+            beta.se <- sqrt(diag(kronecker(solve(crossprod(cajo_o@RK[, -1])), solve(t(alfa) %*% solve(sigma) %*% alfa))))
+            beta.se2 <- c(NA, beta.se)
+            beta.t <- c(NA, beta[-1] / beta.se)
+            beta.pvalue <- dt(beta.t, df=cajorls_o$rlm$df.residual)     # p values
+
+            tr <- createTexreg(coef.names = as.character(rownames(beta)), coef = (-1)*as.numeric(beta), se = beta.se2, pvalues=beta.pvalue,
+            gof.names = c('Dummy'), gof=c(1), gof.decimal=c(FALSE))
+            return(tr)
+       }
+      cajo_beta_create(jotest, vecm)
+      ##
+      ##    Long term model
+      ##
+      screenreg(cajo_beta_create(jotest, vecm))
+                        
+                        
+ 
+=======================================
+                              Model 1  
+---------------------------------------
+Analytical_Set.Mortgages.l8   -1.00    
+                                       
+Analytical_Set.Interest.l8    -0.07 *  
+                              (0.03)   
+Analytical_Set.Log_Prices.l8  -0.69 ***
+                              (0.05)   
+Analytical_Set.Labour.l8       1.75 ***
+                              (0.17)   
+constant                      52.89 ***
+                              (4.11)   
+---------------------------------------
+Dummy                          1       
+=======================================
+*** p < 0.001; ** p < 0.01; * p < 0.05
+                       
+                       
+
+         jotest=ca.jo(data.frame(Analytical_Set$Labour,
+                                 Analytical_Set$GDP), 
+                                 type="trace", 
+                                 K=12, 
+                                 ecdet="const", 
+                                 spec="longrun")
+         summary(jotest)
+
+      vecm <- cajorls(jotest,r=1)
+      coeftest(vecm$rlm)
+      coef(summary(vecm$rlm))
+
+      dynamic_bit <- alphaols(jotest)
+      summary(dynamic_bit)
+       
+      cajo_beta_create <- function(cajo_o, cajorls_o) {
+            alfa <- coef(cajorls_o$rlm)[1, ]
+            residuals <- resid(cajorls_o$rlm)
+            N <- nrow(residuals)
+            sigma <- crossprod(residuals) / N
+            beta <- cajorls_o$beta
+            # standard errors
+            beta.se <- sqrt(diag(kronecker(solve(crossprod(cajo_o@RK[, -1])), solve(t(alfa) %*% solve(sigma) %*% alfa))))
+            beta.se2 <- c(NA, beta.se)
+            beta.t <- c(NA, beta[-1] / beta.se)
+            beta.pvalue <- dt(beta.t, df=cajorls_o$rlm$df.residual)     # p values
+
+            tr <- createTexreg(coef.names = as.character(rownames(beta)), coef = (-1)*as.numeric(beta), se = beta.se2, pvalues=beta.pvalue,
+            gof.names = c('Dummy'), gof=c(1), gof.decimal=c(FALSE))
+            return(tr)
+       }
+      cajo_beta_create(jotest, vecm)
+      ##
+      ##    Long term model
+      ##
+      screenreg(cajo_beta_create(jotest, vecm))
+                        
+                         
