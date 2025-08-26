@@ -5,7 +5,7 @@
 ##
 ##
 ##    https://medium.com/@marc.jacobs012/cointegration-of-time-series-in-r-a6543dacf66e
-##
+##    https://www.quantstart.com/articles/Johansen-Test-for-Cointegrating-Time-Series-Analysis-in-R/
 ##
 ##
 ##
@@ -150,12 +150,12 @@
    ##
       
       jotest=ca.jo(data.frame(Money_Demand_Analytical_Set$Real_Mortgages,
-                              Money_Demand_Analytical_Set$Log_Fisher_Ideal_House_Prices,
                               Money_Demand_Analytical_Set$House_Mortgage_Interest_Rate,
-                              Money_Demand_Analytical_Set$Labour_Paid_Hours_Worked), 
+                              Money_Demand_Analytical_Set$Labour_Paid_Hours_Worked,
+                              Money_Demand_Analytical_Set$Log_Fisher_Ideal_House_Prices), 
                               type  = "trace", 
-                              K     = 9, 
-                              ecdet = "const", 
+                              K     = 8, 
+                              ecdet = "trend", 
                               spec  = "longrun")
       summary(jotest)
 
@@ -188,21 +188,125 @@
       ##
       screenreg(cajo_beta_create(jotest, vecm))
       
+##
+##    Make a linear combination of the eigenvectors
+##
+   Coefs <- as.data.frame(jotest@V)
+   Coefs$Model <- rownames(Coefs)
+   rownames(Coefs) <- NULL
 
-         =======================================================================
-                                                                       Model 1  
-         -----------------------------------------------------------------------
-         Money_Demand_Analytical_Set.Real_Mortgages.l9                 -1.00    
-                                                                                
-         Money_Demand_Analytical_Set.Labour_Paid_Hours_Worked.l9        2.07 ***
-                                                                       (0.17)   
-         Money_Demand_Analytical_Set.Log_Fisher_Ideal_House_Prices.l9  -0.71 ***
-                                                                       (0.05)   
-         Money_Demand_Analytical_Set.House_Mortgage_Interest_Rate.l9   -0.12 ***
-                                                                       (0.03)   
-         constant                                                       3.25 ***
-                                                                       (0.59)   
-         -----------------------------------------------------------------------
-         Dummy                                                          1       
-         =======================================================================
-         *** p < 0.001; ** p < 0.01; * p < 0.05
+   Money_Demand_Analytical_Set$Estimate <- NA
+   Money_Demand_Analytical_Set$Trend <- 1:nrow(Money_Demand_Analytical_Set)
+   
+   
+   for(i in 1:nrow(Money_Demand_Analytical_Set))
+   {
+#      Money_Demand_Analytical_Set$Estimate[i] <-exp( -(Coefs[2,1] * Money_Demand_Analytical_Set$House_Mortgage_Interest_Rate[i]) +
+#                                                     -(Coefs[3,1] * Money_Demand_Analytical_Set$Labour_Paid_Hours_Worked[i]) +
+#                                                     -(Coefs[4,1] * Money_Demand_Analytical_Set$Log_Fisher_Ideal_House_Prices[i]) +
+#                                                     -(Coefs[5,1] * 1))
+      Money_Demand_Analytical_Set$Estimate[i] <-exp( -(Coefs[2,1] * Money_Demand_Analytical_Set$House_Mortgage_Interest_Rate[i]) +
+                                                     -(Coefs[3,1] * Money_Demand_Analytical_Set$Labour_Paid_Hours_Worked[i]) +
+                                                     -(Coefs[4,1] * Money_Demand_Analytical_Set$Log_Fisher_Ideal_House_Prices[i])+
+                                                     -(Coefs[5,1] * Money_Demand_Analytical_Set$Trend[i]))
+   }
+
+   Plot_Me <- data.table::melt(Money_Demand_Analytical_Set,
+                               id.var = "Period",
+                               measure.vars = c("Real_Loans_By_Industry","Estimate"))
+                               
+
+      ggplot(Plot_Me, 
+             aes(x = Period, 
+                 y = value, 
+                 colour=variable))     +
+             geom_line(size =1) +
+             geom_point(size =1) +
+             scale_x_date(date_breaks = "3 month", date_labels = "%Y-%m") +
+             #facet_grid(~variable, scales="free") +
+             labs(x = "\nTime Period", 
+                  y = "%\n", 
+                  title="Real Loans by Industry and \n",
+                  caption = "Stats NZ QES: Total Paid Hours by Industry") +
+             theme_bw(base_size=12, base_family =  "Calibri") %+replace%
+             theme(legend.title.align=0.5,
+                   plot.margin = unit(c(1,3,1,1),"mm"),
+                   panel.border = element_blank(),
+                   strip.background =  element_rect(fill   = SPCColours("Light_Blue")),
+                   strip.text = element_text(colour = "white", 
+                                             size   = 13,
+                                             family = "MyriadPro-Bold",
+                                             margin = margin(1.25,1.25,1.25,1.25, unit = "mm")),
+                   panel.spacing = unit(1, "lines"),                                              
+                   legend.text   = element_text(size = 10, family = "MyriadPro-Regular"),
+                   plot.title    = element_text(size = 24, colour = SPCColours("Dark_Blue"),  family = "MyriadPro-Bold"),
+                   plot.subtitle = element_text(size = 14, colour = SPCColours("Light_Blue"), family = "MyriadPro-Light"),
+                   plot.caption  = element_text(size = 10,  colour = SPCColours("Dark_Blue"), family = "MyriadPro-Light", hjust = 1.0),
+                   plot.tag      = element_text(size =  9, colour = SPCColours("Red")),
+                   axis.title    = element_text(size = 14, colour = SPCColours("Dark_Blue")),
+                   axis.text.x   = element_text(size = 12, colour = SPCColours("Dark_Blue"), angle = 90, margin = margin(t = 10, r = 0,  b = 0, l = 0, unit = "pt"),hjust = 0.5),
+                   axis.text.y   = element_text(size = 12, colour = SPCColours("Dark_Blue"), angle = 00, margin = margin(t = 0,  r = 10, b = 0, l = 0, unit = "pt"),hjust = 1.0),
+                   legend.key.width = unit(1, "cm"),
+                   legend.spacing.y = unit(1, "cm"),
+                   legend.margin = margin(10, 10, 10, 10),
+                   legend.position  = "bottom")                      
+
+
+
+   Money_Demand_Analytical_Set$Nominal_Estimate <- Money_Demand_Analytical_Set$Estimate * Money_Demand_Analytical_Set$Fisher_Ideal_House_Prices
+   
+   Plot_Me <- data.table::melt(Money_Demand_Analytical_Set,
+                               id.var = "Period",
+                               measure.vars = c("Loans_By_Industry","Nominal_Estimate"))
+                               
+
+      ggplot(Plot_Me, 
+             aes(x = Period, 
+                 y = value, 
+                 colour=variable))     +
+             geom_line(size =1) +
+             geom_point(size =1) +
+             scale_x_date(date_breaks = "3 month", date_labels = "%Y-%m") +
+             #facet_grid(~variable, scales="free") +
+             labs(x = "\nTime Period", 
+                  y = "%\n", 
+                  #title="Paid Hours Worked\n",
+                  caption = "Stats NZ QES: Total Paid Hours by Industry") +
+             theme_bw(base_size=12, base_family =  "Calibri") %+replace%
+             theme(legend.title.align=0.5,
+                   plot.margin = unit(c(1,3,1,1),"mm"),
+                   panel.border = element_blank(),
+                   strip.background =  element_rect(fill   = SPCColours("Light_Blue")),
+                   strip.text = element_text(colour = "white", 
+                                             size   = 13,
+                                             family = "MyriadPro-Bold",
+                                             margin = margin(1.25,1.25,1.25,1.25, unit = "mm")),
+                   panel.spacing = unit(1, "lines"),                                              
+                   legend.text   = element_text(size = 10, family = "MyriadPro-Regular"),
+                   plot.title    = element_text(size = 24, colour = SPCColours("Dark_Blue"),  family = "MyriadPro-Bold"),
+                   plot.subtitle = element_text(size = 14, colour = SPCColours("Light_Blue"), family = "MyriadPro-Light"),
+                   plot.caption  = element_text(size = 10,  colour = SPCColours("Dark_Blue"), family = "MyriadPro-Light", hjust = 1.0),
+                   plot.tag      = element_text(size =  9, colour = SPCColours("Red")),
+                   axis.title    = element_text(size = 14, colour = SPCColours("Dark_Blue")),
+                   axis.text.x   = element_text(size = 12, colour = SPCColours("Dark_Blue"), angle = 90, margin = margin(t = 10, r = 0,  b = 0, l = 0, unit = "pt"),hjust = 0.5),
+                   axis.text.y   = element_text(size = 12, colour = SPCColours("Dark_Blue"), angle = 00, margin = margin(t = 0,  r = 10, b = 0, l = 0, unit = "pt"),hjust = 1.0),
+                   legend.key.width = unit(1, "cm"),
+                   legend.spacing.y = unit(1, "cm"),
+                   legend.margin = margin(10, 10, 10, 10),
+                   legend.position  = "bottom")                      
+
+##
+##    Do we have short-term estimates from the Johansen method?
+##
+
+jotest <- cajolst(data.frame(Money_Demand_Analytical_Set$Real_Mortgages,
+                             Money_Demand_Analytical_Set$House_Mortgage_Interest_Rate,
+                             Money_Demand_Analytical_Set$Labour_Paid_Hours_Worked,
+                             Money_Demand_Analytical_Set$Log_Fisher_Ideal_House_Prices), 
+             trend=TRUE, 
+             K=8)
+        
+summary(jotest)
+
+        
+        
