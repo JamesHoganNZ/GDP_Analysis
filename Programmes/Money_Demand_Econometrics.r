@@ -155,7 +155,7 @@
                               Money_Demand_Analytical_Set$Log_Fisher_Ideal_House_Prices), 
                               type  = "trace", 
                               K     = 8, 
-                              ecdet = "trend", 
+                              ecdet = "const", 
                               spec  = "longrun")
       summary(jotest)
 
@@ -195,25 +195,25 @@
    Coefs$Model <- rownames(Coefs)
    rownames(Coefs) <- NULL
 
-   Money_Demand_Analytical_Set$Estimate <- NA
+   Money_Demand_Analytical_Set$Estimated_Real_Housing_Mortgages <- NA
    Money_Demand_Analytical_Set$Trend <- 1:nrow(Money_Demand_Analytical_Set)
    
    
    for(i in 1:nrow(Money_Demand_Analytical_Set))
    {
+      Money_Demand_Analytical_Set$Estimated_Real_Housing_Mortgages[i] <-exp( -(Coefs[2,1] * Money_Demand_Analytical_Set$House_Mortgage_Interest_Rate[i]) +
+                                                     -(Coefs[3,1] * Money_Demand_Analytical_Set$Labour_Paid_Hours_Worked[i]) +
+                                                     -(Coefs[4,1] * Money_Demand_Analytical_Set$Log_Fisher_Ideal_House_Prices[i]) +
+                                                     -(Coefs[5,1] * 1))
 #      Money_Demand_Analytical_Set$Estimate[i] <-exp( -(Coefs[2,1] * Money_Demand_Analytical_Set$House_Mortgage_Interest_Rate[i]) +
 #                                                     -(Coefs[3,1] * Money_Demand_Analytical_Set$Labour_Paid_Hours_Worked[i]) +
-#                                                     -(Coefs[4,1] * Money_Demand_Analytical_Set$Log_Fisher_Ideal_House_Prices[i]) +
-#                                                     -(Coefs[5,1] * 1))
-      Money_Demand_Analytical_Set$Estimate[i] <-exp( -(Coefs[2,1] * Money_Demand_Analytical_Set$House_Mortgage_Interest_Rate[i]) +
-                                                     -(Coefs[3,1] * Money_Demand_Analytical_Set$Labour_Paid_Hours_Worked[i]) +
-                                                     -(Coefs[4,1] * Money_Demand_Analytical_Set$Log_Fisher_Ideal_House_Prices[i])+
-                                                     -(Coefs[5,1] * Money_Demand_Analytical_Set$Trend[i]))
+#                                                     -(Coefs[4,1] * Money_Demand_Analytical_Set$Log_Fisher_Ideal_House_Prices[i])+
+#                                                     -(Coefs[5,1] * Money_Demand_Analytical_Set$Trend[i]))
    }
 
    Plot_Me <- data.table::melt(Money_Demand_Analytical_Set,
                                id.var = "Period",
-                               measure.vars = c("Real_Loans_By_Industry","Estimate"))
+                               measure.vars = c("Real_Loans_By_Industry","Estimated_Real_Housing_Mortgages"))
                                
 
       ggplot(Plot_Me, 
@@ -224,10 +224,11 @@
              geom_point(size =1) +
              scale_x_date(date_breaks = "3 month", date_labels = "%Y-%m") +
              #facet_grid(~variable, scales="free") +
+             scale_colour_manual(values = c("#7b1244","#0094c5"), name="Actual Real Loans and Expected") +             
              labs(x = "\nTime Period", 
-                  y = "%\n", 
-                  title="Real Loans by Industry and \n",
-                  caption = "Stats NZ QES: Total Paid Hours by Industry") +
+                  y = "$Mill\n", 
+                  title="Real Housing Loans and Estimated Loans\n",
+                  caption = "RBNZ deflated by Min Urb Dev Fisher Price Index. Estimate derived from Long Run Cointegration Model") +
              theme_bw(base_size=12, base_family =  "Calibri") %+replace%
              theme(legend.title.align=0.5,
                    plot.margin = unit(c(1,3,1,1),"mm"),
@@ -250,10 +251,9 @@
                    legend.spacing.y = unit(1, "cm"),
                    legend.margin = margin(10, 10, 10, 10),
                    legend.position  = "bottom")                      
+         ggsave("Graphical_Output/Real_Mortages_and_Estimated.png", height =(1.5)*16.13, width = (1.75)*20.66, dpi = 165, units = c("cm"))
 
-
-
-   Money_Demand_Analytical_Set$Nominal_Estimate <- Money_Demand_Analytical_Set$Estimate * Money_Demand_Analytical_Set$Fisher_Ideal_House_Prices
+   Money_Demand_Analytical_Set$Nominal_Estimate <- Money_Demand_Analytical_Set$Estimated_Real_Housing_Mortgages * Money_Demand_Analytical_Set$Fisher_Ideal_House_Prices
    
    Plot_Me <- data.table::melt(Money_Demand_Analytical_Set,
                                id.var = "Period",
