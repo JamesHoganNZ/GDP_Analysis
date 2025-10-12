@@ -30,9 +30,9 @@
    ## Step 2: Start cleaning it up data 
    ##
       ##
-      ##    na-isal-march-2025-quarter-consolidated-accounts
+      ##    na-isal-june-2025-quarter-consolidated-accounts
       ##
-         Dset <- All_Data[["na-isal-march-2025-quarter-consolidated-accounts"]]
+         Dset <- All_Data[["na-isal-june-2025-quarter-consolidated-accounts"]]
          Dset <- Dset[, c("Series_reference", "period", "value", "Status", "seasonality", "SNA_Account", "Transaction", "Transaction_Label", "Sector", "Sector_name")]
          Dset$Actual_Seasadj <- ifelse(Dset$seasonality == "A", "Actual",
                               ifelse(Dset$seasonality == "S", "Seasonally_Adjusted", "UNKNOWN"))
@@ -46,9 +46,9 @@
          ISA_Consolidated_Accounts <- Dset[,c("Actual_Seasadj","Series_reference", "Status",  "SNA_Account", "Transaction", "Transaction_Label", "Sector", "Sector_name", "Period", "Value")]
 
       ##
-      ##    na-isal-march-2025-quarter-consolidated-accounts
+      ##    na-isal-june-2025-quarter-consolidated-accounts
       ##
-         Dset <- All_Data[["na-isal-march-2025-quarter-institutional-sector-accounts"]]
+         Dset <- All_Data[["na-isal-june-2025-quarter-institutional-sector-accounts"]]
          Dset <- Dset[, c("Series_reference","period","value","seasonality","SNA_Account","Transaction","Transaction_Label","Asset_type","Asset_type_label","Sector","Sector_name")]
          
          Dset$Actual_Seasadj <- ifelse(Dset$seasonality == "A", "Actual",
@@ -65,7 +65,7 @@
       ##
       ##    Supplementary Table 1-5A
       ##
-         Dset <- All_Data[["na-isal-march-2025-quarter-supplementary-table-1-5A"]]
+         Dset <- All_Data[["na-isal-june-2025-quarter-supplementary-table-1-5A"]]
          Dset <- Dset[, c("Series_reference","Period","Value","Unit","Series_name","Group")]
          
          Dset$Period <- as.Date(paste0(Dset$Period, "-01"), "%Y.%m-%d")
@@ -79,7 +79,7 @@
       ##
       ##    Supplementary Table 1-5B
       ##
-         Dset <- All_Data[["na-isal-march-2025-quarter-supplementary-table-1-5B"]]
+         Dset <- All_Data[["na-isal-june-2025-quarter-supplementary-table-1-5B"]]
          Dset <- Dset[, c("Series_reference","Period","Value","Unit","Seasonality","Series_name","RBNZ_seriesID","Transaction","Transaction_label","Asset_type","Sector","Sector_name")]
          Dset$Actual_Seasadj <- ifelse(Dset$seasonality == "A", "Actual",
                               ifelse(Dset$seasonality == "S", "Seasonally_Adjusted", "UNKNOWN"))

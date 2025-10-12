@@ -31,20 +31,20 @@
    ##
    ##    Load data from somewhere  
    ##
-      load("Data_Output/ConstantPrice_SA_Qtr_GDP_Published20250725.rda")
-      load("Data_Output/ConstantPrice_Actual_Annual_CapitalStock_Published20250725.rda")
-      load("Data_Output/ConstantPrice_Actual_Qtr_PaidHours_Published20250725.rda")
-      load("Data_Output/Household_Labour_Force_Survey_Published20250725.rda")
-      load("Data_Output/CurrentPrice_Actual_Qtr_CPIAllGroup_Published20250725.rda")
+      load("Data_Output/ConstantPrice_SA_Qtr_GDP_Published20251001.rda")
+      load("Data_Output/ConstantPrice_Actual_Annual_CapitalStock_Published20251001.rda")
+      load("Data_Output/ConstantPrice_Actual_Qtr_PaidHours_Published20251001.rda")
+      load("Data_Output/Household_Labour_Force_Survey_Published20251001.rda")
+      load("Data_Output/CurrentPrice_Actual_Qtr_CPIAllGroup_Published20251001.rda")
       load("Data_Intermediate/Downloaded_Files.rda")                
    ##
    ## Step 1: Check out the Industries and move each data source to a common industry definition
    ##
-      GDP        <- unique(ConstantPrice_SA_Qtr_GDP_Published20250725$Industry)
-      CapStock   <- unique(ConstantPrice_Actual_Annual_CapitalStock_Published20250725$Industry)
-      Labour     <- unique(ConstantPrice_Actual_Qtr_PaidHours_Published20250725$Industry)
-      Unemployed <- Household_Labour_Force_Survey_Published20250725
-      CPI        <- data.frame(CurrentPrice_Actual_Qtr_CPIAllGroup_Published20250725)
+      GDP        <- unique(ConstantPrice_SA_Qtr_GDP_Published20251001$Industry)
+      CapStock   <- unique(ConstantPrice_Actual_Annual_CapitalStock_Published20251001$Industry)
+      Labour     <- unique(ConstantPrice_Actual_Qtr_PaidHours_Published20251001$Industry)
+      Unemployed <- Household_Labour_Force_Survey_Published20251001
+      CPI        <- data.frame(CurrentPrice_Actual_Qtr_CPIAllGroup_Published20251001)
 
       
       GDP[!(GDP %in% CapStock)] # Only the unallocated in GDP is different
@@ -53,17 +53,17 @@
       Reclassify_Industry <- data.table(CapStock = c("Accommodation and Food Services","Administrative and Support Services","Agriculture","Arts and Recreation Services","Central Government Administration, Defence and Public Safety","Construction","Education and Training","Electricity, Gas, Water and Waste Services","Financial and Insurance Services","Fishing, Aquaculture and Agriculture, Forestry and Fishing Support Services","Food, Beverage and Tobacco Product Manufacturing","Forestry and Logging","Furniture and Other Manufacturing","Health Care and Social Assistance","Information Media and Telecommunications","Local Government Administration","Metal Product Manufacturing","Mining","Non-Metallic Mineral Product Manufacturing","Other Services","Owner-Occupied Property Operation (National Accounts Only)","Petroleum, Chemical, Polymer and Rubber Product Manufacturing","Printing","Professional, Scientific and Technical Services","Rental, Hiring and Real Estate Services","Retail Trade","Textile, Leather, Clothing and Footwear Manufacturing","Transport Equipment, Machinery and Equipment Manufacturing","Transport, Postal and Warehousing","Wholesale Trade","Wood and Paper Products Manufacturing"),
                                         Labour   = c("Accommodation and Food Services","Professional, Scientific, Technical, Administrative and Support Services","EXCLUDED FROM QES","Arts, Recreation and Other Services","Public Administration and Safety","Construction","Education and Training","Electricity, Gas, Water and Waste Services","Financial and Insurance Services","EXCLUDED FROM QES","Manufacturing","Forestry and Mining","Manufacturing","Health Care and Social Assistance","Information Media and Telecommunications","Public Administration and Safety","Manufacturing","Forestry and Mining","Manufacturing","Arts, Recreation and Other Services","EXCLUDED FROM QES","Manufacturing","Manufacturing","Professional, Scientific, Technical, Administrative and Support Services","Rental, Hiring and Real Estate Services","Retail Trade","Manufacturing","Manufacturing","Transport, Postal and Warehousing","Wholesale Trade","Manufacturing"))
 
-      GDP <- merge(ConstantPrice_SA_Qtr_GDP_Published20250725,
+      GDP <- merge(ConstantPrice_SA_Qtr_GDP_Published20251001,
                    Reclassify_Industry,
                    by.x = c("Industry"),
                    by.y = c("CapStock"))
 
-      CapStock <- merge(ConstantPrice_Actual_Annual_CapitalStock_Published20250725,
+      CapStock <- merge(ConstantPrice_Actual_Annual_CapitalStock_Published20251001,
                         Reclassify_Industry,
                         by.x = c("Industry"),
                         by.y = c("CapStock"))
                         
-      Labour <- ConstantPrice_Actual_Qtr_PaidHours_Published20250725
+      Labour <- ConstantPrice_Actual_Qtr_PaidHours_Published20251001
       
       names(Labour)[names(Labour) == "Industry"] <- "Labour"
 
@@ -545,7 +545,7 @@
          ##
       showtext_auto()
          
-         ggplot(Output_Gap[(month(Output_Gap$TimePeriod) == 3),], aes(x=Output_Gap/100, y=Unemployment_Rate/100))     +
+         ggplot(Output_Gap[(month(Output_Gap$TimePeriod) == 6),], aes(x=Output_Gap/100, y=Unemployment_Rate/100))     +
                 geom_smooth(method=lm) +
                 geom_path(size = 1, linejoin = "mitre", lineend = "butt", colour = c("#7b1244")) +
                 geom_point(size = 1.5, colour = c("#0094c5")) +
@@ -554,9 +554,9 @@
                ##
                ##    Make explicit the estimated bit below
                ##
-                geom_point(size = 3, colour = "red", data = Output_Gap[(month(Output_Gap$TimePeriod) == 3) & (year(Output_Gap$TimePeriod) > 2023),]) +
-                geom_text(aes(label=format(TimePeriod, "%Y")), size=7, nudge_x = 0.003, colour = "red", data = Output_Gap[(month(Output_Gap$TimePeriod) == 3) & (year(Output_Gap$TimePeriod) > 2023),]) +
-                geom_path(size = 1, linejoin = "mitre", lineend = "butt", colour = "red", data = Output_Gap[(month(Output_Gap$TimePeriod) == 3) & (year(Output_Gap$TimePeriod) > 2022),]) +
+                geom_point(size = 3, colour = "red", data = Output_Gap[(month(Output_Gap$TimePeriod) == 6) & (year(Output_Gap$TimePeriod) > 2023),]) +
+                geom_text(aes(label=format(TimePeriod, "%Y")), size=7, nudge_x = 0.003, colour = "red", data = Output_Gap[(month(Output_Gap$TimePeriod) == 6) & (year(Output_Gap$TimePeriod) > 2023),]) +
+                geom_path(size = 1, linejoin = "mitre", lineend = "butt", colour = "red", data = Output_Gap[(month(Output_Gap$TimePeriod) == 6) & (year(Output_Gap$TimePeriod) > 2022),]) +
                 geom_text(x= -0.0575, y=0.053, size=13, label="Estimated Years",family ="MyriadPro-Light", hjust = 0, colour = "red") +
                ##
                ##    Make explicit the estimated bit above
@@ -602,7 +602,7 @@
 
      showtext_auto()
          
-         ggplot(Output_Gap[(month(Output_Gap$TimePeriod) == 3) &
+         ggplot(Output_Gap[(month(Output_Gap$TimePeriod) == 6) &
                            (year(Output_Gap$TimePeriod) >= 1992) *
                            (year(Output_Gap$TimePeriod) <= 2017),], aes(x=Output_Gap/100, y=Unemployment_Rate/100))     +
                 geom_smooth(method=lm) +

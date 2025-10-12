@@ -137,11 +137,11 @@
             save(list = paste0("ConstantPrice_SA_Qtr_HCE_Published", Publish_Date), 
                  file = paste0("Data_Output/ConstantPrice_SA_Qtr_HCE_Published", Publish_Date,".rda"))
                  
-            assign(paste0("CurrentPrice_SA_Qtr_HCE_Published", Publish_Date), ConstantPrice_SA_Qtr_HCE)
+            assign(paste0("CurrentPrice_SA_Qtr_HCE_Published", Publish_Date), CurrentPrice_SA_Qtr_HCE)
             save(list = paste0("CurrentPrice_SA_Qtr_HCE_Published", Publish_Date), 
                  file = paste0("Data_Output/CurrentPrice_SA_Qtr_HCE_Published", Publish_Date,".rda"))
                  
-            assign(paste0("IPD_SA_Qtr_HCE_Published", Publish_Date), ConstantPrice_SA_Qtr_HCE)
+            assign(paste0("IPD_SA_Qtr_HCE_Published", Publish_Date), IPD_SA_Qtr_HCE)
             save(list = paste0("IPD_SA_Qtr_HCE_Published", Publish_Date), 
                  file = paste0("Data_Output/IPD_SA_Qtr_HCE_Published", Publish_Date,".rda"))
            

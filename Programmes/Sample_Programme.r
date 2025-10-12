@@ -1,20 +1,7 @@
 ##
-##    Programme:  New_Zealand_Production_Function.r
+##    Programme:  Where_Does_The_Money_Go.r
 ##
-##    Objective:  Now all of the InfoShare data has been read in, lets try estimating a production function
-##                as an error correction model, based on constant price GDP, Capital and Labour.
-##
-##                There's a couple of issues: 
-##                1. The Capital Stock measure is annual, so I'll take the spline to interpolate the quarters.
-##                   For the last year, I'll extrapolate it out by GFKF.
-##
-##                2. The Quarterly Employment Survey labour measure is quarterly actuals, which will need seasonally
-##                   adjusted to match with the SA GDP measure.
-##
-##                3. The industries are bound to not be on the same definition.
-##
-##                4. There's no gaurantee that the macro level function will look anything like the micro level
-##                   industry functions, or share similar short run dynamics.
+##    Objective:  
 ##
 ##    Author:     James Hogan, started 27 June 2025
 ##
