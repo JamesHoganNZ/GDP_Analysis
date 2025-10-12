@@ -148,16 +148,20 @@
    ##
    ##    The coefficients on ECT1 are the speeds of adjustment of the regression variable to disequilibrium in the long run position.
    ##
+      ##
+      ##    K = 8 or 9 
+      ##
       
       jotest=ca.jo(data.frame(Money_Demand_Analytical_Set$Real_Mortgages,
                               Money_Demand_Analytical_Set$House_Mortgage_Interest_Rate,
                               Money_Demand_Analytical_Set$Labour_Paid_Hours_Worked,
                               Money_Demand_Analytical_Set$Log_Fisher_Ideal_House_Prices), 
                               type  = "trace", 
-                              K     = 8, 
+                              K     = 9, 
                               ecdet = "const", 
                               spec  = "longrun")
       summary(jotest)
+      summary(alphaols(jotest))
 
       vecm <- cajorls(jotest,r=1)
       coeftest(vecm$rlm)
@@ -202,13 +206,13 @@
    for(i in 1:nrow(Money_Demand_Analytical_Set))
    {
       Money_Demand_Analytical_Set$Estimated_Real_Housing_Mortgages[i] <-exp( -(Coefs[2,1] * Money_Demand_Analytical_Set$House_Mortgage_Interest_Rate[i]) +
-                                                     -(Coefs[3,1] * Money_Demand_Analytical_Set$Labour_Paid_Hours_Worked[i]) +
-                                                     -(Coefs[4,1] * Money_Demand_Analytical_Set$Log_Fisher_Ideal_House_Prices[i]) +
-                                                     -(Coefs[5,1] * 1))
-#      Money_Demand_Analytical_Set$Estimate[i] <-exp( -(Coefs[2,1] * Money_Demand_Analytical_Set$House_Mortgage_Interest_Rate[i]) +
-#                                                     -(Coefs[3,1] * Money_Demand_Analytical_Set$Labour_Paid_Hours_Worked[i]) +
-#                                                     -(Coefs[4,1] * Money_Demand_Analytical_Set$Log_Fisher_Ideal_House_Prices[i])+
-#                                                     -(Coefs[5,1] * Money_Demand_Analytical_Set$Trend[i]))
+                                                                             -(Coefs[3,1] * Money_Demand_Analytical_Set$Labour_Paid_Hours_Worked[i]) +
+                                                                             -(Coefs[4,1] * Money_Demand_Analytical_Set$Log_Fisher_Ideal_House_Prices[i]) +
+                                                                             -(Coefs[5,1] * 1))
+#      Money_Demand_Analytical_Set$Estimated_Real_Housing_Mortgages[i] <-exp( -(Coefs[2,1] * Money_Demand_Analytical_Set$House_Mortgage_Interest_Rate[i]) +
+#                                                                             -(Coefs[3,1] * Money_Demand_Analytical_Set$Labour_Paid_Hours_Worked[i]) +
+#                                                                             -(Coefs[4,1] * Money_Demand_Analytical_Set$Log_Fisher_Ideal_House_Prices[i])
+#                                                                             )
    }
 
    Plot_Me <- data.table::melt(Money_Demand_Analytical_Set,
@@ -251,9 +255,13 @@
                    legend.spacing.y = unit(1, "cm"),
                    legend.margin = margin(10, 10, 10, 10),
                    legend.position  = "bottom")                      
+                   
+                   
          ggsave("Graphical_Output/Real_Mortages_and_Estimated.png", height =(1.5)*16.13, width = (1.75)*20.66, dpi = 165, units = c("cm"))
 
    Money_Demand_Analytical_Set$Nominal_Estimate <- Money_Demand_Analytical_Set$Estimated_Real_Housing_Mortgages * Money_Demand_Analytical_Set$Fisher_Ideal_House_Prices
+   
+   write.csv(Money_Demand_Analytical_Set, file = "Data_Output/Money_Demand_Analytical_Set.csv", row.names = FALSE)
    
    Plot_Me <- data.table::melt(Money_Demand_Analytical_Set,
                                id.var = "Period",
