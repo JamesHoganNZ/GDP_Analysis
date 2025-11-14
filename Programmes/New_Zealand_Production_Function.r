@@ -501,15 +501,15 @@
                   geom_bar(stat="identity", position=position_dodge()) + 
                   coord_flip() +
 #                  scale_colour_manual(aesthetics = c("colour", "fill"), values = nzier.cols(), name="") +
+                   scale_colour_manual(aesthetics = c("colour", "fill"), values = c("#7b1244","#0094c5"), name="Actual or Expected") +
                   labs(x = "", fill = "Industries\n")+
                   labs(y = "\nDifference between Actual and Expected Output\n(Given Capital Stock and Employed Labour)\n") +
                   scale_y_continuous(breaks=seq(-20,20,1), labels=paste0(seq(-20,20,1),"%")) +
                   geom_hline(yintercept=0, color="white", size=1) +
                   theme(axis.text.x = element_text(angle=00)) +
-                  geom_text(x=7.5, y=-10, size=6, label="Under\nPerforming\nIndustries") +
-                  geom_text(x=7.5, y= 5, size=6, label="Over\nPerforming\nIndustries") +
-                  labs(title = "Output Gap - by Industry", 
-                       subtitle = "New Zealand Institute of Economic Research\n")
+                  geom_text(x=7.5, y=-14, size=4, label="Low Demand Industries") +
+                  geom_text(x=7.5, y= 5, size=4, label="High Demand Industries") +
+                  labs(title = "Output Gap - by Industry")
          print(p1, vp=vplayout(1,1))
          dev.off() 
 
