@@ -125,6 +125,12 @@
       ##
          source("Programmes/Institutional_Sector_Accounts_Analysis.r")
       ##
+      ##    STEP 7: Where does people's money go? How is money coming into and through people's household income and expenditure acccounts
+      ##            and what things are they buying?
+      ## 
+
+      ##
+      ##
       ##    STEP x: Final output
       ##
          source("Programmes/xxxxxxxx.r") # This does blah blah blah
