@@ -1,0 +1,595 @@
+<html xmlns:x="urn:schemas-microsoft-com:office:excel">
+	<head>
+		<meta http-equiv="Content-Type" content="charset=windows-1252" />
+		<!--[if gte mso 9]>
+		<xml>
+			<x:ExcelWorkbook>
+				<x:ExcelWorksheets>
+					<x:ExcelWorksheet>
+						<x:Name>matrix</x:Name>
+						<x:WorksheetOptions>
+							<x:Print>
+								<x:ValidPrinterInfo/>
+							</x:Print>
+						</x:WorksheetOptions>
+					</x:ExcelWorksheet>
+				</x:ExcelWorksheets>
+			</x:ExcelWorkbook>
+		</xml>
+		<![endif]-->
+	</head>
+	<body>
+		<style>
+			.stub1 {
+				mso-style-parent:style0;
+				mso-number-format:\@;
+				vertical-align:middle;
+			}
+			.headfirst {
+				mso-style-parent:style0;
+				mso-number-format:\@;
+			}
+			.headlast {
+				mso-style-parent:style0;
+				mso-number-format:\@;
+			}
+			.headmid {
+				mso-style-parent:style0;
+				mso-number-format:\@;
+			}
+			.title
+				mso-style-parent:style0;
+				text-align:left;
+			}
+		</style>
+<table class="pxtable" cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<th colspan="3">CPI Non-standard Tradable &amp; Non-tradable series,Seasonally adjusted (Qrtly-Mar/Jun/Sep/Dec)</th>
+	</tr>
+	<tr>
+		<td class="headfirst" colspan="1" rowspan="2">&nbsp;</td>
+		<th class="headfirst" colspan="2">Seasonally adjusted</th>
+	</tr>
+	<tr>
+		<th class="headlast" colspan="1">Tradable All Groups</th>
+		<th class="headlast" colspan="1">Non-Tradable All Groups</th>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1999Q2</td>
+		<td style="white-space: nowrap;">845</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1999Q3</td>
+		<td style="white-space: nowrap;">846</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">1999Q4</td>
+		<td style="white-space: nowrap;">848</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2000Q1</td>
+		<td style="white-space: nowrap;">857</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2000Q2</td>
+		<td style="white-space: nowrap;">859</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2000Q3</td>
+		<td style="white-space: nowrap;">873</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2000Q4</td>
+		<td style="white-space: nowrap;">886</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2001Q1</td>
+		<td style="white-space: nowrap;">890</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2001Q2</td>
+		<td style="white-space: nowrap;">899</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2001Q3</td>
+		<td style="white-space: nowrap;">904</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2001Q4</td>
+		<td style="white-space: nowrap;">905</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2002Q1</td>
+		<td style="white-space: nowrap;">909</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2002Q2</td>
+		<td style="white-space: nowrap;">919</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2002Q3</td>
+		<td style="white-space: nowrap;">916</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2002Q4</td>
+		<td style="white-space: nowrap;">920</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2003Q1</td>
+		<td style="white-space: nowrap;">923</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2003Q2</td>
+		<td style="white-space: nowrap;">908</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2003Q3</td>
+		<td style="white-space: nowrap;">902</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2003Q4</td>
+		<td style="white-space: nowrap;">901</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2004Q1</td>
+		<td style="white-space: nowrap;">902</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2004Q2</td>
+		<td style="white-space: nowrap;">902</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2004Q3</td>
+		<td style="white-space: nowrap;">902</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2004Q4</td>
+		<td style="white-space: nowrap;">908</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2005Q1</td>
+		<td style="white-space: nowrap;">910</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2005Q2</td>
+		<td style="white-space: nowrap;">909</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2005Q3</td>
+		<td style="white-space: nowrap;">918</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2005Q4</td>
+		<td style="white-space: nowrap;">924</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2006Q1</td>
+		<td style="white-space: nowrap;">929</td>
+		<td style="white-space: nowrap;">..</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2006Q2</td>
+		<td style="white-space: nowrap;">944</td>
+		<td style="white-space: nowrap;">0</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2006Q3</td>
+		<td style="white-space: nowrap;">945</td>
+		<td style="white-space: nowrap;">0</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2006Q4</td>
+		<td style="white-space: nowrap;">935</td>
+		<td style="white-space: nowrap;">0</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2007Q1</td>
+		<td style="white-space: nowrap;">937</td>
+		<td style="white-space: nowrap;">0</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2007Q2</td>
+		<td style="white-space: nowrap;">940</td>
+		<td style="white-space: nowrap;">0</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2007Q3</td>
+		<td style="white-space: nowrap;">942</td>
+		<td style="white-space: nowrap;">0</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2007Q4</td>
+		<td style="white-space: nowrap;">962</td>
+		<td style="white-space: nowrap;">0</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2008Q1</td>
+		<td style="white-space: nowrap;">969</td>
+		<td style="white-space: nowrap;">0</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2008Q2</td>
+		<td style="white-space: nowrap;">985</td>
+		<td style="white-space: nowrap;">0</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2008Q3</td>
+		<td style="white-space: nowrap;">1001</td>
+		<td style="white-space: nowrap;">0</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2008Q4</td>
+		<td style="white-space: nowrap;">984</td>
+		<td style="white-space: nowrap;">0</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2009Q1</td>
+		<td style="white-space: nowrap;">985</td>
+		<td style="white-space: nowrap;">0</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2009Q2</td>
+		<td style="white-space: nowrap;">987</td>
+		<td style="white-space: nowrap;">0</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2009Q3</td>
+		<td style="white-space: nowrap;">999</td>
+		<td style="white-space: nowrap;">0</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2009Q4</td>
+		<td style="white-space: nowrap;">999</td>
+		<td style="white-space: nowrap;">0</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2010Q1</td>
+		<td style="white-space: nowrap;">1005</td>
+		<td style="white-space: nowrap;">821</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2010Q2</td>
+		<td style="white-space: nowrap;">997</td>
+		<td style="white-space: nowrap;">829</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2010Q3</td>
+		<td style="white-space: nowrap;">1002</td>
+		<td style="white-space: nowrap;">839</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2010Q4</td>
+		<td style="white-space: nowrap;">1032</td>
+		<td style="white-space: nowrap;">857</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2011Q1</td>
+		<td style="white-space: nowrap;">1042</td>
+		<td style="white-space: nowrap;">864</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2011Q2</td>
+		<td style="white-space: nowrap;">1052</td>
+		<td style="white-space: nowrap;">872</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2011Q3</td>
+		<td style="white-space: nowrap;">1048</td>
+		<td style="white-space: nowrap;">877</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2011Q4</td>
+		<td style="white-space: nowrap;">1044</td>
+		<td style="white-space: nowrap;">879</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2012Q1</td>
+		<td style="white-space: nowrap;">1044</td>
+		<td style="white-space: nowrap;">886</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2012Q2</td>
+		<td style="white-space: nowrap;">1041</td>
+		<td style="white-space: nowrap;">892</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2012Q3</td>
+		<td style="white-space: nowrap;">1036</td>
+		<td style="white-space: nowrap;">897</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2012Q4</td>
+		<td style="white-space: nowrap;">1033</td>
+		<td style="white-space: nowrap;">901</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2013Q1</td>
+		<td style="white-space: nowrap;">1032</td>
+		<td style="white-space: nowrap;">907</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2013Q2</td>
+		<td style="white-space: nowrap;">1024</td>
+		<td style="white-space: nowrap;">914</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2013Q3</td>
+		<td style="white-space: nowrap;">1031</td>
+		<td style="white-space: nowrap;">921</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2013Q4</td>
+		<td style="white-space: nowrap;">1030</td>
+		<td style="white-space: nowrap;">928</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2014Q1</td>
+		<td style="white-space: nowrap;">1026</td>
+		<td style="white-space: nowrap;">934</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2014Q2</td>
+		<td style="white-space: nowrap;">1025</td>
+		<td style="white-space: nowrap;">939</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2014Q3</td>
+		<td style="white-space: nowrap;">1022</td>
+		<td style="white-space: nowrap;">945</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2014Q4</td>
+		<td style="white-space: nowrap;">1017</td>
+		<td style="white-space: nowrap;">950</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2015Q1</td>
+		<td style="white-space: nowrap;">1001</td>
+		<td style="white-space: nowrap;">956</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2015Q2</td>
+		<td style="white-space: nowrap;">1007</td>
+		<td style="white-space: nowrap;">959</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2015Q3</td>
+		<td style="white-space: nowrap;">1009</td>
+		<td style="white-space: nowrap;">960</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2015Q4</td>
+		<td style="white-space: nowrap;">995</td>
+		<td style="white-space: nowrap;">966</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2016Q1</td>
+		<td style="white-space: nowrap;">989</td>
+		<td style="white-space: nowrap;">971</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2016Q2</td>
+		<td style="white-space: nowrap;">993</td>
+		<td style="white-space: nowrap;">977</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2016Q3</td>
+		<td style="white-space: nowrap;">988</td>
+		<td style="white-space: nowrap;">983</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2016Q4</td>
+		<td style="white-space: nowrap;">994</td>
+		<td style="white-space: nowrap;">989</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2017Q1</td>
+		<td style="white-space: nowrap;">1004</td>
+		<td style="white-space: nowrap;">995</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2017Q2</td>
+		<td style="white-space: nowrap;">1001</td>
+		<td style="white-space: nowrap;">1001</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2017Q3</td>
+		<td style="white-space: nowrap;">998</td>
+		<td style="white-space: nowrap;">1008</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2017Q4</td>
+		<td style="white-space: nowrap;">999</td>
+		<td style="white-space: nowrap;">1013</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2018Q1</td>
+		<td style="white-space: nowrap;">1001</td>
+		<td style="white-space: nowrap;">1018</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2018Q2</td>
+		<td style="white-space: nowrap;">1004</td>
+		<td style="white-space: nowrap;">1026</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2018Q3</td>
+		<td style="white-space: nowrap;">1008</td>
+		<td style="white-space: nowrap;">1032</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2018Q4</td>
+		<td style="white-space: nowrap;">1008</td>
+		<td style="white-space: nowrap;">1039</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2019Q1</td>
+		<td style="white-space: nowrap;">997</td>
+		<td style="white-space: nowrap;">1048</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2019Q2</td>
+		<td style="white-space: nowrap;">1006</td>
+		<td style="white-space: nowrap;">1055</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2019Q3</td>
+		<td style="white-space: nowrap;">1002</td>
+		<td style="white-space: nowrap;">1065</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2019Q4</td>
+		<td style="white-space: nowrap;">1009</td>
+		<td style="white-space: nowrap;">1071</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2020Q1</td>
+		<td style="white-space: nowrap;">1011</td>
+		<td style="white-space: nowrap;">1085</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2020Q2</td>
+		<td style="white-space: nowrap;">1000</td>
+		<td style="white-space: nowrap;">1088</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2020Q3</td>
+		<td style="white-space: nowrap;">1001</td>
+		<td style="white-space: nowrap;">1093</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2020Q4</td>
+		<td style="white-space: nowrap;">1006</td>
+		<td style="white-space: nowrap;">1100</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2021Q1</td>
+		<td style="white-space: nowrap;">1016</td>
+		<td style="white-space: nowrap;">1109</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2021Q2</td>
+		<td style="white-space: nowrap;">1034</td>
+		<td style="white-space: nowrap;">1124</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2021Q3</td>
+		<td style="white-space: nowrap;">1058</td>
+		<td style="white-space: nowrap;">1141</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2021Q4</td>
+		<td style="white-space: nowrap;">1075</td>
+		<td style="white-space: nowrap;">1158</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2022Q1</td>
+		<td style="white-space: nowrap;">1102</td>
+		<td style="white-space: nowrap;">1176</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2022Q2</td>
+		<td style="white-space: nowrap;">1125</td>
+		<td style="white-space: nowrap;">1195</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2022Q3</td>
+		<td style="white-space: nowrap;">1144</td>
+		<td style="white-space: nowrap;">1215</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2022Q4</td>
+		<td style="white-space: nowrap;">1162</td>
+		<td style="white-space: nowrap;">1236</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2023Q1</td>
+		<td style="white-space: nowrap;">1172</td>
+		<td style="white-space: nowrap;">1255</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2023Q2</td>
+		<td style="white-space: nowrap;">1183</td>
+		<td style="white-space: nowrap;">1274</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2023Q3</td>
+		<td style="white-space: nowrap;">1198</td>
+		<td style="white-space: nowrap;">1292</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2023Q4</td>
+		<td style="white-space: nowrap;">1197</td>
+		<td style="white-space: nowrap;">1309</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2024Q1</td>
+		<td style="white-space: nowrap;">1191</td>
+		<td style="white-space: nowrap;">1328</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2024Q2</td>
+		<td style="white-space: nowrap;">1187</td>
+		<td style="white-space: nowrap;">1343</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2024Q3</td>
+		<td style="white-space: nowrap;">1179</td>
+		<td style="white-space: nowrap;">1356</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2024Q4</td>
+		<td style="white-space: nowrap;">1184</td>
+		<td style="white-space: nowrap;">1369</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2025Q1</td>
+		<td style="white-space: nowrap;">1195</td>
+		<td style="white-space: nowrap;">1380</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2025Q2</td>
+		<td style="white-space: nowrap;">1201</td>
+		<td style="white-space: nowrap;">1392</td>
+	</tr>
+	<tr>
+		<td rowspan="1" class="stub1">2025Q3</td>
+		<td style="white-space: nowrap;">1205</td>
+		<td style="white-space: nowrap;">1404</td>
+	</tr>
+	<tr>
+		<td class="footnote" colspan="3">
+			<a id="information">
+				<b>Table information:</b>
+			</a>
+			<br />Units:<br />Index, Magnitude = Units<br /><br /><a id="footnotes"><b>Footnotes:</b></a><br /> <br />Symbols:<br />.. figure not available<br />C: Confidential<br />E: Early Estimate<br />P: Provisional<br />R: Revised<br />S: Suppressed<br /><br />Status flags are not displayed<br /><br />Table reference: <br />CPI033AA<br /><br />Last updated:<br />20 October 2025 10:45am<br /><br />Source: Statistics New Zealand<br />Contact: Information Centre<br />Telephone: 0508 525 525<br />Email:<a href="mailto:info@stats.govt.nz">info@stats.govt.nz</a><br /><br /><br /></td>
+	</tr>
+</table>	</body>
+</html>
